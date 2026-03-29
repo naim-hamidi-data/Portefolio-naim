@@ -5,6 +5,8 @@ Bienvenue sur mon portefolio.
 🌱 Ingénieur agronome en transition vers la Data & l’AgriTech  
 📍 Toulouse → 🇪🇸 Córdoba (prochaine étape)
 
+---
+
 ## 🚀 Mon positionnement
 
 Je suis aujourd’hui un **néo dans le monde de l'AgriTech**, avec une conviction forte :
@@ -18,6 +20,7 @@ Après un parcours en :
 
 ➡️ Je fais aujourd’hui évoluer mon profil vers la **Digitalisation du secteur agri/agro**
 
+---
 
 ## 🎓 Prochaine étape : virage vers l’AgriTech
 
@@ -65,7 +68,7 @@ Compétences en cours d’acquisition :
 
 #### 🔍 Analyse de données agricoles (à venir)
 📌 Objectif : exploiter des données terrain pour aider à la décision  
-🔗 https://github.com/ton-username/projet-data-agri  
+🔗 à venir  
 🧾 En cours :
 - Nettoyage de données
 - Analyse exploratoire
@@ -75,7 +78,7 @@ Compétences en cours d’acquisition :
 
 #### 🛰️ Projet géomatique & QGIS
 📌 Objectif : cartographier et analyser des surfaces agricoles  
-🔗 https://github.com/ton-username/projet-qgis  
+🔗 à venir  
 🧾 Basé sur mon expérience PAC :
 - Instruction de dossiers surfaces
 - Analyse spatiale
@@ -85,7 +88,7 @@ Compétences en cours d’acquisition :
 
 #### 📡 Projet IoT agricole (à venir)
 📌 Objectif : comprendre l’usage des capteurs dans l’agriculture  
-🔗 https://github.com/ton-username/projet-iot-agri  
+🔗 à venir  
 🧾 En réflexion :
 - Données météo / sol
 - Aide à la décision agronomique
