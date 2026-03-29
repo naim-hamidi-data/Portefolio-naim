@@ -1,0 +1,91 @@
+🚀 Présentation du projet
+
+Ce dépôt regroupe plusieurs projets SIG appliqués à l’analyse agricole et au contrôle environnemental.
+
+Les travaux portent sur :
+
+🌾 Suivi des surfaces agricoles (PAC)
+🛰️ Analyse spatiale de données géographiques
+🌱 Contrôle de la conformité environnementale
+🗺️ Production de cartes opérationnelles pour le terrain
+
+👉 Objectif global : transformer des données agricoles complexes en outils d’aide à la décision opérationnels pour l’administration et les contrôles terrain.
+
+📁 Projet 1 – Analyse des augmentations de surfaces agricoles (PAC 2024–2025)
+🎯 Objectif
+
+Identifier et quantifier les augmentations de surfaces agricoles entre les campagnes PAC 2024 et 2025 afin de détecter les parcelles nécessitant une justification par les exploitants.
+
+📊 Données utilisées
+Parcelles PAC 2024
+Parcelles PAC 2025
+Identifiant parcellaire (ID PAR)
+Données attributaires des exploitations agricoles
+⚙️ Méthodologie
+1️⃣ Extraction des parcelles par exploitation
+Utilisation de l’identifiant unique ID PAR
+Sélection des parcelles par exploitation
+Structuration des données agricoles
+2️⃣ Construction des couches 2024 et 2025
+Agrégation des parcelles PAC 2024
+Reconstitution des données PAC 2025 via Excel + import SIG
+Traitement sous QGIS
+3️⃣ Analyse spatiale
+Comparaison des surfaces 2024 vs 2025
+Détection des nouvelles surfaces agricoles
+Identification des écarts
+4️⃣ Automatisation du traitement
+Développement d’un modèle sous QGIS (avec une sigiste)
+Automatisation des étapes :
+comparaison des couches
+détection des surfaces supplémentaires
+génération d’une couche “surfaces à justifier”
+📈 Résultats
+✔ Détection automatisée des augmentations de surfaces agricoles
+✔ Création d’une couche SIG des parcelles à justifier
+✔ Traitement à grande échelle (~100 exploitations)
+✔ Base exploitable pour les constats administratifs
+
+
+🌱 Projet 2 – Contrôle terrain & cartographie environnementale (Haute-Garonne)
+
+📍 Haute-Garonne
+👨‍🌾 31 exploitations agricoles contrôlées
+
+🎯 Objectif
+
+Faciliter les contrôles terrain de la conditionnalité environnementale en produisant des cartes d’aide à la décision.
+
+Domaines concernés :
+
+💧 Directive nitrates
+🐦 Biodiversité (oiseaux / habitats)
+🌊 Cadre de l’eau
+📊 Données utilisées
+Parcelles agricoles (DDT)
+Couches environnementales :
+haies 🌳
+cours d’eau 🌊
+pentes ⛰️
+⚙️ Méthodologie
+1️⃣ Extraction des parcelles
+Sélection des parcelles par exploitation
+Export dans une couche dédiée
+2️⃣ Superposition des données environnementales
+Ajout des couches :
+haies
+cours d’eau
+pentes
+Analyse des zones sensibles
+3️⃣ Identification des zones de contrôle
+Analyse visuelle des risques environnementaux
+Sélection des parcelles à contrôler
+4️⃣ Production cartographique
+Création de 31 cartes individuelles
+Cartes adaptées aux contrôles terrain
+Symbologie dédiée aux zones sensibles
+📈 Résultats
+✔ Amélioration de la préparation des contrôles terrain
+✔ Gain de temps pour les inspecteurs
+✔ Standardisation des analyses par exploitation
+✔ Outil opérationnel directement utilisable sur le terrain
