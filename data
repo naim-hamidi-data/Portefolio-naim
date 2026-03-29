@@ -1,0 +1,107 @@
+# 🍈 Melon Variety Selection Trial (2022) – Field Experiment & Statistical Analysis
+
+## 📌 Project Overview
+
+This project presents an agronomic field trial conducted to evaluate early-season melon varieties under open-field conditions. The objective was to identify high-performing pre-commercial varieties suitable for market introduction.
+
+The study combines **field experimentation**, **data analysis**, and **statistical modeling** to support decision-making in varietal selection.
+
+---
+
+## 🎯 Objectives
+
+* Evaluate the field performance of pre-commercial melon varieties (PLC5)
+* Compare candidate varieties to commercial controls
+* Identify 1–2 varieties with strong agronomic and commercial potential
+
+---
+
+## 🧪 Experimental Design
+
+* Total plants: 321
+* Plot size: 7 plants per plot
+* Design: Randomized block design
+* Replicates: 3
+* Varieties tested: 20+ (including controls)
+
+### Factors studied:
+
+* Variety
+* Company (e.g. Syngenta, Clause)
+* Variety type (Control vs test)
+
+---
+
+## 📊 Data Collection
+
+Data were collected using multiple tools:
+
+* Field observations
+* Drone imagery
+* Video recordings
+* Tablets and Excel sheets
+
+---
+
+## 📈 Data Analysis
+
+Data processing and statistical analysis were performed using:
+
+* Microsoft Excel
+* Analysis of Variance (ANOVA)
+* Newman-Keuls post-hoc test (5% significance level)
+
+The analysis focused on:
+
+### Quantitative traits:
+
+* Fruit count per plot
+* Yield performance
+* Average fruit weight
+
+### Qualitative traits:
+
+* Waste percentage
+* Fruit defects (cracks, rot, deformities)
+* Sugar content (Brix)
+
+---
+
+## 🔍 Key Findings
+
+* Several varieties showed strong early yield performance (e.g. MC24908, MC26015, MC26097)
+* Some varieties combined high yield with acceptable fruit quality
+* Trade-offs were observed between yield and waste rate
+* Two varieties were shortlisted for further comparison with commercial controls
+
+---
+
+## ⚠️ Data Disclaimer
+
+The dataset provided in this repository has been **simulated and anonymized** for confidentiality reasons.
+
+However:
+
+* The experimental design is real
+* The statistical methodology is identical
+* The data structure reflects real agronomic conditions
+
+---
+
+## 🧠 Skills Demonstrated
+
+* Experimental design (field trials)
+* Agronomic data analysis
+* Statistical testing (ANOVA, post-hoc analysis)
+* Data structuring and cleaning
+* Decision-oriented analysis
+
+
+---
+
+## 👨‍🌾 Author
+
+Naïm Hamidi
+Agricultural Engineer | Quality & Sustainability | Data-driven agriculture
+
+---
