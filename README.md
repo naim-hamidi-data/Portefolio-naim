@@ -1,42 +1,26 @@
-# Naïm HAMIDI - Portfolio
-Portefolio AgriTech Engineer
-
-Bienvenue sur mon portefolio.
-🌱 Ingénieur agronome en transition vers la Data & l’AgriTech  
-📍 Toulouse → 🇪🇸 Córdoba (prochaine étape)
+# Bonjour, je suis Naïm HAMIDI
+Ingénieur agronome | Futur expert en agriculture de précision, data science et géomatique 
 
 ---
 
-## 🚀 Mon positionnement
+## 🚀 À propos
 
-Je suis aujourd’hui un **néo dans le monde de l'AgriTech**, avec une conviction forte :
+Ingénieur agronome de formation, j’ai construit mon parcours autour de problématiques variées :
+🌾 Agronomie · 🛒 Business & retail · 🏭 Agroalimentaire · 🏦 Banque · 🏛️ Politiques publiques
 
-> 💡 L’agriculture de demain sera pilotée par la donnée, les capteurs et l’intelligence terrain.
+Ces expériences m’ont permis de développer une vision globale du secteur agricole, du terrain jusqu’aux enjeux stratégiques.
 
-Après un parcours en :
-- 🌾 Agronomie
-- 🛒 Business & retail 
-- 🏭 Agroalimentaire ; banque ; politique publique ...
+➡️ Aujourd’hui, je souhaite orienter ma carrière vers la digitalisation du secteur agri/agro.
+Dans cette dynamique, j’intègre le Master DigitalAgri de l’Université de Córdoba (Espagne), où je développe des compétences avancées en :
 
-➡️ Je fais aujourd’hui évoluer mon profil vers la **Digitalisation du secteur agri/agro**
-
----
-
-## 🎓 Prochaine étape : virage vers l’AgriTech
-
-🇪🇸 Master Digital Agriculture – Córdoba (à venir)
-
-Compétences en cours d’acquisition :
-- 📊 Data Science appliquée à l’agriculture  
-- 🌍 Géomatique & télédétection  
-- 📡 IoT & capteurs agricoles  
-- 🛰️ Analyse de données spatiales  
-
-🎯 Objectif : devenir un acteur de la transformation digitale des systèmes agricoles
+📊 Data science appliquée à l’agriculture
+🌍 Géomatique & télédétection
+📡 Agriculture de précision, IoT & capteurs agricoles
+🛰️ Innovation et transformation du secteur
 
 ---
 
-## 🧠 Ce que j’apporte déjà
+## 🧠 Mes compétences
 
 ### 🌱 Agronomie & terrain
 - Compréhension concrète des exploitations agricoles et de leurs contraintes
@@ -49,10 +33,10 @@ Compétences en cours d’acquisition :
 - Capacité à transformer des données en recommandations opérationnelles
 
 ### 🏭 Mangement par la qualité
-- Contrôle qualité agroalimentaire
-- Analyse de multicritères
-- Audit
-- Rigueur dans le respect des normes et process
+- Contrôle qualité en agroalimentaire
+- Analyse multicritère
+- Audit interne (ISO 9001)
+- Rigueur dans le respect des normes et des processus
 
 ### 🔄 Mes +++ 
 - 🌉 Capacité à faire le lien entre terrain agricole et data
@@ -61,39 +45,44 @@ Compétences en cours d’acquisition :
 - 🚀 Transition active vers la data et l’agritech
 
 ---
+## Parcours académique
+### Formation & Diplômes
 
-## 📂 Mes projets
+Universidad de Córdoba
+Máster en Transformación digital en el sector agroalimentario y forestal (DigitalAgri)
+2026 - 2027
 
-### 📊 Transition vers la data
+Ecole d'Ingénieurs de PURPAN (Toulouse)
+Diplôme d'ingénieur agronome
+2019 – 2024
 
-#### 🔍 Analyse de données agricoles (à venir)
-📌 Objectif : exploiter des données terrain pour aider à la décision  
-🔗 à venir  
-🧾 En cours :
-- Nettoyage de données
-- Analyse exploratoire
-- Visualisation
+---
+## 📂 Portfolio
+
+### 📊 Mes réalisations
+
+#### 1️⃣ AgriBot – Assistant agricole intelligent (Python & Telegram)
 
 ---
 
-#### 🛰️ Projet géomatique & QGIS
-📌 Objectif : cartographier et analyser des surfaces agricoles  
-🔗 à venir  
-🧾 Basé sur mon expérience PAC :
-- Instruction de dossiers surfaces
-- Analyse spatiale
-- Logique SIG
+#### 2️⃣ Comparaison des variétés de melon en conditions expérimentales
 
 ---
 
-#### 📡 Projet IoT agricole (à venir)
-📌 Objectif : comprendre l’usage des capteurs dans l’agriculture  
-🔗 à venir  
-🧾 En réflexion :
-- Données météo / sol
-- Aide à la décision agronomique
+#### 3️⃣ 🛰️ Analyse SIG - Evolution de la surface des exploitations agricoles
+📌 Objectif : analyser l'augmentation des surfaces agricoles entre n et n-1 des exploitations agricoles du département 31. 
+🔗 à venir  CARTES !!!!!
 
 ---
+
+#### 4️⃣  Dashboard de pilotage agricole (Power BI) je dois choisir sur quoi !!!
+
+---
+
+#### 5️⃣ Nettoyage et analyse de données agricoles (Data Cleaning)
+
+---
+
 
 ## 💼 Expériences clés
 
@@ -102,41 +91,7 @@ Compétences en cours d’acquisition :
 - Contrôle terrain de 31 exploitations
 - Réglementation environnementale (nitrates, eau, biodiversité)
 
----
-
-### 🛒 Category Manager – Les Mousquetaires (2023–2024)
-- Gestion de catégories (360 magasins)
-- Analyse des ventes & KPI
-- Stratégie promotionnelle & négociation fournisseurs
-
----
-
-### 🏭 Contrôleur qualité F&L – Carrefour (2025)
-- Contrôle qualité à réception
-- Analyse : poids, sucre, maturité, conformité
-
----
-
-### 🌱 Expérimentation agronomique – Syngenta (2022)
-- Suivi variétal (melon, courgette)
-- Analyse de données agronomiques
-- Tests gustatifs
-
----
-
-### 📊 Support RSE – Crédit Agricole (2023)
-- Suivi de 400 exploitations agricoles
-- Structuration et analyse de données
-- Reporting hebdomadaire
-
-
----
-
-## 🎯 Ce que je recherche
-
-- 🌍 Opportunités en AgriTech / Data agricole  
-- 📊 Projets autour de la donnée agricole  
-- 🚀 Collaborations sur des sujets innovants  
+### Télécharger CV
 
 ---
 
@@ -147,15 +102,4 @@ Compétences en cours d’acquisition :
 
 ---
 
-## ⚡ Ma Vision
 
-> “Convaincu que l’agriculture et l’alimentation n’ont véritablement de sens que lorsqu’elles favorisent l’autonomie plutôt que la dépendance.”
-
----
-
-## 🧩 Ce qui me différencie
-
-✔ Double vision : terrain agricole + business  
-✔ Expérience concrète avant la tech  
-✔ Compréhension des besoins réels des agriculteurs  
-✔ Transition stratégique vers la data  
