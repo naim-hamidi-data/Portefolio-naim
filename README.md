@@ -65,7 +65,7 @@ Diplôme d'ingénieur agronome
 
 ---
 
-#### 2️⃣ Comparaison des variétés de melon en conditions expérimentales
+#### 2️⃣ Modèle décisionnel melon (sélection variétale)
 
 ---
 
@@ -75,14 +75,23 @@ Diplôme d'ingénieur agronome
 
 ---
 
-#### 4️⃣  Dashboard de pilotage agricole (Power BI) je dois choisir sur quoi !!!
+#### 4️⃣  🚜 Data Pipeline & Dashboard de pilotage agricole
+
+✔️ Data engineering (pipeline)
+✔️ Data cleaning (qualité données)
+✔️ Data analysis (KPIs)
+✔️ Data visualization (dashboard)
+✔️ Business agritech (décision)
 
 ---
 
-#### 5️⃣ Nettoyage et analyse de données agricoles (Data Cleaning)
+#### 5️⃣ 🌾 Modèle agronomique (irrigation ou maladie)
 
 ---
 
+#### 6 🥇 Optimisation économique d’une exploitation agricole (cultures 
+
+---
 
 ## 💼 Expériences clés
 
