@@ -48,11 +48,11 @@ Dans cette dynamique, j’intègre le Master DigitalAgri de l’Université de C
 ## Parcours académique
 ### Formation & Diplômes
 
-Universidad de Córdoba
+#### Universidad de Córdoba
 Máster en Transformación digital en el sector agroalimentario y forestal (DigitalAgri)
 2026 - 2027
 
-Ecole d'Ingénieurs de PURPAN (Toulouse)
+#### Ecole d'Ingénieurs de PURPAN (Toulouse)
 Diplôme d'ingénieur agronome
 2019 – 2024
 
