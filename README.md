@@ -100,6 +100,61 @@ Pour chaque domaine, je présente les **projets qui permettent d'illustrer concr
 
 → [Voir le projet]
 
+## 🍈 Analyse des rendements de variétés précoces de melon
+
+**Contexte :** Stage — Syngenta, Sarrians · 2022
+
+### Réalisation
+
+* Suivi agronomique des essais variétaux **sous abri et en plein champ**.
+* Collecte et organisation des données issues des essais : **photographies, vidéos, données drone et données issues des machines Setop**.
+* Comparaison des performances des différentes variétés selon un **protocole expérimental interne**.
+* Analyse statistique des résultats, notamment par **analyse de variance (ANOVA)**.
+* Analyse complémentaire des résultats des **tests gustatifs**.
+* Interprétation des résultats pour comparer les performances agronomiques et qualitatives des variétés.
+
+> 🛠️ **STACK TECHNIQUE**
+>
+> `Analyse de données` · `ANOVA` · `Analyse statistique` · `Données agronomiques` · `Expérimentation variétale` · `Suivi terrain` 
+
+→ [Voir le projet]
+
+## 🌱 Projet — Indicateurs agricoles et RSE
+
+**Contexte :** CDD — Crédit Agricole Toulouse 31 · 2023
+
+### Réalisation
+
+* Création et structuration d'une **base de données regroupant 400 exploitations agricoles**.
+* Collecte, organisation et traitement des données relatives aux exploitations.
+* Indicateurs financiers ; extra-financiers ; Indicateurs carbone.
+* Analyse descriptive des données afin de caractériser les exploitations et leurs performances.
+
+> 🛠️ **STACK TECHNIQUE**
+>
+> `SQL` · `Excel` · `Analyse descriptive` · `Statistiques` · `Base de données` · `Données agricoles` · `Indicateurs RSE` · `Indicateurs carbone`
+
+→ [Voir le projet]
+
+## 📊 Projet — Analyse de marché et Category Management
+
+**Contexte :** Apprentissage — Groupement Les Mousquetaires, Paris · 2024–2025
+
+### Réalisation
+
+* Analyse des **performances des marchés** et des évolutions de l'assortiment.
+* Exploitation de données issues des panels **Kantar, Nielsen et A3 Distrib**.
+* Analyse des **tendances de consommation** et veille de marché.
+* Traitement et interprétation de **données commerciales** pour identifier les évolutions du marché.
+* Contribution à la définition de la **stratégie promotionnelle** et à la préparation des négociations avec les industriels.
+* Gestion de l'assortiment promotionnel pour un réseau de **360 magasins Netto France**.
+
+> 🛠️ **STACK TECHNIQUE**
+>
+> `Excel` · `Kantar` · `Nielsen` · `A3 Distrib` · `Analyse de données` · `Analyse de marché` · `Veille commerciale` · `Category Management` · `Data visualisation`
+
+→ [Voir le projet]
+
 ---
 
 ## 🛰️ SIG, données géographiques & agriculture
@@ -287,37 +342,6 @@ Cette expérience m'a permis de comprendre l'utilisation opérationnelle de l'im
 
 → [Voir le projet]
 
----
-
-# 🔬 Autres expériences mobilisant mes compétences agronomiques
-
-### Projet — Expérimentation et sélection variétale
-
-**Syngenta — 2022**
-
-* Suivi agronomique d'essais variétaux
-* Programme melon et courgette
-* Analyse des performances variétales
-* Analyse des résultats de tests gustatifs
-
-### Projet — Indicateurs agricoles et RSE
-
-**Crédit Agricole Toulouse 31 — 2023**
-
-* Création d'une base de données sur 400 exploitations agricoles
-* Indicateurs financiers
-* Indicateurs extra-financiers
-* Indicateurs carbone
-
-### Projet — Analyse de marché et Category Management
-
-**Groupement Les Mousquetaires — 2024–2025**
-
-* Analyse des performances des marchés
-* Panels Kantar, Nielsen et A3 Distrib
-* Veille des tendances de consommation
-* Analyse de données commerciales
-* Construction de stratégies promotionnelles
 
 ---
 
