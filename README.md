@@ -4,8 +4,7 @@
 
 ### Ingénieur agronome spécialisé en agriculture numérique
 
-### DIGITAL AGRI · DATA · AGRICULTURE · SIG
-
+### DIGITAL AGRI 
 <br>
 
 **TRANSFORMER LES DONNÉES AGRICOLES  
@@ -29,13 +28,30 @@ EN DÉCISIONS OPÉRATIONNELLES**
 ## 1. Présentation
 > **Vision :** favoriser l'autonomie des acteurs du monde agricole et encourager le choix plutôt que la dépendance.
 
-Mon parcours se situe à l'interface entre **agriculture, agronomie et technologies numériques**.
+Ingénieur agronome formé en France et en Espagne, je construis mon parcours à la croisée de l'agriculture, du numérique et de l'analyse des données. J'aime comprendre les systèmes, croiser les connaissances et transformer des informations parfois complexes en outils utiles à la décision.
 
-Ma formation d'ingénieur agronome m'a permis d'acquérir une compréhension des systèmes agricoles et agroalimentaires. Je complète aujourd'hui cette approche par une spécialisation en **transformation digitale de l'agriculture**, avec le développement de compétences en data, intelligence artificielle, télédétection, IoT, agriculture de précision et outils d'aide à la décision.
+Je parle quatre langues : 🇫🇷 français · 🇬🇧 anglais · 🇪🇸 espagnol · 🇩🇿 arabe dialectal.
+Je m'initie également au 🇨🇳 mandarin et à l'arabe littéral, avec la volonté de continuer à élargir mon horizon linguistique et culturel.
 
-Mon objectif est de mobiliser ces technologies pour répondre à des problématiques agricoles concrètes.
+Au-delà de l'agriculture et du numérique, la cuisine, le voyage et le sport occupent une place importante dans mon parcours. J'y vois trois manières différentes de découvrir le monde : partager, rencontrer et expérimenter.
 
-Cuisine, voyage et sport occupent également une place importante dans mon parcours. Ce sont pour moi des moyens de créer du lien, de découvrir de nouveaux environnements et d'apprendre par l'expérience.
+Ces expériences nourrissent une même démarche : rester curieux, comprendre des environnements différents et apprendre de chacun d'eux.
+
+> **Mon objectif :** mobiliser ces connaissances, ces expériences et ces outils pour répondre à des problématiques agricoles concrètes, avec une approche à la fois technique, pragmatique et tournée vers l'autonomie des acteurs.
+
+<div align="center">
+
+### 💼/🎓 FORMATION & EXPÉRIENCES PROFESSIONNELLES
+
+<img src="./assets/parcours-professionnel.png" width="850">
+
+<br><br>
+
+<a href="./CV_Naim_Hamidi.pdf">
+  <strong>📄 TÉLÉCHARGER MON CV</strong>
+</a>
+
+</div>
 
 ---
 
