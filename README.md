@@ -1,22 +1,41 @@
-# Naïm HAMIDI
+<div align="center">
+
+# NAÏM HAMIDI
 
 ### Ingénieur agronome spécialisé en agriculture numérique
 
+### DIGITAL AGRI · DATA · AGRICULTURE · SIG
+
+<br>
+
+**TRANSFORMER LES DONNÉES AGRICOLES  
+EN DÉCISIONS OPÉRATIONNELLES**
+
+<br>
+
+[ 🔗 LinkedIn ] · [ 📧 Contact ] · [ 💻 GitHub ]
+
+</div>
+
+**Annonce** :
 **Recherche d'un stage de fin d'études de 3 mois à partir de l'été 2027**
-
-> **Vision :** favoriser l'autonomie des acteurs du monde agricole et encourager le choix plutôt que la dépendance.
-
-Cuisine, voyage et sport occupent également une place importante dans mon parcours. Ce sont pour moi des moyens de créer du lien, de découvrir de nouveaux environnements et d'apprendre par l'expérience.
 
 ---
 
+<table>
+<tr>
+<td width="50%">
+
 ## 1. Présentation
+> **Vision :** favoriser l'autonomie des acteurs du monde agricole et encourager le choix plutôt que la dépendance.
 
 Mon parcours se situe à l'interface entre **agriculture, agronomie et technologies numériques**.
 
 Ma formation d'ingénieur agronome m'a permis d'acquérir une compréhension des systèmes agricoles et agroalimentaires. Je complète aujourd'hui cette approche par une spécialisation en **transformation digitale de l'agriculture**, avec le développement de compétences en data, intelligence artificielle, télédétection, IoT, agriculture de précision et outils d'aide à la décision.
 
 Mon objectif est de mobiliser ces technologies pour répondre à des problématiques agricoles concrètes.
+
+Cuisine, voyage et sport occupent également une place importante dans mon parcours. Ce sont pour moi des moyens de créer du lien, de découvrir de nouveaux environnements et d'apprendre par l'expérience.
 
 ---
 
@@ -70,6 +89,19 @@ Spécialisation dans :
 Cette partie présente les compétences développées au cours de mes expériences professionnelles et de ma formation DigitalAgri.
 
 Pour chaque domaine, je présente les **projets qui permettent d'illustrer concrètement leur mise en pratique**.
+
+## DOMAINES
+
+📊 Data Analytics  
+🗺️ SIG & analyse spatiale  
+🛰️ Télédétection 
+🌱 Agriculture de précision  
+🤖 Intelligence artificielle & séries temporelles  
+📈 Études de marché  
+
+</td>
+</tr>
+</table>
 
 ---
 
@@ -323,7 +355,7 @@ Cette expérience m'a permis de comprendre l'utilisation opérationnelle de l'im
 
 ---
 
-# 📊 Outils d'aide à la décision
+# 📊 Outils d'aide à la décision (OAD)
 
 ### Projet — Tableau de bord et système de veille
 
