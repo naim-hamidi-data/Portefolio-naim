@@ -1,10 +1,10 @@
 # Naïm HAMIDI
 
-### Ingénieur agronome spécialisé en Agritech
+### Ingénieur agronome spécialisé en agriculture numérique
 
 **Recherche d'un stage de fin d'études de 3 mois à partir de l'été 2027**
 
-> **Valeur :** favoriser l'autonomie des acteurs du monde agricole et encourager le choix plutôt que la dépendance.
+> **Vision :** favoriser l'autonomie des acteurs du monde agricole et encourager le choix plutôt que la dépendance.
 
 Cuisine, voyage et sport occupent également une place importante dans mon parcours. Ce sont pour moi des moyens de créer du lien, de découvrir de nouveaux environnements et d'apprendre par l'expérience.
 
