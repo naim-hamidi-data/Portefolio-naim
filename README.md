@@ -22,7 +22,8 @@
 ## 1. Présentation
 > **Vision :** favoriser l'autonomie des acteurs du monde agricole et encourager le choix plutôt que la dépendance.
 
-Ingénieur agronome formé en France et en Espagne, je construis mon parcours à la croisée de l'agriculture, du numérique et de l'analyse des données. J'aime comprendre les systèmes, croiser les connaissances et transformer des informations parfois complexes en outils utiles à la décision.
+Ingénieur agronome formé en France et en Espagne, je construis mon parcours à la croisée de l'agriculture, du numérique et de l'analyse des données. 
+J'aime comprendre les systèmes, croiser les connaissances et transformer des informations parfois complexes en outils utiles à la décision.
 
 Je parle quatre langues : 🇫🇷 français · 🇬🇧 anglais · 🇪🇸 espagnol · 🇩🇿 arabe dialectal.
 Je m'initie également au 🇨🇳 mandarin et à l'arabe littéral, avec la volonté de continuer à élargir mon horizon linguistique et culturel.
