@@ -2,22 +2,16 @@
 
 # NAÏM HAMIDI
 
-### Ingénieur agronome spécialisé en agriculture numérique
+### Ingénieur agronome diplômé  🇫🇷
+### Etudiant master DIGITAL AGRI  🇪🇸
 
-### DIGITAL AGRI 
-<br>
-
-**TRANSFORMER LES DONNÉES AGRICOLES  
-EN DÉCISIONS OPÉRATIONNELLES**
-
-<br>
 
 [ 🔗 LinkedIn ] · [ 📧 Contact ] · [ 💻 GitHub ]
 
-</div>
-
 **Annonce** :
-**Recherche d'un stage de fin d'études de 3 mois à partir de l'été 2027**
+**Recherche d'un stage de fin d'études de 3 mois minumun à partir de l'été 2027**
+
+</div>
 
 ---
 
