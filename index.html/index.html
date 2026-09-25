@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,71 +9,36 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-    
 <body>
 
-    <!-- =========================
-         NAVIGATION
-    ========================== -->
+    <!-- NAVIGATION -->
+    <header class="navbar">
+        <a href="index.html" class="logo">NAÏM HAMIDI</a>
 
-    <header class="header">
-
-        <nav class="navbar">
-
-            <a href="#accueil" class="logo">
-                NAÏM <span>HAMIDI</span>
-            </a>
-
-            <button class="menu-toggle" aria-label="Ouvrir le menu">
-                ☰
-            </button>
-
-            <ul class="menu">
-
-                <li>
-                    <a href="#accueil">Accueil</a>
-                </li>
-
-                <li>
-                    <a href="#presentation">Présentation</a>
-                </li>
-
-                <li>
-                    <a href="#expertise">Expertise</a>
-                </li>
-
-                <li>
-                    <a href="#projets">Projets</a>
-                </li>
-
-                <li>
-                    <a href="#contact">Contact</a>
-                </li>
-
-            </ul>
-
+        <nav class="nav-links">
+            <a href="#accueil">Accueil</a>
+            <a href="#expertise">Expertise</a>
+            <a href="#projets">Projets</a>
+            <a href="#parcours">Parcours</a>
+            <a href="#contact">Contact</a>
         </nav>
 
+        <button class="menu-button" aria-label="Ouvrir le menu">
+            <span></span>
+            <span></span>
+        </button>
     </header>
 
 
-    <!-- =========================
-         CONTENU PRINCIPAL
-    ========================== -->
-
+    <!-- ACCUEIL -->
     <main>
 
+        <section class="hero" id="accueil">
 
-        <!-- =========================
-             ACCUEIL
-        ========================== -->
-
-        <section id="accueil" class="hero">
-
-            <div class="hero-content">
+            <div class="hero-left">
 
                 <p class="eyebrow">
-                    DIGITAL AGRI · DATA · AGRICULTURE · SIG
+                    DIGITAL AGRI · DATA · SIG
                 </p>
 
                 <h1>
@@ -82,59 +46,63 @@
                     <span>HAMIDI</span>
                 </h1>
 
-                <h2>
-                    Ingénieur agronome spécialisé
-                    en agriculture numérique
-                </h2>
+                <div class="hero-description">
 
-                <p class="hero-description">
-                    Transformer les données agricoles
-                    en décisions opérationnelles.
-                </p>
+                    <p class="profession">
+                        Ingénieur agronome<br>
+                        spécialisé en agriculture numérique
+                    </p>
 
-                <div class="hero-buttons">
-
-                    <a href="#projets" class="button button-primary">
-                        Découvrir mes projets
-                    </a>
-
-                    <a href="#presentation" class="button button-secondary">
-                        Mon parcours
-                    </a>
+                    <p class="tagline">
+                        Transformer les données agricoles
+                        <br>
+                        en décisions opérationnelles.
+                    </p>
 
                 </div>
+
+                <a href="#projets" class="hero-button">
+                    Explorer mon travail
+                    <span>↗</span>
+                </a>
 
             </div>
 
 
+            <!-- VISUEL -->
             <div class="hero-visual">
 
-                <div class="data-card">
+                <div class="visual-label top">
+                    AGRICULTURAL DATA
+                </div>
 
-                    <div class="data-card-top">
-                        <span>AGRICULTURE</span>
-                        <span>DATA</span>
-                    </div>
+                <div class="field-map">
 
-                    <div class="map-grid">
+                    <div class="field field-1"></div>
+                    <div class="field field-2"></div>
+                    <div class="field field-3"></div>
+                    <div class="field field-4"></div>
+                    <div class="field field-5"></div>
+                    <div class="field field-6"></div>
+                    <div class="field field-7"></div>
+                    <div class="field field-8"></div>
+                    <div class="field field-9"></div>
 
-                        <div class="parcel parcel-1"></div>
-                        <div class="parcel parcel-2"></div>
-                        <div class="parcel parcel-3"></div>
-                        <div class="parcel parcel-4"></div>
-                        <div class="parcel parcel-5"></div>
-                        <div class="parcel parcel-6"></div>
+                    <div class="map-point point-1"></div>
+                    <div class="map-point point-2"></div>
+                    <div class="map-point point-3"></div>
 
-                    </div>
+                    <div class="map-line"></div>
 
-                    <div class="data-card-bottom">
+                </div>
 
-                        <span>SIG</span>
-                        <span>TÉLÉDÉTECTION</span>
-                        <span>OAD</span>
+                <div class="visual-info">
+                    <span>43°36' N</span>
+                    <span>01°26' E</span>
+                </div>
 
-                    </div>
-
+                <div class="visual-label bottom">
+                    GIS / REMOTE SENSING
                 </div>
 
             </div>
@@ -142,446 +110,81 @@
         </section>
 
 
-        <!-- =========================
-             PRÉSENTATION
-        ========================== -->
+        <!-- BANDEAU -->
+        <section class="discipline-bar">
 
-        <section id="presentation" class="section presentation">
+            <span>Agriculture numérique</span>
+            <span>Data</span>
+            <span>SIG</span>
+            <span>Télédétection</span>
+            <span>IA</span>
+            <span>IoT</span>
 
-            <div class="section-heading">
+        </section>
 
-                <p class="section-number">01 / PRÉSENTATION</p>
+
+        <!-- INTRODUCTION -->
+        <section class="intro" id="expertise">
+
+            <div class="section-number">
+                01
+            </div>
+
+            <div class="intro-content">
+
+                <p class="section-kicker">
+                    AGRICULTURE × NUMÉRIQUE
+                </p>
 
                 <h2>
                     À l'interface entre
-                    <span>agriculture</span>
-                    et numérique.
+                    <em>le terrain</em>,
+                    la donnée et la technologie.
                 </h2>
 
-            </div>
-
-
-            <div class="presentation-grid">
-
-                <div class="presentation-text">
-
-                    <p class="lead">
-                        Ingénieur agronome formé en France et en Espagne,
-                        je développe un profil à l'interface entre
-                        agriculture, numérique et analyse des données.
-                    </p>
-
-                    <p>
-                        Mon parcours m'a permis de travailler sur des
-                        problématiques agricoles, environnementales,
-                        commerciales et territoriales.
-                    </p>
-
-                    <p>
-                        Je m'intéresse particulièrement aux technologies
-                        permettant de transformer des données complexes
-                        en informations utiles à la prise de décision.
-                    </p>
-
-                </div>
-
-
-                <div class="vision-card">
-
-                    <p class="small-label">MA VISION</p>
-
-                    <blockquote>
-                        « Favoriser l'autonomie des acteurs du monde
-                        agricole et encourager le choix plutôt que
-                        la dépendance. »
-                    </blockquote>
-
-                </div>
-
-            </div>
-
-
-            <div class="stats">
-
-                <div class="stat">
-                    <strong>FR</strong>
-                    <span>Formation</span>
-                </div>
-
-                <div class="stat">
-                    <strong>ES</strong>
-                    <span>Formation internationale</span>
-                </div>
-
-                <div class="stat">
-                    <strong>SIG</strong>
-                    <span>Analyse spatiale</span>
-                </div>
-
-                <div class="stat">
-                    <strong>DATA</strong>
-                    <span>Agriculture numérique</span>
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================
-             EXPERTISE
-        ========================== -->
-
-        <section id="expertise" class="section expertise">
-
-            <div class="section-heading">
-
-                <p class="section-number">02 / EXPERTISE</p>
-
-                <h2>
-                    Des compétences au croisement
-                    de plusieurs <span>domaines.</span>
-                </h2>
-
-            </div>
-
-
-            <div class="expertise-grid">
-
-                <article class="expertise-card">
-
-                    <span class="card-number">01</span>
-
-                    <div class="card-icon">🌾</div>
-
-                    <h3>Agriculture numérique</h3>
-
-                    <p>
-                        Agriculture de précision, outils numériques
-                        et systèmes d'aide à la décision.
-                    </p>
-
-                    <div class="tags">
-                        <span>Digital Agri</span>
-                        <span>OAD</span>
-                    </div>
-
-                </article>
-
-
-                <article class="expertise-card">
-
-                    <span class="card-number">02</span>
-
-                    <div class="card-icon">📊</div>
-
-                    <h3>Data & IA</h3>
-
-                    <p>
-                        Analyse, structuration et valorisation
-                        des données appliquées aux problématiques agricoles.
-                    </p>
-
-                    <div class="tags">
-                        <span>Data</span>
-                        <span>IA</span>
-                    </div>
-
-                </article>
-
-
-                <article class="expertise-card">
-
-                    <span class="card-number">03</span>
-
-                    <div class="card-icon">🗺️</div>
-
-                    <h3>SIG & analyse spatiale</h3>
-
-                    <p>
-                        Cartographie, analyse spatiale et exploitation
-                        de données agricoles et territoriales.
-                    </p>
-
-                    <div class="tags">
-                        <span>QGIS</span>
-                        <span>RPG</span>
-                    </div>
-
-                </article>
-
-
-                <article class="expertise-card">
-
-                    <span class="card-number">04</span>
-
-                    <div class="card-icon">🛰️</div>
-
-                    <h3>Télédétection</h3>
-
-                    <p>
-                        Imagerie satellitaire et observation des
-                        territoires et des systèmes agricoles.
-                    </p>
-
-                    <div class="tags">
-                        <span>Sentinel-2</span>
-                        <span>Remote Sensing</span>
-                    </div>
-
-                </article>
-
-
-                <article class="expertise-card">
-
-                    <span class="card-number">05</span>
-
-                    <div class="card-icon">📡</div>
-
-                    <h3>IoT & capteurs</h3>
-
-                    <p>
-                        Acquisition de données et technologies
-                        connectées appliquées au suivi agricole.
-                    </p>
-
-                    <div class="tags">
-                        <span>IoT</span>
-                        <span>Capteurs</span>
-                    </div>
-
-                </article>
-
-
-                <article class="expertise-card">
-
-                    <span class="card-number">06</span>
-
-                    <div class="card-icon">🌍</div>
-
-                    <h3>Agriculture & environnement</h3>
-
-                    <p>
-                        Compréhension des interactions entre pratiques
-                        agricoles, environnement et territoires.
-                    </p>
-
-                    <div class="tags">
-                        <span>Agronomie</span>
-                        <span>Environnement</span>
-                    </div>
-
-                </article>
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================
-             PROJETS
-        ========================== -->
-
-        <section id="projets" class="section projects">
-
-            <div class="section-heading">
-
-                <p class="section-number">03 / PROJETS</p>
-
-                <h2>
-                    Transformer la donnée
-                    en <span>projets concrets.</span>
-                </h2>
-
-            </div>
-
-
-            <div class="projects-grid">
-
-
-                <article class="project-card">
-
-                    <div class="project-image project-qgis">
-                        <span>QGIS / SIG</span>
-                    </div>
-
-                    <div class="project-content">
-
-                        <p class="project-type">
-                            ANALYSE SPATIALE
-                        </p>
-
-                        <h3>
-                            Données agricoles & cartographie
-                        </h3>
-
-                        <p>
-                            Analyse de données agricoles,
-                            cartographie et traitement spatial
-                            appliqués aux territoires agricoles.
-                        </p>
-
-                        <div class="project-footer">
-                            <span>QGIS</span>
-                            <span>RPG</span>
-                            <span>SIG</span>
-                        </div>
-
-                    </div>
-
-                </article>
-
-
-                <article class="project-card">
-
-                    <div class="project-image project-satellite">
-                        <span>SENTINEL-2</span>
-                    </div>
-
-                    <div class="project-content">
-
-                        <p class="project-type">
-                            TÉLÉDÉTECTION
-                        </p>
-
-                        <h3>
-                            Imagerie satellitaire
-                        </h3>
-
-                        <p>
-                            Exploration de l'imagerie satellitaire
-                            et de ses applications pour l'observation
-                            des systèmes agricoles.
-                        </p>
-
-                        <div class="project-footer">
-                            <span>Sentinel-2</span>
-                            <span>Satellite</span>
-                        </div>
-
-                    </div>
-
-                </article>
-
-
-                <article class="project-card">
-
-                    <div class="project-image project-data">
-                        <span>DATA / OAD</span>
-                    </div>
-
-                    <div class="project-content">
-
-                        <p class="project-type">
-                            DATA AGRICOLE
-                        </p>
-
-                        <h3>
-                            Données & aide à la décision
-                        </h3>
-
-                        <p>
-                            Structuration et analyse de données
-                            pour produire des informations utiles
-                            à la décision.
-                        </p>
-
-                        <div class="project-footer">
-                            <span>Data</span>
-                            <span>OAD</span>
-                            <span>Agriculture</span>
-                        </div>
-
-                    </div>
-
-                </article>
-
-
-            </div>
-
-
-            <div class="projects-more">
-
-                <p>
-                    D'autres projets seront progressivement ajoutés
-                    à ce portfolio.
+                <p class="intro-text">
+                    Ingénieur agronome formé en France et en Espagne,
+                    je développe un profil à l'interface entre
+                    agriculture, analyse des données, systèmes
+                    d'information géographique et technologies numériques.
                 </p>
 
             </div>
 
         </section>
 
+        <!-- APPEL À L'ACTION -->
+        <section class="closing" id="projets">
 
-        <!-- =========================
-             CONTACT
-        ========================== -->
+            <p>PORTFOLIO · 2026 / 2027</p>
 
-        <section id="contact" class="section contact">
+            <h2>
+                Voir les projets
+                <span>→</span>
+            </h2>
 
-            <div class="contact-content">
+        </section>
 
-                <p class="section-number">04 / CONTACT</p>
 
-                <h2>
-                    Construisons quelque chose
-                    autour de la <span>donnée agricole.</span>
-                </h2>
+        <!-- CONTACT -->
+        <section class="contact-preview" id="contact">
 
-                <p>
-                    Vous souhaitez échanger autour d'un projet,
-                    d'une collaboration ou d'une opportunité de stage ?
-                </p>
+            <p>UNE COLLABORATION ?</p>
 
-                <div class="contact-buttons">
-
-                    <a href="mailto:ton-email@email.com"
-                        class="button button-primary">
-                        Me contacter
-                    </a>
-
-                    <a href="#"
-                        class="button button-secondary">
-                        LinkedIn
-                    </a>
-
-                </div>
-
-                <p class="internship">
-                    Recherche d'un stage de fin d'études de
-                    <strong>3 mois à partir de l'été 2027.</strong>
-                </p>
-
-            </div>
+            <a href="mailto:contact@example.com">
+                contact@example.com
+            </a>
 
         </section>
 
     </main>
 
 
-    <!-- =========================
-         FOOTER
-    ========================== -->
-
     <footer>
-
-        <div class="footer-content">
-
-            <div>
-                <strong>NAÏM HAMIDI</strong>
-                <p>Digital Agriculture · Data · SIG</p>
-            </div>
-
-            <div>
-                <p>© 2026 Naïm Hamidi</p>
-            </div>
-
-        </div>
-
+        <span>© 2026 Naïm Hamidi</span>
+        <span>Digital Agriculture · Data · GIS</span>
     </footer>
 
 
-    <script src="js/script.js"></script>
-
 </body>
-
 </html>
