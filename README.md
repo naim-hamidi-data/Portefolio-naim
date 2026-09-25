@@ -6,9 +6,9 @@
 
 > **Transformer les données agricoles en décisions opérationnelles.**
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Profile-0A66C2?style=flat-square\&logo=linkedin\&logoColor=white)](LIEN_LINKEDIN)
-[![Email](https://img.shields.io/badge/Contact-Email-EA4335?style=flat-square\&logo=gmail\&logoColor=white)](LIEN_EMAIL)
-[![GitHub](https://img.shields.io/badge/GitHub-Portfolio-181717?style=flat-square\&logo=github\&logoColor=white)](LIEN_GITHUB)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Profile-0A66C2?style=flat-square\&logo=linkedin\&logoColor=white)](www.linkedin.com/in/naimhamidi)
+[![Email](https://img.shields.io/badge/Contact-Email-EA4335?style=flat-square\&logo=gmail\&logoColor=white)](abdelnaim31@outlook.fr)
+[![GitHub](https://img.shields.io/badge/GitHub-Portfolio-181717?style=flat-square\&logo=github\&logoColor=white)]([https://github.com/naim-hamidi-data)
 
 ---
 
