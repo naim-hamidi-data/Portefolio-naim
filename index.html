@@ -1,1 +1,1410 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>Naïm Hamidi — Digital Agriculture</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family:
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Helvetica,
+                Arial,
+                sans-serif;
+
+            background: #f7f7f5;
+            color: #151515;
+            line-height: 1.5;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            width: min(1180px, calc(100% - 60px));
+            margin: auto;
+        }
+
+
+        /* =========================
+           NAVIGATION
+        ========================= */
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+
+            background: rgba(247,247,245,0.88);
+            backdrop-filter: blur(18px);
+
+            border-bottom: 1px solid #e3e3df;
+        }
+
+        .nav-inner {
+            height: 70px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: .12em;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+
+            font-size: 13px;
+            color: #666;
+        }
+
+        .nav-links a:hover {
+            color: #111;
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 100vh;
+
+            display: flex;
+            align-items: center;
+
+            padding-top: 100px;
+        }
+
+        .hero-grid {
+            display: grid;
+
+            grid-template-columns:
+                1.1fr
+                .9fr;
+
+            gap: 90px;
+
+            align-items: center;
+        }
+
+        .eyebrow {
+            font-size: 12px;
+
+            letter-spacing: .16em;
+            text-transform: uppercase;
+
+            color: #777;
+
+            margin-bottom: 25px;
+        }
+
+        h1 {
+            font-size: clamp(58px, 8vw, 105px);
+
+            line-height: .91;
+
+            letter-spacing: -.065em;
+
+            font-weight: 700;
+
+            margin-bottom: 35px;
+        }
+
+        .hero-title {
+            font-size: 24px;
+
+            color: #555;
+
+            max-width: 620px;
+
+            margin-bottom: 25px;
+        }
+
+        .hero-description {
+            max-width: 620px;
+
+            font-size: 17px;
+
+            color: #666;
+
+            line-height: 1.7;
+        }
+
+        .hero-actions {
+            display: flex;
+
+            gap: 12px;
+
+            margin-top: 35px;
+        }
+
+        .button {
+            padding: 13px 20px;
+
+            border-radius: 100px;
+
+            font-size: 14px;
+
+            border: 1px solid #222;
+
+            transition: .2s;
+        }
+
+        .button.primary {
+            background: #171717;
+            color: white;
+        }
+
+        .button.primary:hover {
+            background: #333;
+        }
+
+        .button.secondary {
+            border-color: #d5d5d1;
+            color: #555;
+        }
+
+        .button.secondary:hover {
+            border-color: #999;
+            color: #111;
+        }
+
+
+        /* =========================
+           PHOTO
+        ========================= */
+
+        .portrait {
+            width: 100%;
+            aspect-ratio: 4 / 5;
+
+            border-radius: 28px;
+
+            overflow: hidden;
+
+            background: #e7e7e2;
+
+            position: relative;
+        }
+
+        .portrait img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            display: block;
+        }
+
+        .portrait-placeholder {
+            height: 100%;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            color: #999;
+
+            font-size: 14px;
+
+            text-align: center;
+
+            padding: 30px;
+        }
+
+
+        /* =========================
+           SECTIONS
+        ========================= */
+
+        section {
+            padding: 120px 0;
+
+            border-top: 1px solid #deded9;
+        }
+
+        .section-header {
+            display: grid;
+
+            grid-template-columns: 260px 1fr;
+
+            gap: 70px;
+
+            margin-bottom: 60px;
+        }
+
+        .section-label {
+            font-size: 12px;
+
+            text-transform: uppercase;
+
+            letter-spacing: .15em;
+
+            color: #888;
+        }
+
+        .section-title {
+            font-size: clamp(38px, 5vw, 65px);
+
+            line-height: 1;
+
+            letter-spacing: -.05em;
+        }
+
+
+        /* =========================
+           EXPERTISE
+        ========================= */
+
+        .expertise-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 16px;
+        }
+
+        .expertise-card {
+            background: white;
+
+            border: 1px solid #e1e1dd;
+
+            border-radius: 22px;
+
+            padding: 30px;
+
+            min-height: 240px;
+
+            transition: transform .25s,
+                        box-shadow .25s;
+        }
+
+        .expertise-card:hover {
+            transform: translateY(-4px);
+
+            box-shadow:
+                0 15px 40px rgba(0,0,0,.06);
+        }
+
+        .number {
+            font-size: 12px;
+
+            color: #999;
+
+            margin-bottom: 45px;
+        }
+
+        .expertise-card h3 {
+            font-size: 21px;
+
+            margin-bottom: 12px;
+        }
+
+        .expertise-card p {
+            color: #666;
+
+            font-size: 14px;
+
+            line-height: 1.6;
+        }
+
+
+        /* =========================
+           PROJECTS
+        ========================= */
+
+        .projects {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 18px;
+        }
+
+        .project {
+            background: white;
+
+            border: 1px solid #e1e1dd;
+
+            border-radius: 24px;
+
+            padding: 35px;
+
+            min-height: 280px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: space-between;
+
+            transition: .25s;
+        }
+
+        .project:hover {
+            transform: translateY(-4px);
+
+            box-shadow:
+                0 18px 45px rgba(0,0,0,.06);
+        }
+
+        .project-category {
+            font-size: 12px;
+
+            color: #888;
+
+            text-transform: uppercase;
+
+            letter-spacing: .12em;
+        }
+
+        .project h3 {
+            font-size: 28px;
+
+            letter-spacing: -.035em;
+
+            margin: 35px 0 15px;
+        }
+
+        .project p {
+            font-size: 15px;
+
+            color: #666;
+
+            max-width: 600px;
+        }
+
+        .project-link {
+            margin-top: 30px;
+
+            font-size: 14px;
+
+            font-weight: 600;
+        }
+
+
+        /* =========================
+           PROFILE
+        ========================= */
+
+        .profile-grid {
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 80px;
+        }
+
+        .profile-text {
+            font-size: 20px;
+
+            line-height: 1.7;
+
+            color: #555;
+        }
+
+        .profile-text strong {
+            color: #111;
+        }
+
+        .profile-list {
+            border-top: 1px solid #ddd;
+
+            margin-top: 10px;
+        }
+
+        .profile-item {
+            padding: 20px 0;
+
+            border-bottom: 1px solid #ddd;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            gap: 30px;
+        }
+
+        .profile-item span:first-child {
+            color: #888;
+
+            font-size: 13px;
+        }
+
+        .profile-item span:last-child {
+            text-align: right;
+
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           EXPERIENCE
+        ========================= */
+
+        .experience {
+            border-top: 1px solid #ddd;
+        }
+
+        .experience-item {
+            display: grid;
+
+            grid-template-columns:
+                170px
+                1fr;
+
+            gap: 50px;
+
+            padding: 30px 0;
+
+            border-bottom: 1px solid #ddd;
+        }
+
+        .experience-date {
+            color: #888;
+
+            font-size: 13px;
+        }
+
+        .experience h3 {
+            font-size: 21px;
+
+            margin-bottom: 5px;
+        }
+
+        .experience-company {
+            color: #777;
+
+            font-size: 14px;
+
+            margin-bottom: 15px;
+        }
+
+        .experience p {
+            color: #666;
+
+            font-size: 14px;
+
+            max-width: 720px;
+        }
+
+
+        /* =========================
+           CTA
+        ========================= */
+
+        .cta {
+            background: #171717;
+
+            color: white;
+
+            border-radius: 30px;
+
+            padding: 70px;
+
+            text-align: center;
+        }
+
+        .cta h2 {
+            font-size: clamp(40px, 6vw, 75px);
+
+            letter-spacing: -.05em;
+
+            line-height: 1;
+
+            margin-bottom: 25px;
+        }
+
+        .cta p {
+            color: #aaa;
+
+            max-width: 600px;
+
+            margin: auto;
+
+            font-size: 16px;
+        }
+
+        .cta .button {
+            display: inline-block;
+
+            margin-top: 30px;
+
+            background: white;
+
+            color: #111;
+
+            border-color: white;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            padding: 50px 0;
+
+            color: #888;
+
+            font-size: 13px;
+        }
+
+        .footer-inner {
+            display: flex;
+
+            justify-content: space-between;
+
+            gap: 30px;
+        }
+
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media(max-width: 850px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero-grid,
+            .profile-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding-top: 120px;
+            }
+
+            .portrait {
+                max-width: 500px;
+            }
+
+            .expertise-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .section-header {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .projects {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media(max-width: 550px) {
+
+            .container {
+                width: min(100% - 40px, 1180px);
+            }
+
+            h1 {
+                font-size: 58px;
+            }
+
+            .expertise-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .experience-item {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+
+            .cta {
+                padding: 45px 25px;
+            }
+
+            .footer-inner {
+                flex-direction: column;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<nav>
+
+    <div class="container nav-inner">
+
+        <a href="#" class="logo">
+            NAÏM HAMIDI
+        </a>
+
+        <div class="nav-links">
+
+            <a href="#expertise">Expertise</a>
+
+            <a href="#projets">Projets</a>
+
+            <a href="#experience">Expériences</a>
+
+            <a href="#contact">Contact</a>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<header class="hero">
+
+    <div class="container hero-grid">
+
+
+        <div>
+
+            <div class="eyebrow">
+                Digital Agriculture · Data · SIG
+            </div>
+
+
+            <h1>
+                Naïm<br>
+                Hamidi
+            </h1>
+
+
+            <div class="hero-title">
+                Ingénieur agronome spécialisé
+                en agriculture numérique.
+            </div>
+
+
+            <p class="hero-description">
+
+                À l'interface entre agriculture,
+                numérique et analyse des données.
+
+                Je transforme des données agricoles,
+                spatiales et environnementales en
+                informations utiles à la décision.
+
+            </p>
+
+
+            <div class="hero-actions">
+
+                <a
+                    href="#projets"
+                    class="button primary"
+                >
+                    Explorer les projets
+                </a>
+
+
+                <a
+                    href="#contact"
+                    class="button secondary"
+                >
+                    Me contacter
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="portrait">
+
+            <!--
+            POUR AJOUTER TA PHOTO :
+
+            remplace le bloc ci-dessous par :
+
+            <img src="image/ta-photo.jpg"
+                 alt="Naïm Hamidi">
+
+            -->
+
+            <div class="portrait-placeholder">
+
+                Ajoute ta photo dans le dossier
+                <strong>image/</strong>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</header>
+
+
+
+<!-- =========================
+     EXPERTISE
+========================= -->
+
+<section id="expertise">
+
+    <div class="container">
+
+
+        <div class="section-header">
+
+            <div class="section-label">
+                01 — Expertise
+            </div>
+
+            <h2 class="section-title">
+                Agriculture ×
+                numérique.
+            </h2>
+
+        </div>
+
+
+        <div class="expertise-grid">
+
+
+            <div class="expertise-card">
+
+                <div class="number">01</div>
+
+                <h3>
+                    Data Analytics & IA
+                </h3>
+
+                <p>
+                    Analyse statistique, données agricoles,
+                    modèles prédictifs et visualisation.
+                </p>
+
+            </div>
+
+
+            <div class="expertise-card">
+
+                <div class="number">02</div>
+
+                <h3>
+                    SIG & Analyse spatiale
+                </h3>
+
+                <p>
+                    Analyse des territoires agricoles,
+                    données vectorielles, raster et cartographie.
+                </p>
+
+            </div>
+
+
+            <div class="expertise-card">
+
+                <div class="number">03</div>
+
+                <h3>
+                    Télédétection
+                </h3>
+
+                <p>
+                    Sentinel-2, NDVI, imagerie satellitaire,
+                    drones et observation des surfaces agricoles.
+                </p>
+
+            </div>
+
+
+            <div class="expertise-card">
+
+                <div class="number">04</div>
+
+                <h3>
+                    Agriculture de précision
+                </h3>
+
+                <p>
+                    Irrigation, GNSS, données géoréférencées,
+                    cartographie de préconisation et guidage.
+                </p>
+
+            </div>
+
+
+            <div class="expertise-card">
+
+                <div class="number">05</div>
+
+                <h3>
+                    IoT & Capteurs
+                </h3>
+
+                <p>
+                    Acquisition, transmission, stockage et
+                    visualisation des données issues de capteurs.
+                </p>
+
+            </div>
+
+
+            <div class="expertise-card">
+
+                <div class="number">06</div>
+
+                <h3>
+                    Outils d'aide à la décision
+                </h3>
+
+                <p>
+                    Power BI, dashboards, systèmes de veille
+                    et transformation des données en indicateurs.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     PROJECTS
+========================= -->
+
+<section id="projets">
+
+    <div class="container">
+
+
+        <div class="section-header">
+
+            <div class="section-label">
+                02 — Projets
+            </div>
+
+            <h2 class="section-title">
+                Des données
+                aux décisions.
+            </h2>
+
+        </div>
+
+
+        <div class="projects">
+
+
+            <!-- PROJET 1 -->
+
+            <a
+                href="./projet%20data%20%26%20ia/analyse-varietale/"
+                class="project"
+            >
+
+                <div>
+
+                    <div class="project-category">
+                        Data · Agronomie
+                    </div>
+
+                    <h3>
+                        Analyse statistique
+                        d'essais variétaux
+                    </h3>
+
+                    <p>
+                        Analyse de données expérimentales
+                        appliquée à la sélection variétale
+                        du melon.
+                    </p>
+
+                </div>
+
+                <div class="project-link">
+                    Voir le projet →
+                </div>
+
+            </a>
+
+
+            <!-- PROJET 2 -->
+
+            <div class="project">
+
+                <div>
+
+                    <div class="project-category">
+                        SIG · Agriculture
+                    </div>
+
+                    <h3>
+                        Analyse spatiale
+                        des surfaces agricoles
+                    </h3>
+
+                    <p>
+                        Analyse de l'évolution des parcelles
+                        et identification d'anomalies
+                        à partir de données géographiques.
+                    </p>
+
+                </div>
+
+                <div class="project-link">
+                    Projet à venir →
+                </div>
+
+            </div>
+
+
+            <!-- PROJET 3 -->
+
+            <div class="project">
+
+                <div>
+
+                    <div class="project-category">
+                        Télédétection · Sentinel-2
+                    </div>
+
+                    <h3>
+                        Suivi des surfaces
+                        agricoles
+                    </h3>
+
+                    <p>
+                        Utilisation de l'imagerie satellitaire
+                        et du NDVI pour suivre les surfaces
+                        agricoles.
+                    </p>
+
+                </div>
+
+                <div class="project-link">
+                    Projet à venir →
+                </div>
+
+            </div>
+
+
+            <!-- PROJET 4 -->
+
+            <div class="project">
+
+                <div>
+
+                    <div class="project-category">
+                        Agriculture de précision
+                    </div>
+
+                    <h3>
+                        Gestion de l'eau
+                        & irrigation
+                    </h3>
+
+                    <p>
+                        Bilan hydrique, données climatiques,
+                        IA et informations géoréférencées
+                        pour le pilotage de l'irrigation.
+                    </p>
+
+                </div>
+
+                <div class="project-link">
+                    Projet à venir →
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     PROFILE
+========================= -->
+
+<section>
+
+    <div class="container">
+
+
+        <div class="section-header">
+
+            <div class="section-label">
+                03 — Profil
+            </div>
+
+            <h2 class="section-title">
+                Un profil
+                entre plusieurs mondes.
+            </h2>
+
+        </div>
+
+
+        <div class="profile-grid">
+
+
+            <div class="profile-text">
+
+                <p>
+
+                    Ingénieur agronome formé en
+                    <strong>France et en Espagne</strong>,
+                    je développe un profil à l'interface
+                    entre agriculture, numérique,
+                    données et analyse spatiale.
+
+                </p>
+
+                <br>
+
+                <p>
+
+                    Mon approche consiste à partir
+                    d'une problématique agricole concrète,
+                    structurer les données disponibles,
+                    les analyser avec les outils adaptés
+                    et produire une information exploitable.
+
+                </p>
+
+            </div>
+
+
+            <div class="profile-list">
+
+
+                <div class="profile-item">
+
+                    <span>
+                        Formation actuelle
+                    </span>
+
+                    <span>
+                        Master DigitalAgri<br>
+                        Universidad de Córdoba
+                    </span>
+
+                </div>
+
+
+                <div class="profile-item">
+
+                    <span>
+                        Formation ingénieur
+                    </span>
+
+                    <span>
+                        École d'Ingénieurs de Purpan
+                    </span>
+
+                </div>
+
+
+                <div class="profile-item">
+
+                    <span>
+                        Localisation
+                    </span>
+
+                    <span>
+                        France · Espagne
+                    </span>
+
+                </div>
+
+
+                <div class="profile-item">
+
+                    <span>
+                        Recherche
+                    </span>
+
+                    <span>
+                        Stage de fin d'études<br>
+                        3 mois · été 2027
+                    </span>
+
+                </div>
+
+
+                <div class="profile-item">
+
+                    <span>
+                        Langues
+                    </span>
+
+                    <span>
+                        Français · Anglais · Espagnol<br>
+                        Arabe · Mandarin — initiation
+                    </span>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     EXPERIENCE
+========================= -->
+
+<section id="experience">
+
+    <div class="container">
+
+
+        <div class="section-header">
+
+            <div class="section-label">
+                04 — Expériences
+            </div>
+
+            <h2 class="section-title">
+                Agriculture,
+                industrie & data.
+            </h2>
+
+        </div>
+
+
+        <div class="experience">
+
+
+            <div class="experience-item">
+
+                <div class="experience-date">
+                    2025 — 2026
+                </div>
+
+                <div>
+
+                    <h3>
+                        Instructeur & Contrôleur PAC
+                    </h3>
+
+                    <div class="experience-company">
+                        Ministère de l'Agriculture · DDT Haute-Garonne
+                    </div>
+
+                    <p>
+                        Instruction et contrôle PAC,
+                        conditionnalité environnementale,
+                        analyse 3STR, Sentinel-2,
+                        RPG et analyses spatiales sous QGIS.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="experience-item">
+
+                <div class="experience-date">
+                    2024
+                </div>
+
+                <div>
+
+                    <h3>
+                        Apprenti Category Manager
+                    </h3>
+
+                    <div class="experience-company">
+                        Groupement Les Mousquetaires
+                    </div>
+
+                    <p>
+                        Analyse de marchés, panels Kantar,
+                        Nielsen et A3 Distrib, assortiment
+                        et stratégie promotionnelle.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="experience-item">
+
+                <div class="experience-date">
+                    2023
+                </div>
+
+                <div>
+
+                    <h3>
+                        Support projet RSE
+                    </h3>
+
+                    <div class="experience-company">
+                        Crédit Agricole Toulouse 31
+                    </div>
+
+                    <p>
+                        Structuration d'une base de données
+                        regroupant des indicateurs financiers,
+                        extra-financiers et carbone.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="experience-item">
+
+                <div class="experience-date">
+                    2022
+                </div>
+
+                <div>
+
+                    <h3>
+                        Expérimentation & sélection variétale
+                    </h3>
+
+                    <div class="experience-company">
+                        Syngenta · Sarrians
+                    </div>
+
+                    <p>
+                        Suivi d'essais variétaux,
+                        collecte de données terrain,
+                        analyse statistique et sélection
+                        de variétés de melon et courgette.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section id="contact">
+
+    <div class="container">
+
+        <div class="cta">
+
+            <h2>
+                Construisons
+                quelque chose d'utile.
+            </h2>
+
+            <p>
+
+                Je recherche un stage de fin d'études
+                de 3 mois à partir de l'été 2027,
+                dans les domaines de l'agriculture numérique,
+                de la data, du SIG, de l'IA ou de
+                l'agriculture de précision.
+
+            </p>
+
+
+            <a
+                href="mailto:abdelnaim31@outlook.fr"
+                class="button"
+            >
+                Me contacter
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <div class="container footer-inner">
+
+        <span>
+            © 2026 Naïm Hamidi
+        </span>
+
+        <span>
+            DIGITAL AGRI · DATA · AGRICULTURE · SIG
+        </span>
+
+    </div>
+
+</footer>
+
+
+</body>
+</html>
