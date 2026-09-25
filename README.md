@@ -61,9 +61,9 @@ Analyse statistique, données agricoles, modèles prédictifs et visualisation.
 
 **Projets**
 
-* Analyse statistique d'essais variétaux
-* Analyse de données de marchés
-* Création de bases de données agricoles (indicateurs financiers, extra-financiers et carbone)
+* [Analyse statistique d'essais variétaux](LIEN_PROJET)
+* [Analyse de données de marchés](LIEN_PROJET)
+* [Création de bases de données agricoles](LIEN_PROJET)
 
 **Stack**
 
@@ -79,9 +79,8 @@ De l'acquisition de données jusqu'à leur transmission, leur stockage et leur a
 
 **Projet**
 
-* fictif : Technologies NIRS (infrarouges) et modèles prédictifs pour anticiper les maladies en élevage
-* * fictif : pose de capteur mesure données sol
-
+* [Technologies NIRS (infrarouges) et modèles prédictifs pour anticiper les maladies en élevage](LIEN_PROJET)
+* [Pose de capteurs pour la mesure des données du sol](LIEN_PROJET)
 
 **Stack**
 
@@ -100,8 +99,8 @@ Analyse spatiale et cartographie.
 
 **Projet**
 
-* Identification d'évolutions de parcelles et d'anomalies déclaratives
-* Identification des zones à enjeux à contrôler dans le cadre de contrôle environnement
+* [Identification d'évolutions de parcelles et d'anomalies déclaratives](LIEN_PROJET)
+* [Identification des zones à enjeux à contrôler dans le cadre du contrôle environnemental](LIEN_PROJET)
 
 **Stack**
 
@@ -117,8 +116,8 @@ Exploitation de l'imagerie pour observer et suivre les surfaces agricoles.
 
 **Projet**
 
-* Suivi des surfaces agricoles en temps réel via sentinel-2 : comparaison entre déclaration et réalité observée
-* Drones et calcul de NDVI : élaboration de orthomosaïque
+* [Suivi des surfaces agricoles en temps réel via Sentinel-2](LIEN_PROJET)
+* [Drones et calcul de NDVI : élaboration d'orthomosaïques](LIEN_PROJET)
 
 **Stack**
 
@@ -137,10 +136,10 @@ Utilisation des données spatiales, capteurs et systèmes numériques pour optim
 
 **Projets**
 
-* Bilan hydrique pour le pilotage de l'irrigation
-* IA appliquée à la gestion de l'eau
-* Cartographie de préconisation
-* Guidage et gestion des équipements agricoles
+* [Bilan hydrique pour le pilotage de l'irrigation](LIEN_PROJET)
+* [IA appliquée à la gestion de l'eau](LIEN_PROJET)
+* [Cartographie de préconisation](LIEN_PROJET)
+* [Guidage et gestion des équipements agricoles](LIEN_PROJET)
 
 **Stack**
 
@@ -156,9 +155,9 @@ Application de l'IA aux données agricoles et agroalimentaires.
 
 **Projets**
 
-* Développement d’un modèle prédictif dans la chaîne agroalimentaire.
-* Traitement d’images et/ou de données NLP dans la chaîne agroalimentaire.
-* Développement d’assistants virtuels open source.
+* [Développement d'un modèle prédictif dans la chaîne agroalimentaire](LIEN_PROJET)
+* [Traitement d'images et/ou de données NLP dans la chaîne agroalimentaire](LIEN_PROJET)
+* [Développement d'assistants virtuels open source](LIEN_PROJET)
 
 **Stack**
 
@@ -177,8 +176,8 @@ Transformation de données agricoles, économiques et environnementales en infor
 
 **Projets**
 
-* Développement de tableaux de bord avec **Power BI**
-* Développement de **systèmes de veille**
+* [Développement de tableaux de bord avec **Power BI**](LIEN_PROJET)
+* [Développement de **systèmes de veille**](LIEN_PROJET)
 
 **Stack**
 
