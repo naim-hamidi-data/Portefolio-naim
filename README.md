@@ -80,6 +80,8 @@ De l'acquisition de données jusqu'à leur transmission, leur stockage et leur a
 **Projet**
 
 * fictif : Technologies NIRS (infrarouges) et modèles prédictifs pour anticiper les maladies en élevage
+* * fictif : pose de capteur mesure données sol
+
 
 **Stack**
 
