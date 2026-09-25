@@ -1,1 +1,1063 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>Analyse statistique d'essais variétaux · Naïm Hamidi</title>
+
+    <meta name="description"
+          content="Analyse statistique d'essais variétaux de melon — expérimentation agronomique, analyse de données et sélection variétale.">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                         Helvetica, Arial, sans-serif;
+            color: #171717;
+            background: #f7f7f5;
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* =========================
+           NAVIGATION
+        ========================= */
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(247, 247, 245, 0.88);
+            backdrop-filter: blur(14px);
+            border-bottom: 1px solid #e5e5e2;
+        }
+
+        .nav-container {
+            max-width: 1180px;
+            margin: auto;
+            padding: 18px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand {
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+        }
+
+        .back {
+            font-size: 14px;
+            color: #666;
+            transition: color 0.2s ease;
+        }
+
+        .back:hover {
+            color: #111;
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            max-width: 1180px;
+            margin: auto;
+            padding: 110px 30px 90px;
+        }
+
+        .eyebrow {
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: #777;
+            margin-bottom: 24px;
+        }
+
+        h1 {
+            max-width: 950px;
+            font-size: clamp(48px, 7vw, 86px);
+            line-height: 0.98;
+            letter-spacing: -0.055em;
+            font-weight: 700;
+            margin-bottom: 32px;
+        }
+
+        .hero-description {
+            max-width: 760px;
+            font-size: 21px;
+            color: #555;
+            line-height: 1.55;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 9px;
+            margin-top: 35px;
+        }
+
+        .tag {
+            border: 1px solid #d8d8d4;
+            background: #fff;
+            padding: 7px 12px;
+            border-radius: 100px;
+            font-size: 13px;
+            color: #555;
+        }
+
+        /* =========================
+           CONTENT
+        ========================= */
+
+        main {
+            background: #fff;
+        }
+
+        .section {
+            max-width: 1180px;
+            margin: auto;
+            padding: 90px 30px;
+        }
+
+        .section + .section {
+            border-top: 1px solid #e8e8e5;
+        }
+
+        .section-number {
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            color: #888;
+            margin-bottom: 15px;
+        }
+
+        h2 {
+            font-size: clamp(32px, 4vw, 52px);
+            line-height: 1.05;
+            letter-spacing: -0.04em;
+            margin-bottom: 35px;
+        }
+
+        h3 {
+            font-size: 21px;
+            margin-bottom: 12px;
+        }
+
+        p {
+            color: #555;
+            font-size: 17px;
+            max-width: 850px;
+        }
+
+        /* =========================
+           MISSION
+        ========================= */
+
+        .mission {
+            display: grid;
+            grid-template-columns: 1fr 1.6fr;
+            gap: 80px;
+            align-items: start;
+        }
+
+        .mission-text p + p {
+            margin-top: 20px;
+        }
+
+        .highlight {
+            background: #f5f5f2;
+            border-radius: 24px;
+            padding: 35px;
+        }
+
+        .highlight-title {
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #888;
+            margin-bottom: 15px;
+        }
+
+        .highlight strong {
+            display: block;
+            font-size: 24px;
+            line-height: 1.3;
+            letter-spacing: -0.02em;
+        }
+
+        /* =========================
+           CRITERIA
+        ========================= */
+
+        .criteria {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1px;
+            background: #dededb;
+            border: 1px solid #dededb;
+        }
+
+        .criterion {
+            background: #fff;
+            padding: 28px;
+        }
+
+        .criterion-title {
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .criterion p {
+            font-size: 15px;
+        }
+
+        /* =========================
+           EXPERIMENT
+        ========================= */
+
+        .experiment-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-top: 40px;
+        }
+
+        .stat {
+            background: #f5f5f2;
+            border-radius: 20px;
+            padding: 28px;
+        }
+
+        .stat-number {
+            font-size: 38px;
+            font-weight: 700;
+            letter-spacing: -0.04em;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            color: #666;
+            font-size: 14px;
+        }
+
+        /* =========================
+           PIPELINE
+        ========================= */
+
+        .pipeline {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+            margin-top: 50px;
+        }
+
+        .step {
+            flex: 1;
+            text-align: center;
+            background: #f5f5f2;
+            padding: 25px 15px;
+            border-radius: 18px;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .arrow {
+            color: #999;
+            font-size: 20px;
+        }
+
+        /* =========================
+           DATA SOURCES
+        ========================= */
+
+        .data-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin-top: 40px;
+        }
+
+        .data-card {
+            border: 1px solid #e0e0dc;
+            border-radius: 20px;
+            padding: 28px;
+        }
+
+        .data-card span {
+            font-size: 28px;
+            display: block;
+            margin-bottom: 18px;
+        }
+
+        .data-card h3 {
+            font-size: 18px;
+        }
+
+        .data-card p {
+            font-size: 14px;
+        }
+
+        /* =========================
+           ANALYSIS
+        ========================= */
+
+        .analysis-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 40px;
+        }
+
+        .analysis-item {
+            background: #f5f5f2;
+            padding: 25px;
+            border-radius: 18px;
+            font-weight: 600;
+        }
+
+        .analysis-item small {
+            display: block;
+            margin-top: 5px;
+            color: #777;
+            font-weight: 400;
+        }
+
+        /* =========================
+           MULTICRITERIA
+        ========================= */
+
+        .selection-flow {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 40px;
+        }
+
+        .selection-flow div {
+            background: #171717;
+            color: white;
+            padding: 13px 18px;
+            border-radius: 100px;
+            font-size: 14px;
+        }
+
+        /* =========================
+           RESULTS
+        ========================= */
+
+        .result-box {
+            background: #f5f5f2;
+            border-radius: 28px;
+            padding: 45px;
+            margin-top: 40px;
+        }
+
+        .result-box p {
+            font-size: 18px;
+            max-width: 900px;
+        }
+
+        .confidential {
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+            font-size: 13px;
+            color: #777;
+        }
+
+        /* =========================
+           SKILLS
+        ========================= */
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 30px;
+        }
+
+        .skill {
+            background: #171717;
+            color: #fff;
+            border-radius: 100px;
+            padding: 9px 14px;
+            font-size: 13px;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            max-width: 1180px;
+            margin: auto;
+            padding: 70px 30px;
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+            color: #777;
+            font-size: 14px;
+        }
+
+        footer strong {
+            color: #171717;
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 800px) {
+
+            .hero {
+                padding-top: 70px;
+            }
+
+            .mission {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .criteria {
+                grid-template-columns: 1fr;
+            }
+
+            .experiment-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .data-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .analysis-list {
+                grid-template-columns: 1fr;
+            }
+
+            .pipeline {
+                flex-direction: column;
+            }
+
+            .arrow {
+                transform: rotate(90deg);
+            }
+
+            .step {
+                width: 100%;
+            }
+
+            footer {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 500px) {
+
+            .nav-container,
+            .hero,
+            .section,
+            footer {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+
+            h1 {
+                font-size: 48px;
+            }
+
+            .experiment-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .result-box {
+                padding: 28px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================
+         NAVIGATION
+    ========================= -->
+
+    <nav>
+        <div class="nav-container">
+            <a href="../../" class="brand">NAÏM HAMIDI</a>
+
+            <a href="../../" class="back">
+                ← Retour au portfolio
+            </a>
+        </div>
+    </nav>
+
+
+    <!-- =========================
+         HERO
+    ========================= -->
+
+    <header class="hero">
+
+        <div class="eyebrow">
+            Projet · Data Analytics · Agronomie
+        </div>
+
+        <h1>
+            Analyse statistique
+            d'essais variétaux
+        </h1>
+
+        <p class="hero-description">
+            Analyse de données issues d'expérimentations variétales
+            afin de comparer les performances de variétés de melon
+            et d'appuyer le processus de sélection.
+        </p>
+
+        <div class="tags">
+            <span class="tag">Data Analytics</span>
+            <span class="tag">Statistiques</span>
+            <span class="tag">Agronomie</span>
+            <span class="tag">Expérimentation</span>
+            <span class="tag">Sélection variétale</span>
+        </div>
+
+    </header>
+
+
+    <main>
+
+        <!-- =========================
+             MISSION
+        ========================= -->
+
+        <section class="section">
+
+            <div class="section-number">01 — MISSION</div>
+
+            <div class="mission">
+
+                <div>
+                    <h2>
+                        De l'expérimentation
+                        à la décision.
+                    </h2>
+                </div>
+
+                <div class="mission-text">
+
+                    <p>
+                        Dans le cadre de mon stage en expérimentation
+                        et sélection variétale chez Syngenta, j'ai
+                        participé au suivi et à l'analyse d'essais
+                        consacrés à la sélection de variétés de
+                        melon charentais.
+                    </p>
+
+                    <p>
+                        L'objectif était d'évaluer le comportement
+                        de variétés pré-commerciales en conditions
+                        de culture afin d'identifier les génotypes
+                        présentant le meilleur compromis entre
+                        rendement, précocité, qualité des fruits,
+                        résistance aux défauts et aptitude à la
+                        conservation.
+                    </p>
+
+                    <p>
+                        La mission combinait observations agronomiques
+                        au champ, acquisition de données, mesures
+                        quantitatives et qualitatives et analyse
+                        statistique.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             OBJECTIFS
+        ========================= -->
+
+        <section class="section">
+
+            <div class="section-number">02 — CRITÈRES</div>
+
+            <h2>
+                Les critères de sélection
+            </h2>
+
+            <div class="criteria">
+
+                <div class="criterion">
+                    <div class="criterion-title">
+                        🌱 Rendement
+                    </div>
+                    <p>
+                        Nombre de fruits par plante,
+                        poids des fruits et productivité.
+                    </p>
+                </div>
+
+                <div class="criterion">
+                    <div class="criterion-title">
+                        🦠 Résistance
+                    </div>
+                    <p>
+                        Observation des résistances et
+                        sensibilités aux principales maladies
+                        et ravageurs.
+                    </p>
+                </div>
+
+                <div class="criterion">
+                    <div class="criterion-title">
+                        🍈 Qualité interne
+                    </div>
+                    <p>
+                        Taux de Brix, arômes, texture,
+                        couleur de chair et cavité.
+                    </p>
+                </div>
+
+                <div class="criterion">
+                    <div class="criterion-title">
+                        🍈 Qualité externe
+                    </div>
+                    <p>
+                        Taille, forme, couleur, homogénéité,
+                        épaisseur de l'épiderme et aspect du fruit.
+                    </p>
+                </div>
+
+                <div class="criterion">
+                    <div class="criterion-title">
+                        ⏱️ Précocité
+                    </div>
+                    <p>
+                        Date des premières récoltes et
+                        répartition de la production dans le temps.
+                    </p>
+                </div>
+
+                <div class="criterion">
+                    <div class="criterion-title">
+                        🌿 Vigueur
+                    </div>
+                    <p>
+                        État sanitaire, feuillage, vigueur
+                        et tenue générale de la plante.
+                    </p>
+                </div>
+
+                <div class="criterion">
+                    <div class="criterion-title">
+                        ❄️ Conservation
+                    </div>
+                    <p>
+                        Résistance aux chocs et aptitude
+                        à la conservation frigorifique.
+                    </p>
+                </div>
+
+                <div class="criterion">
+                    <div class="criterion-title">
+                        ⚖️ Compromis
+                    </div>
+                    <p>
+                        Croisement des performances quantitatives
+                        et qualitatives pour la sélection finale.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             DISPOSITIF
+        ========================= -->
+
+        <section class="section">
+
+            <div class="section-number">03 — DISPOSITIF EXPÉRIMENTAL</div>
+
+            <h2>
+                Un dispositif construit
+                pour comparer les variétés.
+            </h2>
+
+            <p>
+                L'étude portait sur des variétés pré-commerciales
+                de melon cultivées en plein champ et comparées
+                à des variétés témoins.
+            </p>
+
+            <div class="experiment-grid">
+
+                <div class="stat">
+                    <div class="stat-number">321</div>
+                    <div class="stat-label">
+                        plantes réellement implantées
+                    </div>
+                </div>
+
+                <div class="stat">
+                    <div class="stat-number">7</div>
+                    <div class="stat-label">
+                        plantes par plot
+                    </div>
+                </div>
+
+                <div class="stat">
+                    <div class="stat-number">3</div>
+                    <div class="stat-label">
+                        répétitions expérimentales
+                    </div>
+                </div>
+
+                <div class="stat">
+                    <div class="stat-number">5×</div>
+                    <div class="stat-label">
+                        récoltes par plot
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             ACQUISITION
+        ========================= -->
+
+        <section class="section">
+
+            <div class="section-number">04 — ACQUISITION DES DONNÉES</div>
+
+            <h2>
+                Du terrain à la donnée.
+            </h2>
+
+            <p>
+                Les données étaient acquises à différentes étapes
+                de l'expérimentation afin de caractériser à la fois
+                le comportement des plantes et la qualité des fruits.
+            </p>
+
+            <div class="pipeline">
+
+                <div class="step">Champ</div>
+                <div class="arrow">→</div>
+
+                <div class="step">Récolte</div>
+                <div class="arrow">→</div>
+
+                <div class="step">Mesures</div>
+                <div class="arrow">→</div>
+
+                <div class="step">Saisie</div>
+                <div class="arrow">→</div>
+
+                <div class="step">Analyse</div>
+                <div class="arrow">→</div>
+
+                <div class="step">Sélection</div>
+
+            </div>
+
+            <div class="data-grid">
+
+                <div class="data-card">
+                    <span>🌱</span>
+                    <h3>Observations terrain</h3>
+                    <p>
+                        Notations de la plante, état sanitaire,
+                        vigueur, homogénéité et comportement
+                        des différents plots.
+                    </p>
+                </div>
+
+                <div class="data-card">
+                    <span>⚖️</span>
+                    <h3>Mesures quantitatives</h3>
+                    <p>
+                        Comptage des fruits, pesées, rendement
+                        et répartition des récoltes.
+                    </p>
+                </div>
+
+                <div class="data-card">
+                    <span>🍈</span>
+                    <h3>Qualité des fruits</h3>
+                    <p>
+                        Taux de Brix, qualité interne, qualité
+                        externe et caractérisation des déchets.
+                    </p>
+                </div>
+
+                <div class="data-card">
+                    <span>📱</span>
+                    <h3>Acquisition numérique</h3>
+                    <p>
+                        Données collectées à l'aide de tablettes,
+                        fichiers Excel, photographies et vidéos.
+                    </p>
+                </div>
+
+                <div class="data-card">
+                    <span>🔬</span>
+                    <h3>Mesures instrumentales</h3>
+                    <p>
+                        Utilisation d'une Setop pour mesurer
+                        notamment le Brix, la fermeté, le diamètre
+                        et le poids.
+                    </p>
+                </div>
+
+                <div class="data-card">
+                    <span>❄️</span>
+                    <h3>Conservation</h3>
+                    <p>
+                        Évaluation du comportement des fruits
+                        après conservation frigorifique.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             ANALYSE
+        ========================= -->
+
+        <section class="section">
+
+            <div class="section-number">05 — ANALYSE STATISTIQUE</div>
+
+            <h2>
+                Transformer les mesures
+                en résultats comparables.
+            </h2>
+
+            <p>
+                Une première analyse comparative était réalisée
+                à partir des données de rendement, de poids et
+                de qualité. Les résultats étaient ensuite confrontés
+                aux observations réalisées au champ et lors des
+                expositions variétales.
+            </p>
+
+            <div class="analysis-list">
+
+                <div class="analysis-item">
+                    Préparation des données
+                    <small>
+                        Structuration et contrôle des données sous Excel.
+                    </small>
+                </div>
+
+                <div class="analysis-item">
+                    Moyennes et écarts-types
+                    <small>
+                        Caractérisation de la variabilité des mesures.
+                    </small>
+                </div>
+
+                <div class="analysis-item">
+                    Analyse de variance — ANOVA
+                    <small>
+                        Comparaison statistique des performances.
+                    </small>
+                </div>
+
+                <div class="analysis-item">
+                    Test de Newman-Keuls
+                    <small>
+                        Comparaison des moyennes au seuil de 5 %.
+                    </small>
+                </div>
+
+                <div class="analysis-item">
+                    Rendement cumulé
+                    <small>
+                        Analyse de la répartition des récoltes.
+                    </small>
+                </div>
+
+                <div class="analysis-item">
+                    Analyse qualitative
+                    <small>
+                        Croisement des données statistiques avec les
+                        observations agronomiques.
+                    </small>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             SÉLECTION
+        ========================= -->
+
+        <section class="section">
+
+            <div class="section-number">06 — PROCESSUS DE SÉLECTION</div>
+
+            <h2>
+                Une sélection
+                multicritère.
+            </h2>
+
+            <p>
+                La sélection ne reposait pas sur un seul indicateur.
+                Une variété pouvait présenter un rendement intéressant
+                mais être écartée en raison d'une qualité externe
+                insuffisante, d'une mauvaise homogénéité ou d'une
+                conservation limitée.
+            </p>
+
+            <div class="selection-flow">
+
+                <div>Rendement</div>
+                <div>Précocité</div>
+                <div>Qualité externe</div>
+                <div>Qualité interne</div>
+                <div>Conservation</div>
+                <div>Comparaison aux témoins</div>
+                <div>Sélection</div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             RÉSULTATS
+        ========================= -->
+
+        <section class="section">
+
+            <div class="section-number">07 — RÉSULTATS</div>
+
+            <h2>
+                De la donnée
+                à la décision variétale.
+            </h2>
+
+            <div class="result-box">
+
+                <p>
+                    L'analyse des performances quantitatives a permis
+                    d'identifier plusieurs variétés présentant des
+                    résultats intéressants sur les premières récoltes.
+                </p>
+
+                <br>
+
+                <p>
+                    Ces variétés ont ensuite été comparées sur des
+                    critères qualitatifs : homogénéité des fruits,
+                    défauts externes, qualité interne, taux de Brix,
+                    répartition des récoltes et conservation.
+                </p>
+
+                <br>
+
+                <p>
+                    Le croisement de ces différents indicateurs a permis
+                    de réduire progressivement le nombre de candidates
+                    et d'identifier une variété présentant le meilleur
+                    compromis pour l'étape suivante du programme.
+                </p>
+
+                <div class="confidential">
+                    Les données, références variétales et résultats
+                    numériques présentés dans ce portfolio sont
+                    volontairement anonymisés afin de préserver
+                    la confidentialité des données expérimentales.
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             COMPÉTENCES
+        ========================= -->
+
+        <section class="section">
+
+            <div class="section-number">08 — COMPÉTENCES</div>
+
+            <h2>
+                Compétences mobilisées
+            </h2>
+
+            <div class="skills">
+
+                <span class="skill">Expérimentation agronomique</span>
+                <span class="skill">Analyse statistique</span>
+                <span class="skill">ANOVA</span>
+                <span class="skill">Newman-Keuls</span>
+                <span class="skill">Excel</span>
+                <span class="skill">Data Analysis</span>
+                <span class="skill">Analyse multicritère</span>
+                <span class="skill">Sélection variétale</span>
+                <span class="skill">Collecte de données terrain</span>
+                <span class="skill">Analyse agronomique</span>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+
+        <div>
+            <strong>NAÏM HAMIDI</strong><br>
+            Ingénieur agronome spécialisé en agriculture numérique
+        </div>
+
+        <div>
+            DIGITAL AGRI · DATA · AGRICULTURE · SIG
+        </div>
+
+    </footer>
+
+</body>
+</html>
