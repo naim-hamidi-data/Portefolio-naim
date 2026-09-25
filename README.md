@@ -1,14 +1,28 @@
+<table>
+<tr>
+<td width="30%" align="center">
+
+<img src="LIEN_VERS_TA_PHOTO" width="220px" alt="Naïm Hamidi">
+
+</td>
+
+<td width="70%">
+
 # NAÏM HAMIDI
 
 ### Ingénieur agronome spécialisé en agriculture numérique
 
 **DIGITAL AGRI · DATA · AGRICULTURE · SIG**
 
-> **Transformer les données agricoles en décisions opérationnelles.**
+> **Favoriser l'autonomie des acteurs du monde agricole et encourager le choix plutôt que la dépendance.**
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Profile-0A66C2?style=flat-square\&logo=linkedin\&logoColor=white)](www.linkedin.com/in/naimhamidi)
-[![Email](https://img.shields.io/badge/Contact-Email-EA4335?style=flat-square\&logo=gmail\&logoColor=white)](abdelnaim31@outlook.fr)
-[![GitHub](https://img.shields.io/badge/GitHub-Portfolio-181717?style=flat-square\&logo=github\&logoColor=white)]([https://github.com/naim-hamidi-data)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Profile-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/naimhamidi/) ·
+[![Email](https://img.shields.io/badge/Contact-Email-EA4335?style=flat-square&logo=gmail&logoColor=white)](mailto:abdelnaim31@outlook.fr) ·
+[![GitHub](https://img.shields.io/badge/GitHub-Portfolio-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/naim-hamidi-data)
+
+</td>
+</tr>
+</table>
 
 ---
 
@@ -18,11 +32,20 @@ Ingénieur agronome formé en **France et en Espagne**, je développe un profil 
 
 Mon approche consiste à partir d'une problématique agricole concrète, structurer les données disponibles, les analyser avec les outils numériques adaptés et produire une information exploitable pour la décision.
 
-> **Vision :** favoriser l'autonomie des acteurs du monde agricole et encourager le choix plutôt que la dépendance.
+🎯 Ce que je recherche : Stage de fin d'études · 3 mois · été 2027
 
-Je m'intéresse particulièrement aux applications du numérique permettant de mieux comprendre les systèmes agricoles, de suivre leur évolution et d'améliorer la prise de décision.
+Je recherche un environnement dans lequel je peux mobiliser et continuer de développer mes compétences en :
 
-**Recherche d'un stage de fin d'études de 3 mois à partir de l'été 2027.**
+* agriculture numérique ;
+* analyse de données ;
+* SIG et télédétection ;
+* IA et modèles prédictifs ;
+* agriculture de précision ;
+* IoT et capteurs ;
+* outils d'aide à la décision.
+
+**Domaines d'intérêt :**
+`Digital Agriculture` · `AgTech` · `Precision Agriculture` · `Data` · `Remote Sensing` · `GIS` · `AI` · `Smart Farming`
 
 ---
 
@@ -480,24 +503,6 @@ Mon objectif est de connecter ces différentes briques plutôt que de les consid
 
 Une donnée agricole n'a de valeur que lorsqu'elle permet de mieux comprendre une situation, d'identifier une option ou d'appuyer une décision.
 
----
-
-# 🎯 Ce que je recherche
-
-### Stage de fin d'études · 3 mois · été 2027
-
-Je recherche un environnement dans lequel je peux mobiliser simultanément mes compétences en :
-
-* agriculture numérique ;
-* analyse de données ;
-* SIG et télédétection ;
-* IA et modèles prédictifs ;
-* agriculture de précision ;
-* IoT et capteurs ;
-* outils d'aide à la décision.
-
-**Domaines d'intérêt :**
-`Digital Agriculture` · `AgTech` · `Precision Agriculture` · `Data` · `Remote Sensing` · `GIS` · `AI` · `Smart Farming`
 
 ---
 
