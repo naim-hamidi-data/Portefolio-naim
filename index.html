@@ -4,9 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Naïm Hamidi — Digital Agriculture</title>
+    <title>Naïm Hamidi — Digital Agriculture · Data · SIG</title>
+
+    <meta
+        name="description"
+        content="Naïm Hamidi — Ingénieur agronome spécialisé en agriculture numérique, data, SIG, télédétection, IA et agriculture de précision."
+    >
 
     <style>
+
+        /* =========================================================
+           BASE
+        ========================================================= */
+
+        :root {
+            --background: #f7f7f5;
+            --surface: #ffffff;
+            --surface-soft: #f1f1ee;
+            --text: #111111;
+            --text-secondary: #6f6f6a;
+            --border: #deded9;
+            --accent: #111111;
+            --max-width: 1180px;
+        }
 
         * {
             box-sizing: border-box;
@@ -27,9 +47,9 @@
                 Arial,
                 sans-serif;
 
-            background: #f7f7f5;
-            color: #151515;
-            line-height: 1.5;
+            background: var(--background);
+            color: var(--text);
+            line-height: 1.6;
         }
 
         a {
@@ -37,31 +57,37 @@
             text-decoration: none;
         }
 
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
         .container {
-            width: min(1180px, calc(100% - 60px));
-            margin: auto;
+            width: min(100% - 48px, var(--max-width));
+            margin: 0 auto;
         }
 
 
-        /* =========================
+        /* =========================================================
            NAVIGATION
-        ========================= */
+        ========================================================= */
 
         nav {
-            position: fixed;
+            position: sticky;
             top: 0;
-            left: 0;
-            width: 100%;
             z-index: 100;
 
-            background: rgba(247,247,245,0.88);
+            background: rgba(247, 247, 245, 0.88);
             backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
 
-            border-bottom: 1px solid #e3e3df;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.07);
         }
 
         .nav-inner {
-            height: 70px;
+            width: min(100% - 48px, var(--max-width));
+            height: 72px;
+            margin: auto;
 
             display: flex;
             align-items: center;
@@ -69,587 +95,717 @@
         }
 
         .logo {
-            font-size: 14px;
+            font-size: 15px;
             font-weight: 700;
-            letter-spacing: .12em;
+            letter-spacing: 0.08em;
         }
 
         .nav-links {
             display: flex;
-            gap: 30px;
+            gap: 28px;
+            align-items: center;
+        }
 
-            font-size: 13px;
-            color: #666;
+        .nav-links a {
+            font-size: 14px;
+            color: var(--text-secondary);
+            transition: color 0.2s ease;
         }
 
         .nav-links a:hover {
-            color: #111;
+            color: var(--text);
         }
 
 
-        /* =========================
+        /* =========================================================
            HERO
-        ========================= */
+        ========================================================= */
 
         .hero {
-            min-height: 100vh;
+            min-height: calc(100vh - 72px);
 
-            display: flex;
-            align-items: center;
-
-            padding-top: 100px;
-        }
-
-        .hero-grid {
             display: grid;
-
-            grid-template-columns:
-                1.1fr
-                .9fr;
-
-            gap: 90px;
-
+            grid-template-columns: 1.15fr 0.85fr;
             align-items: center;
+
+            gap: 80px;
+            padding: 90px 0;
         }
 
         .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+
             font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.13em;
+            color: var(--text-secondary);
 
-            letter-spacing: .16em;
             text-transform: uppercase;
-
-            color: #777;
-
             margin-bottom: 25px;
         }
 
-        h1 {
-            font-size: clamp(58px, 8vw, 105px);
+        .eyebrow::before {
+            content: "";
+            width: 28px;
+            height: 1px;
+            background: var(--text);
+        }
 
-            line-height: .91;
-
-            letter-spacing: -.065em;
-
+        .hero h1 {
+            font-size: clamp(52px, 7vw, 92px);
+            line-height: 0.95;
+            letter-spacing: -0.055em;
             font-weight: 700;
 
-            margin-bottom: 35px;
+            margin-bottom: 26px;
         }
 
-        .hero-title {
-            font-size: 24px;
-
-            color: #555;
+        .hero-role {
+            font-size: clamp(20px, 2.5vw, 30px);
+            line-height: 1.25;
+            font-weight: 500;
 
             max-width: 620px;
+            margin-bottom: 18px;
+        }
 
-            margin-bottom: 25px;
+        .hero-domain {
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            color: var(--text-secondary);
+
+            margin-bottom: 32px;
         }
 
         .hero-description {
-            max-width: 620px;
+            max-width: 650px;
 
-            font-size: 17px;
-
-            color: #666;
-
+            font-size: 18px;
             line-height: 1.7;
+            color: var(--text-secondary);
+
+            margin-bottom: 38px;
         }
 
         .hero-actions {
             display: flex;
-
+            flex-wrap: wrap;
             gap: 12px;
-
-            margin-top: 35px;
         }
 
         .button {
-            padding: 13px 20px;
-
-            border-radius: 100px;
-
-            font-size: 14px;
-
-            border: 1px solid #222;
-
-            transition: .2s;
-        }
-
-        .button.primary {
-            background: #171717;
-            color: white;
-        }
-
-        .button.primary:hover {
-            background: #333;
-        }
-
-        .button.secondary {
-            border-color: #d5d5d1;
-            color: #555;
-        }
-
-        .button.secondary:hover {
-            border-color: #999;
-            color: #111;
-        }
-
-
-        /* =========================
-           PHOTO
-        ========================= */
-
-        .portrait {
-            width: 100%;
-            aspect-ratio: 4 / 5;
-
-            border-radius: 28px;
-
-            overflow: hidden;
-
-            background: #e7e7e2;
-
-            position: relative;
-        }
-
-        .portrait img {
-            width: 100%;
-            height: 100%;
-
-            object-fit: cover;
-
-            display: block;
-        }
-
-        .portrait-placeholder {
-            height: 100%;
-
-            display: flex;
-
+            display: inline-flex;
             align-items: center;
             justify-content: center;
 
-            color: #999;
+            min-height: 48px;
+            padding: 0 22px;
+
+            border-radius: 999px;
 
             font-size: 14px;
+            font-weight: 600;
 
-            text-align: center;
+            transition:
+                transform 0.2s ease,
+                background 0.2s ease,
+                border-color 0.2s ease;
+        }
 
-            padding: 30px;
+        .button:hover {
+            transform: translateY(-2px);
+        }
+
+        .button.primary {
+            background: var(--text);
+            color: white;
+        }
+
+        .button.secondary {
+            border: 1px solid var(--border);
+            background: white;
         }
 
 
-        /* =========================
+        /* =========================================================
+           PHOTO
+        ========================================================= */
+
+        .portrait {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .portrait img {
+            width: min(420px, 100%);
+            aspect-ratio: 1 / 1;
+
+            object-fit: cover;
+
+            border-radius: 32px;
+
+            background: var(--surface);
+            border: 1px solid var(--border);
+
+            box-shadow:
+                0 30px 80px rgba(0, 0, 0, 0.10);
+        }
+
+
+        /* =========================================================
            SECTIONS
-        ========================= */
+        ========================================================= */
 
         section {
             padding: 120px 0;
-
-            border-top: 1px solid #deded9;
+            border-top: 1px solid var(--border);
         }
 
         .section-header {
             display: grid;
+            grid-template-columns: 0.35fr 1fr;
 
-            grid-template-columns: 260px 1fr;
-
-            gap: 70px;
-
-            margin-bottom: 60px;
+            gap: 50px;
+            margin-bottom: 65px;
         }
 
-        .section-label {
+        .section-number {
             font-size: 12px;
-
-            text-transform: uppercase;
-
-            letter-spacing: .15em;
-
-            color: #888;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            color: var(--text-secondary);
         }
 
         .section-title {
-            font-size: clamp(38px, 5vw, 65px);
-
+            font-size: clamp(38px, 5vw, 64px);
             line-height: 1;
+            letter-spacing: -0.045em;
+        }
 
-            letter-spacing: -.05em;
+        .section-intro {
+            max-width: 780px;
+            margin-top: 20px;
+
+            color: var(--text-secondary);
+            font-size: 18px;
         }
 
 
-        /* =========================
+        /* =========================================================
+           À PROPOS
+        ========================================================= */
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1.3fr 0.7fr;
+            gap: 80px;
+        }
+
+        .about-text {
+            font-size: 20px;
+            line-height: 1.75;
+        }
+
+        .about-text p + p {
+            margin-top: 24px;
+        }
+
+        .about-text strong {
+            color: var(--text);
+        }
+
+        .search-box {
+            margin-top: 38px;
+
+            padding: 28px;
+
+            border: 1px solid var(--border);
+            border-radius: 20px;
+
+            background: var(--surface);
+        }
+
+        .search-label {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+
+            color: var(--text-secondary);
+
+            margin-bottom: 10px;
+        }
+
+        .search-text {
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .languages {
+            padding: 28px;
+
+            border: 1px solid var(--border);
+            border-radius: 20px;
+
+            background: var(--surface);
+        }
+
+        .languages-title {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+
+            color: var(--text-secondary);
+
+            margin-bottom: 20px;
+        }
+
+        .language-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .language {
+            font-size: 15px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .language:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .interest-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+
+            margin-top: 28px;
+        }
+
+        .tag {
+            display: inline-flex;
+
+            padding: 7px 11px;
+
+            border: 1px solid var(--border);
+            border-radius: 999px;
+
+            background: var(--surface);
+
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+
+
+        /* =========================================================
            EXPERTISE
-        ========================= */
+        ========================================================= */
 
         .expertise-grid {
             display: grid;
-
-            grid-template-columns:
-                repeat(3, 1fr);
+            grid-template-columns: repeat(2, 1fr);
 
             gap: 16px;
         }
 
         .expertise-card {
-            background: white;
+            padding: 34px;
 
-            border: 1px solid #e1e1dd;
+            background: var(--surface);
 
-            border-radius: 22px;
+            border: 1px solid var(--border);
+            border-radius: 24px;
 
-            padding: 30px;
-
-            min-height: 240px;
-
-            transition: transform .25s,
-                        box-shadow .25s;
+            transition:
+                transform 0.25s ease,
+                box-shadow 0.25s ease;
         }
 
         .expertise-card:hover {
             transform: translateY(-4px);
 
             box-shadow:
-                0 15px 40px rgba(0,0,0,.06);
+                0 20px 50px rgba(0, 0, 0, 0.07);
         }
 
-        .number {
+        .expertise-card.full {
+            grid-column: 1 / -1;
+        }
+
+        .expertise-number {
             font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            color: var(--text-secondary);
 
-            color: #999;
-
-            margin-bottom: 45px;
+            margin-bottom: 18px;
         }
 
         .expertise-card h3 {
-            font-size: 21px;
-
-            margin-bottom: 12px;
+            font-size: 25px;
+            letter-spacing: -0.025em;
+            margin-bottom: 13px;
         }
 
-        .expertise-card p {
-            color: #666;
+        .expertise-description {
+            color: var(--text-secondary);
+            margin-bottom: 22px;
+        }
 
-            font-size: 14px;
+        .project-list {
+            margin: 0 0 24px 18px;
+        }
 
-            line-height: 1.6;
+        .project-list li {
+            margin-bottom: 8px;
+        }
+
+        .project-list a {
+            text-decoration: underline;
+            text-decoration-color: #c9c9c4;
+            text-underline-offset: 3px;
+        }
+
+        .stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px;
+        }
+
+        .stack span {
+            padding: 6px 9px;
+
+            background: var(--surface-soft);
+
+            border-radius: 7px;
+
+            font-size: 11px;
+            color: var(--text-secondary);
         }
 
 
-        /* =========================
-           PROJECTS
-        ========================= */
+        /* =========================================================
+           PROJETS
+        ========================================================= */
 
         .projects {
-            display: grid;
-
-            grid-template-columns:
-                repeat(2, 1fr);
-
+            display: flex;
+            flex-direction: column;
             gap: 18px;
         }
 
-        .project {
-            background: white;
-
-            border: 1px solid #e1e1dd;
-
-            border-radius: 24px;
-
-            padding: 35px;
-
-            min-height: 280px;
-
-            display: flex;
-
-            flex-direction: column;
-
-            justify-content: space-between;
-
-            transition: .25s;
-        }
-
-        .project:hover {
-            transform: translateY(-4px);
-
-            box-shadow:
-                0 18px 45px rgba(0,0,0,.06);
-        }
-
-        .project-category {
-            font-size: 12px;
-
-            color: #888;
-
-            text-transform: uppercase;
-
-            letter-spacing: .12em;
-        }
-
-        .project h3 {
-            font-size: 28px;
-
-            letter-spacing: -.035em;
-
-            margin: 35px 0 15px;
-        }
-
-        .project p {
-            font-size: 15px;
-
-            color: #666;
-
-            max-width: 600px;
-        }
-
-        .project-link {
-            margin-top: 30px;
-
-            font-size: 14px;
-
-            font-weight: 600;
-        }
-
-
-        /* =========================
-           PROFILE
-        ========================= */
-
-        .profile-grid {
+        .project-card {
             display: grid;
-
-            grid-template-columns:
-                1fr 1fr;
-
-            gap: 80px;
-        }
-
-        .profile-text {
-            font-size: 20px;
-
-            line-height: 1.7;
-
-            color: #555;
-        }
-
-        .profile-text strong {
-            color: #111;
-        }
-
-        .profile-list {
-            border-top: 1px solid #ddd;
-
-            margin-top: 10px;
-        }
-
-        .profile-item {
-            padding: 20px 0;
-
-            border-bottom: 1px solid #ddd;
-
-            display: flex;
-
-            justify-content: space-between;
-
-            gap: 30px;
-        }
-
-        .profile-item span:first-child {
-            color: #888;
-
-            font-size: 13px;
-        }
-
-        .profile-item span:last-child {
-            text-align: right;
-
-            font-size: 14px;
-        }
-
-
-        /* =========================
-           EXPERIENCE
-        ========================= */
-
-        .experience {
-            border-top: 1px solid #ddd;
-        }
-
-        .experience-item {
-            display: grid;
-
-            grid-template-columns:
-                170px
-                1fr;
+            grid-template-columns: 0.9fr 1.6fr;
 
             gap: 50px;
 
-            padding: 30px 0;
+            padding: 42px;
 
-            border-bottom: 1px solid #ddd;
+            background: var(--surface);
+
+            border: 1px solid var(--border);
+            border-radius: 24px;
+
+            transition:
+                transform 0.25s ease,
+                box-shadow 0.25s ease;
         }
 
-        .experience-date {
-            color: #888;
+        .project-card:hover {
+            transform: translateY(-3px);
 
+            box-shadow:
+                0 20px 60px rgba(0, 0, 0, 0.07);
+        }
+
+        .project-meta {
+            color: var(--text-secondary);
+        }
+
+        .project-index {
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+
+            margin-bottom: 16px;
+        }
+
+        .project-type {
             font-size: 13px;
+            font-weight: 600;
+            line-height: 1.5;
         }
 
-        .experience h3 {
-            font-size: 21px;
-
-            margin-bottom: 5px;
-        }
-
-        .experience-company {
-            color: #777;
-
-            font-size: 14px;
+        .project-content h3 {
+            font-size: 28px;
+            line-height: 1.2;
+            letter-spacing: -0.03em;
 
             margin-bottom: 15px;
         }
 
-        .experience p {
-            color: #666;
+        .project-content p {
+            color: var(--text-secondary);
 
-            font-size: 14px;
-
-            max-width: 720px;
+            margin-bottom: 20px;
+            max-width: 750px;
         }
 
+        .project-architecture {
+            display: inline-block;
 
-        /* =========================
-           CTA
-        ========================= */
+            margin: 5px 0 22px;
+            padding: 12px 15px;
 
-        .cta {
-            background: #171717;
+            border-radius: 10px;
+            background: var(--surface-soft);
 
-            color: white;
-
-            border-radius: 30px;
-
-            padding: 70px;
-
-            text-align: center;
+            font-size: 13px;
+            font-weight: 600;
         }
 
-        .cta h2 {
-            font-size: clamp(40px, 6vw, 75px);
-
-            letter-spacing: -.05em;
-
-            line-height: 1;
+        .project-skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px;
 
             margin-bottom: 25px;
         }
 
-        .cta p {
-            color: #aaa;
+        .project-skills span {
+            padding: 6px 9px;
 
-            max-width: 600px;
+            border: 1px solid var(--border);
+            border-radius: 7px;
 
-            margin: auto;
-
-            font-size: 16px;
+            font-size: 11px;
+            color: var(--text-secondary);
         }
 
-        .cta .button {
-            display: inline-block;
-
-            margin-top: 30px;
-
-            background: white;
-
-            color: #111;
-
-            border-color: white;
-        }
-
-
-        /* =========================
-           FOOTER
-        ========================= */
-
-        footer {
-            padding: 50px 0;
-
-            color: #888;
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
 
             font-size: 13px;
+            font-weight: 700;
+
+            border-bottom: 1px solid var(--text);
+            padding-bottom: 3px;
+        }
+
+
+        /* =========================================================
+           CONTACT
+        ========================================================= */
+
+        .contact {
+            padding-bottom: 80px;
+        }
+
+        .contact-box {
+            display: grid;
+            grid-template-columns: 1fr auto;
+
+            align-items: end;
+
+            gap: 50px;
+
+            padding: 60px;
+
+            background: var(--text);
+            color: white;
+
+            border-radius: 30px;
+        }
+
+        .contact-box .eyebrow {
+            color: #a4a4a0;
+        }
+
+        .contact-box .eyebrow::before {
+            background: white;
+        }
+
+        .contact-box h2 {
+            max-width: 760px;
+
+            font-size: clamp(38px, 5vw, 68px);
+            line-height: 1;
+
+            letter-spacing: -0.05em;
+
+            margin-bottom: 22px;
+        }
+
+        .contact-box p {
+            max-width: 650px;
+
+            color: #b8b8b3;
+            font-size: 17px;
+        }
+
+        .contact-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .contact-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            min-height: 48px;
+            padding: 0 20px;
+
+            border-radius: 999px;
+
+            background: white;
+            color: black;
+
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+
+        /* =========================================================
+           FOOTER
+        ========================================================= */
+
+        footer {
+            padding: 30px 0 45px;
+
+            color: var(--text-secondary);
+
+            font-size: 12px;
         }
 
         .footer-inner {
             display: flex;
-
+            align-items: center;
             justify-content: space-between;
 
-            gap: 30px;
+            gap: 20px;
+
+            border-top: 1px solid var(--border);
+
+            padding-top: 25px;
+        }
+
+        .footer-brand {
+            font-weight: 700;
+            color: var(--text);
+            letter-spacing: 0.08em;
         }
 
 
-        /* =========================
+        /* =========================================================
            RESPONSIVE
-        ========================= */
+        ========================================================= */
 
-        @media(max-width: 850px) {
+        @media (max-width: 900px) {
+
+            .hero {
+                grid-template-columns: 1fr;
+                gap: 50px;
+                padding-top: 70px;
+            }
+
+            .portrait {
+                justify-content: flex-start;
+            }
+
+            .portrait img {
+                width: min(360px, 100%);
+            }
+
+            .section-header {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .project-card {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .contact-box {
+                grid-template-columns: 1fr;
+                align-items: start;
+            }
+        }
+
+
+        @media (max-width: 700px) {
+
+            .container,
+            .nav-inner {
+                width: min(100% - 30px, var(--max-width));
+            }
+
+            .nav-inner {
+                height: 64px;
+            }
 
             .nav-links {
                 display: none;
             }
 
-            .hero-grid,
-            .profile-grid {
-                grid-template-columns: 1fr;
-            }
-
             .hero {
-                padding-top: 120px;
+                min-height: auto;
+                padding: 70px 0 90px;
             }
 
-            .portrait {
-                max-width: 500px;
+            .hero h1 {
+                font-size: 56px;
             }
 
-            .expertise-grid {
-                grid-template-columns: 1fr 1fr;
+            .hero-description {
+                font-size: 16px;
             }
 
-            .section-header {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-
-            .projects {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media(max-width: 550px) {
-
-            .container {
-                width: min(100% - 40px, 1180px);
-            }
-
-            h1 {
-                font-size: 58px;
+            section {
+                padding: 80px 0;
             }
 
             .expertise-grid {
                 grid-template-columns: 1fr;
             }
 
-            .experience-item {
-                grid-template-columns: 1fr;
-                gap: 10px;
+            .expertise-card.full {
+                grid-column: auto;
             }
 
-            .cta {
-                padding: 45px 25px;
+            .project-card {
+                padding: 28px;
+            }
+
+            .project-content h3 {
+                font-size: 24px;
+            }
+
+            .contact-box {
+                padding: 35px 25px;
             }
 
             .footer-inner {
                 flex-direction: column;
+                align-items: flex-start;
             }
         }
 
@@ -659,736 +815,1255 @@
 
 <body>
 
+    <!-- =========================================================
+         NAVIGATION
+    ========================================================== -->
 
-<!-- =========================
-     NAVIGATION
-========================= -->
+    <nav>
+        <div class="nav-inner">
 
-<nav>
+            <a href="#top" class="logo">
+                NAÏM HAMIDI
+            </a>
 
-    <div class="container nav-inner">
+            <div class="nav-links">
 
-        <a href="#" class="logo">
-            NAÏM HAMIDI
-        </a>
-
-        <div class="nav-links">
-
-            <a href="#expertise">Expertise</a>
-
-            <a href="#projets">Projets</a>
-
-            <a href="#experience">Expériences</a>
-
-            <a href="#contact">Contact</a>
-
-        </div>
-
-    </div>
-
-</nav>
-
-
-<!-- =========================
-     HERO
-========================= -->
-
-<header class="hero">
-
-    <div class="container hero-grid">
-
-
-        <div>
-
-            <div class="eyebrow">
-                Digital Agriculture · Data · SIG
-            </div>
-
-
-            <h1>
-                Naïm<br>
-                Hamidi
-            </h1>
-
-
-            <div class="hero-title">
-                Ingénieur agronome spécialisé
-                en agriculture numérique.
-            </div>
-
-
-            <p class="hero-description">
-
-                À l'interface entre agriculture,
-                numérique et analyse des données.
-
-                Je transforme des données agricoles,
-                spatiales et environnementales en
-                informations utiles à la décision.
-
-            </p>
-
-
-            <div class="hero-actions">
-
-                <a
-                    href="#projets"
-                    class="button primary"
-                >
-                    Explorer les projets
+                <a href="#about">
+                    À propos
                 </a>
 
+                <a href="#expertise">
+                    Expertise
+                </a>
 
-                <a
-                    href="#contact"
-                    class="button secondary"
-                >
-                    Me contacter
+                <a href="#projects">
+                    Projets
+                </a>
+
+                <a href="#contact">
+                    Contact
                 </a>
 
             </div>
 
         </div>
+    </nav>
 
 
-        <div class="portrait">
-<img src="image/photo_naim.png" alt="Naïm Hamidi">
+    <main id="top">
 
-        </div>
 
+        <!-- =====================================================
+             HERO
+        ====================================================== -->
 
-    </div>
+        <div class="container">
 
-</header>
-
-
-
-<!-- =========================
-     EXPERTISE
-========================= -->
-
-<section id="expertise">
-
-    <div class="container">
-
-
-        <div class="section-header">
-
-            <div class="section-label">
-                01 — Expertise
-            </div>
-
-            <h2 class="section-title">
-                Agriculture ×
-                numérique.
-            </h2>
-
-        </div>
-
-
-        <div class="expertise-grid">
-
-
-            <div class="expertise-card">
-
-                <div class="number">01</div>
-
-                <h3>
-                    Data Analytics & IA
-                </h3>
-
-                <p>
-                    Analyse statistique, données agricoles,
-                    modèles prédictifs et visualisation.
-                </p>
-
-            </div>
-
-
-            <div class="expertise-card">
-
-                <div class="number">02</div>
-
-                <h3>
-                    SIG & Analyse spatiale
-                </h3>
-
-                <p>
-                    Analyse des territoires agricoles,
-                    données vectorielles, raster et cartographie.
-                </p>
-
-            </div>
-
-
-            <div class="expertise-card">
-
-                <div class="number">03</div>
-
-                <h3>
-                    Télédétection
-                </h3>
-
-                <p>
-                    Sentinel-2, NDVI, imagerie satellitaire,
-                    drones et observation des surfaces agricoles.
-                </p>
-
-            </div>
-
-
-            <div class="expertise-card">
-
-                <div class="number">04</div>
-
-                <h3>
-                    Agriculture de précision
-                </h3>
-
-                <p>
-                    Irrigation, GNSS, données géoréférencées,
-                    cartographie de préconisation et guidage.
-                </p>
-
-            </div>
-
-
-            <div class="expertise-card">
-
-                <div class="number">05</div>
-
-                <h3>
-                    IoT & Capteurs
-                </h3>
-
-                <p>
-                    Acquisition, transmission, stockage et
-                    visualisation des données issues de capteurs.
-                </p>
-
-            </div>
-
-
-            <div class="expertise-card">
-
-                <div class="number">06</div>
-
-                <h3>
-                    Outils d'aide à la décision
-                </h3>
-
-                <p>
-                    Power BI, dashboards, systèmes de veille
-                    et transformation des données en indicateurs.
-                </p>
-
-            </div>
-
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================
-     PROJECTS
-========================= -->
-
-<section id="projets">
-
-    <div class="container">
-
-
-        <div class="section-header">
-
-            <div class="section-label">
-                02 — Projets
-            </div>
-
-            <h2 class="section-title">
-                Des données
-                aux décisions.
-            </h2>
-
-        </div>
-
-
-        <div class="projects">
-
-
-            <!-- PROJET 1 -->
-
-            <a
-                href="./projet%20data%20%26%20ia/analyse-varietale/"
-                class="project"
-            >
+            <section class="hero" style="border-top: none;">
 
                 <div>
 
-                    <div class="project-category">
-                        Data · Agronomie
+                    <div class="eyebrow">
+                        DIGITAL AGRICULTURE · DATA · GIS
                     </div>
 
-                    <h3>
-                        Analyse statistique
-                        d'essais variétaux
-                    </h3>
+                    <h1>
+                        NAÏM<br>
+                        HAMIDI
+                    </h1>
 
-                    <p>
-                        Analyse de données expérimentales
-                        appliquée à la sélection variétale
-                        du melon.
-                    </p>
-
-                </div>
-
-                <div class="project-link">
-                    Voir le projet →
-                </div>
-
-            </a>
-
-
-            <!-- PROJET 2 -->
-
-            <div class="project">
-
-                <div>
-
-                    <div class="project-category">
-                        SIG · Agriculture
+                    <div class="hero-role">
+                        Ingénieur agronome spécialisé en agriculture numérique
                     </div>
 
-                    <h3>
-                        Analyse spatiale
-                        des surfaces agricoles
-                    </h3>
-
-                    <p>
-                        Analyse de l'évolution des parcelles
-                        et identification d'anomalies
-                        à partir de données géographiques.
-                    </p>
-
-                </div>
-
-                <div class="project-link">
-                    Projet à venir →
-                </div>
-
-            </div>
-
-
-            <!-- PROJET 3 -->
-
-            <div class="project">
-
-                <div>
-
-                    <div class="project-category">
-                        Télédétection · Sentinel-2
+                    <div class="hero-domain">
+                        DIGITAL AGRI · DATA · AGRICULTURE · SIG
                     </div>
 
-                    <h3>
-                        Suivi des surfaces
-                        agricoles
-                    </h3>
-
-                    <p>
-                        Utilisation de l'imagerie satellitaire
-                        et du NDVI pour suivre les surfaces
-                        agricoles.
+                    <p class="hero-description">
+                        Transformer les données agricoles en informations
+                        exploitables pour mieux comprendre les situations,
+                        identifier les options et appuyer la décision.
                     </p>
 
-                </div>
+                    <div class="hero-actions">
 
-                <div class="project-link">
-                    Projet à venir →
-                </div>
+                        <a
+                            href="#projects"
+                            class="button primary"
+                        >
+                            Voir mes projets
+                        </a>
 
-            </div>
+                        <a
+                            href="#contact"
+                            class="button secondary"
+                        >
+                            Me contacter
+                        </a>
 
+                        <a
+                            href="CV_Naim_Hamidi.pdf"
+                            target="_blank"
+                            class="button secondary"
+                        >
+                            Voir mon CV
+                        </a>
 
-            <!-- PROJET 4 -->
-
-            <div class="project">
-
-                <div>
-
-                    <div class="project-category">
-                        Agriculture de précision
                     </div>
 
-                    <h3>
-                        Gestion de l'eau
-                        & irrigation
-                    </h3>
+                </div>
 
-                    <p>
-                        Bilan hydrique, données climatiques,
-                        IA et informations géoréférencées
-                        pour le pilotage de l'irrigation.
-                    </p>
+
+                <div class="portrait">
+
+                    <img
+                        src="image/photo_naim.png"
+                        alt="Naïm Hamidi"
+                    >
 
                 </div>
 
-                <div class="project-link">
-                    Projet à venir →
-                </div>
-
-            </div>
-
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================
-     PROFILE
-========================= -->
-
-<section>
-
-    <div class="container">
-
-
-        <div class="section-header">
-
-            <div class="section-label">
-                03 — Profil
-            </div>
-
-            <h2 class="section-title">
-                Un profil
-                entre plusieurs mondes.
-            </h2>
+            </section>
 
         </div>
 
 
-        <div class="profile-grid">
+        <!-- =====================================================
+             À PROPOS
+        ====================================================== -->
+
+        <section id="about">
+
+            <div class="container">
+
+                <div class="section-header">
+
+                    <div class="section-number">
+                        01 / À PROPOS
+                    </div>
+
+                    <div>
+
+                        <h2 class="section-title">
+                            Agriculture.<br>
+                            Données.<br>
+                            Décision.
+                        </h2>
+
+                        <p class="section-intro">
+                            Un profil à l'interface entre agronomie,
+                            numérique, données et analyse spatiale.
+                        </p>
+
+                    </div>
+
+                </div>
 
 
-            <div class="profile-text">
+                <div class="about-grid">
 
-                <p>
+                    <div class="about-text">
 
-                    Ingénieur agronome formé en
-                    <strong>France et en Espagne</strong>,
-                    je développe un profil à l'interface
-                    entre agriculture, numérique,
-                    données et analyse spatiale.
+                        <p>
+                            Ingénieur agronome formé en
+                            <strong>France et en Espagne</strong>,
+                            je développe un profil à l'interface entre
+                            <strong>agriculture, numérique, données et analyse spatiale</strong>.
+                        </p>
 
-                </p>
+                        <p>
+                            Mon approche consiste à partir d'une
+                            <strong>problématique agricole concrète</strong>,
+                            structurer les données disponibles, les analyser
+                            avec les outils numériques adaptés et produire
+                            une information exploitable pour la décision.
+                        </p>
 
-                <br>
+                        <p>
+                            Je m'intéresse particulièrement aux applications
+                            de l'agriculture numérique permettant de mieux
+                            observer les systèmes agricoles, comprendre leur
+                            fonctionnement et accompagner les décisions.
+                        </p>
 
-                <p>
 
-                    Mon approche consiste à partir
-                    d'une problématique agricole concrète,
-                    structurer les données disponibles,
-                    les analyser avec les outils adaptés
-                    et produire une information exploitable.
+                        <div class="search-box">
 
-                </p>
+                            <div class="search-label">
+                                Recherche
+                            </div>
+
+                            <div class="search-text">
+                                Stage de fin d'études · 3 mois · été 2027
+                            </div>
+
+                        </div>
+
+
+                        <div class="interest-tags">
+
+                            <span class="tag">
+                                Digital Agriculture
+                            </span>
+
+                            <span class="tag">
+                                AgTech
+                            </span>
+
+                            <span class="tag">
+                                Precision Agriculture
+                            </span>
+
+                            <span class="tag">
+                                Data
+                            </span>
+
+                            <span class="tag">
+                                Remote Sensing
+                            </span>
+
+                            <span class="tag">
+                                GIS
+                            </span>
+
+                            <span class="tag">
+                                AI
+                            </span>
+
+                            <span class="tag">
+                                Smart Farming
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="languages">
+
+                        <div class="languages-title">
+                            Langues
+                        </div>
+
+                        <div class="language-list">
+
+                            <div class="language">
+                                🇫🇷 <strong>Français</strong>
+                            </div>
+
+                            <div class="language">
+                                🇬🇧 <strong>Anglais</strong>
+                            </div>
+
+                            <div class="language">
+                                🇪🇸 <strong>Espagnol</strong>
+                            </div>
+
+                            <div class="language">
+                                🇩🇿 <strong>Arabe dialectal</strong>
+                            </div>
+
+                            <div class="language">
+                                <strong>Arabe littéral</strong>
+                            </div>
+
+                            <div class="language">
+                                🇨🇳 <strong>Mandarin</strong>
+                                <span style="color:#777;">
+                                    · initiation
+                                </span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
 
             </div>
 
-
-            <div class="profile-list">
-
-
-                <div class="profile-item">
-
-                    <span>
-                        Formation actuelle
-                    </span>
-
-                    <span>
-                        Master DigitalAgri<br>
-                        Universidad de Córdoba
-                    </span>
-
-                </div>
+        </section>
 
 
-                <div class="profile-item">
+        <!-- =====================================================
+             EXPERTISE
+        ====================================================== -->
 
-                    <span>
-                        Formation ingénieur
-                    </span>
+        <section id="expertise">
 
-                    <span>
-                        École d'Ingénieurs de Purpan
-                    </span>
+            <div class="container">
 
-                </div>
+                <div class="section-header">
 
+                    <div class="section-number">
+                        02 / EXPERTISE
+                    </div>
 
-                <div class="profile-item">
+                    <div>
 
-                    <span>
-                        Localisation
-                    </span>
+                        <h2 class="section-title">
+                            Sept domaines.<br>
+                            Une même logique.
+                        </h2>
 
-                    <span>
-                        France · Espagne
-                    </span>
+                        <p class="section-intro">
+                            Mobiliser les outils numériques adaptés
+                            à chaque problématique agricole.
+                        </p>
+
+                    </div>
 
                 </div>
 
 
-                <div class="profile-item">
+                <div class="expertise-grid">
 
-                    <span>
-                        Recherche
-                    </span>
 
-                    <span>
-                        Stage de fin d'études<br>
-                        3 mois · été 2027
-                    </span>
+                    <!-- 01 -->
+
+                    <article class="expertise-card">
+
+                        <div class="expertise-number">
+                            01
+                        </div>
+
+                        <h3>
+                            Data Analytics & IA
+                        </h3>
+
+                        <p class="expertise-description">
+                            Analyse statistique, données agricoles,
+                            modèles prédictifs et visualisation.
+                        </p>
+
+                        <ul class="project-list">
+
+                            <li>
+                                <a href="projet%20data%20%26%20ia/analyse-varietale/">
+                                    Analyse statistique d'essais variétaux
+                                </a>
+                            </li>
+
+                            <li>
+                                Analyse de données de marchés
+                            </li>
+
+                            <li>
+                                Création de bases de données agricoles
+                            </li>
+
+                        </ul>
+
+                        <div class="stack">
+
+                            <span>Python</span>
+                            <span>SQL</span>
+                            <span>NoSQL</span>
+                            <span>Excel</span>
+                            <span>Power BI</span>
+                            <span>Machine Learning</span>
+                            <span>Data Analytics</span>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- 02 -->
+
+                    <article class="expertise-card">
+
+                        <div class="expertise-number">
+                            02
+                        </div>
+
+                        <h3>
+                            IoT & Capteurs
+                        </h3>
+
+                        <p class="expertise-description">
+                            De l'acquisition de données jusqu'à leur
+                            transmission, leur stockage et leur analyse.
+                        </p>
+
+                        <ul class="project-list">
+
+                            <li>
+                                Technologies NIRS et modèles prédictifs
+                            </li>
+
+                            <li>
+                                Pose de capteurs pour la mesure des données du sol
+                            </li>
+
+                        </ul>
+
+                        <div class="stack">
+
+                            <span>NIRS</span>
+                            <span>Capteurs</span>
+                            <span>MQTT</span>
+                            <span>HTTP</span>
+                            <span>FIWARE</span>
+                            <span>Gateway</span>
+                            <span>Grafana</span>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- 03 -->
+
+                    <article class="expertise-card">
+
+                        <div class="expertise-number">
+                            03
+                        </div>
+
+                        <h3>
+                            SIG & Analyse spatiale
+                        </h3>
+
+                        <p class="expertise-description">
+                            Analyse spatiale et cartographie des
+                            territoires agricoles.
+                        </p>
+
+                        <ul class="project-list">
+
+                            <li>
+                                Évolution des surfaces agricoles
+                            </li>
+
+                            <li>
+                                Identification d'évolutions de parcelles
+                                et d'anomalies déclaratives
+                            </li>
+
+                            <li>
+                                Identification de zones à enjeux
+                            </li>
+
+                        </ul>
+
+                        <div class="stack">
+
+                            <span>QGIS</span>
+                            <span>ArcGIS</span>
+                            <span>Analyse spatiale</span>
+                            <span>Cartographie</span>
+                            <span>Données vectorielles</span>
+                            <span>Données raster</span>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- 04 -->
+
+                    <article class="expertise-card">
+
+                        <div class="expertise-number">
+                            04
+                        </div>
+
+                        <h3>
+                            Télédétection & Imagerie satellitaire
+                        </h3>
+
+                        <p class="expertise-description">
+                            Exploitation de l'imagerie pour observer
+                            et suivre les surfaces agricoles.
+                        </p>
+
+                        <ul class="project-list">
+
+                            <li>
+                                Suivi des surfaces agricoles via Sentinel-2
+                            </li>
+
+                            <li>
+                                Comparaison déclaration / réalité observée
+                            </li>
+
+                            <li>
+                                Drones et calcul de NDVI
+                            </li>
+
+                        </ul>
+
+                        <div class="stack">
+
+                            <span>Sentinel-2</span>
+                            <span>Google Earth Engine</span>
+                            <span>Python</span>
+                            <span>JavaScript</span>
+                            <span>NDVI</span>
+                            <span>Drones</span>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- 05 -->
+
+                    <article class="expertise-card">
+
+                        <div class="expertise-number">
+                            05
+                        </div>
+
+                        <h3>
+                            Agriculture de précision
+                        </h3>
+
+                        <p class="expertise-description">
+                            Utilisation des données spatiales, capteurs
+                            et systèmes numériques pour optimiser
+                            les interventions agricoles.
+                        </p>
+
+                        <ul class="project-list">
+
+                            <li>
+                                Bilan hydrique pour le pilotage de l'irrigation
+                            </li>
+
+                            <li>
+                                IA appliquée à la gestion de l'eau
+                            </li>
+
+                            <li>
+                                Cartographie de préconisation
+                            </li>
+
+                            <li>
+                                Guidage et gestion des équipements agricoles
+                            </li>
+
+                        </ul>
+
+                        <div class="stack">
+
+                            <span>GNSS</span>
+                            <span>NDVI</span>
+                            <span>Capteurs</span>
+                            <span>SIG agricole</span>
+                            <span>IA</span>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- 06 -->
+
+                    <article class="expertise-card">
+
+                        <div class="expertise-number">
+                            06
+                        </div>
+
+                        <h3>
+                            IA & Séries temporelles
+                        </h3>
+
+                        <p class="expertise-description">
+                            Application de l'IA aux données agricoles
+                            et agroalimentaires.
+                        </p>
+
+                        <ul class="project-list">
+
+                            <li>
+                                Modèles prédictifs
+                            </li>
+
+                            <li>
+                                Séries temporelles
+                            </li>
+
+                            <li>
+                                Traitement d'images
+                            </li>
+
+                            <li>
+                                NLP
+                            </li>
+
+                            <li>
+                                Assistants virtuels open source
+                            </li>
+
+                        </ul>
+
+                        <div class="stack">
+
+                            <span>Machine Learning</span>
+                            <span>Deep Learning</span>
+                            <span>Séries temporelles</span>
+                            <span>NLP</span>
+                            <span>Computer Vision</span>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- 07 -->
+
+                    <article class="expertise-card full">
+
+                        <div class="expertise-number">
+                            07
+                        </div>
+
+                        <h3>
+                            Outils d'aide à la décision
+                        </h3>
+
+                        <p class="expertise-description">
+                            Transformation de données agricoles,
+                            économiques et environnementales en
+                            informations directement exploitables
+                            pour la décision.
+                        </p>
+
+                        <ul class="project-list">
+
+                            <li>
+                                Développement de tableaux de bord avec Power BI
+                            </li>
+
+                            <li>
+                                Structuration et visualisation d'indicateurs
+                            </li>
+
+                            <li>
+                                Développement de systèmes de veille
+                            </li>
+
+                            <li>
+                                Agrégation de données provenant de différentes sources
+                            </li>
+
+                        </ul>
+
+                        <div class="stack">
+
+                            <span>Power BI</span>
+                            <span>Dashboards</span>
+                            <span>Data Visualization</span>
+                            <span>Systèmes de veille</span>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             PROJETS
+        ====================================================== -->
+
+        <section id="projects">
+
+            <div class="container">
+
+                <div class="section-header">
+
+                    <div class="section-number">
+                        03 / PROJETS
+                    </div>
+
+                    <div>
+
+                        <h2 class="section-title">
+                            Des données<br>
+                            aux applications.
+                        </h2>
+
+                        <p class="section-intro">
+                            Quelques projets illustrant l'application
+                            concrète de mes compétences à des
+                            problématiques agricoles et agroalimentaires.
+                        </p>
+
+                    </div>
 
                 </div>
 
 
-                <div class="profile-item">
+                <div class="projects">
 
-                    <span>
-                        Langues
-                    </span>
 
-                    <span>
-                        Français · Anglais · Espagnol<br>
-                        Arabe · Mandarin — initiation
-                    </span>
+                    <!-- Projet 01 -->
+
+                    <article class="project-card">
+
+                        <div class="project-meta">
+
+                            <div class="project-index">
+                                01
+                            </div>
+
+                            <div class="project-type">
+                                SIG · Agriculture · Analyse spatiale · QGIS
+                            </div>
+
+                        </div>
+
+                        <div class="project-content">
+
+                            <h3>
+                                🌾 Analyse spatiale des surfaces agricoles
+                            </h3>
+
+                            <p>
+                                Analyse de l'évolution des surfaces agricoles
+                                à l'échelle d'un département à partir de
+                                données parcellaires et géographiques.
+                            </p>
+
+                            <p>
+                                Le projet vise notamment à identifier les
+                                évolutions de parcelles, les changements
+                                de surfaces et certaines anomalies
+                                nécessitant une analyse complémentaire.
+                            </p>
+
+                            <div class="project-skills">
+
+                                <span>QGIS</span>
+                                <span>Analyse spatiale</span>
+                                <span>Données agricoles</span>
+                                <span>RPG</span>
+                                <span>Cartographie</span>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Projet 02 -->
+
+                    <article class="project-card">
+
+                        <div class="project-meta">
+
+                            <div class="project-index">
+                                02
+                            </div>
+
+                            <div class="project-type">
+                                Télédétection · Sentinel-2 · NDVI · 3STR
+                            </div>
+
+                        </div>
+
+                        <div class="project-content">
+
+                            <h3>
+                                🛰️ Suivi des surfaces agricoles
+                                par imagerie satellitaire
+                            </h3>
+
+                            <p>
+                                Analyse d'images satellitaires pour contribuer
+                                au suivi des surfaces agricoles et comparer
+                                les observations issues de l'imagerie avec
+                                les déclarations agricoles.
+                            </p>
+
+                            <p>
+                                Ce travail s'inscrit dans le contexte du
+                                Système de Suivi des Surfaces en Temps Réel
+                                et de l'utilisation de modèles d'intelligence
+                                artificielle appliqués aux images Sentinel-2.
+                            </p>
+
+                            <div class="project-skills">
+
+                                <span>Sentinel-2</span>
+                                <span>NDVI</span>
+                                <span>Imagerie infrarouge</span>
+                                <span>Python</span>
+                                <span>Google Earth Engine</span>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Projet 03 -->
+
+                    <article class="project-card">
+
+                        <div class="project-meta">
+
+                            <div class="project-index">
+                                03
+                            </div>
+
+                            <div class="project-type">
+                                Data Analytics · Statistiques · Agronomie
+                            </div>
+
+                        </div>
+
+                        <div class="project-content">
+
+                            <h3>
+                                📊 Analyse statistique d'essais variétaux
+                            </h3>
+
+                            <p>
+                                Analyse de données issues d'expérimentations
+                                variétales afin de comparer les performances
+                                des variétés testées et d'appuyer le choix
+                                variétal.
+                            </p>
+
+                            <p>
+                                Le projet combine compréhension agronomique,
+                                préparation des données et méthodes statistiques.
+                            </p>
+
+                            <div class="project-skills">
+
+                                <span>Python</span>
+                                <span>Statistiques</span>
+                                <span>Data Analysis</span>
+                                <span>Expérimentation agronomique</span>
+
+                            </div>
+
+                            <a
+                                href="projet%20data%20%26%20ia/analyse-varietale/"
+                                class="project-link"
+                            >
+                                Voir le projet →
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Projet 04 -->
+
+                    <article class="project-card">
+
+                        <div class="project-meta">
+
+                            <div class="project-index">
+                                04
+                            </div>
+
+                            <div class="project-type">
+                                Data Analytics · Business Intelligence · Agroalimentaire
+                            </div>
+
+                        </div>
+
+                        <div class="project-content">
+
+                            <h3>
+                                🛒 Analyse de données de marché
+                            </h3>
+
+                            <p>
+                                Analyse des performances des marchés et des
+                                tendances de consommation à partir des panels
+                                Kantar, Nielsen et A3 Distrib.
+                            </p>
+
+                            <p>
+                                Les données sont structurées puis transformées
+                                en indicateurs permettant de faciliter
+                                l'analyse commerciale et la prise de décision.
+                            </p>
+
+                            <div class="project-skills">
+
+                                <span>Kantar</span>
+                                <span>Nielsen</span>
+                                <span>A3 Distrib</span>
+                                <span>Excel</span>
+                                <span>Power BI</span>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Projet 05 -->
+
+                    <article class="project-card">
+
+                        <div class="project-meta">
+
+                            <div class="project-index">
+                                05
+                            </div>
+
+                            <div class="project-type">
+                                Data Engineering · Agriculture · RSE
+                            </div>
+
+                        </div>
+
+                        <div class="project-content">
+
+                            <h3>
+                                🗄️ Base de données agricole
+                            </h3>
+
+                            <p>
+                                Création d'une base de données regroupant
+                                des indicateurs financiers, extra-financiers
+                                et carbone sur 400 exploitations agricoles.
+                            </p>
+
+                            <p>
+                                L'objectif est de structurer des données
+                                hétérogènes afin de permettre leur exploitation
+                                dans des analyses agricoles et RSE.
+                            </p>
+
+                            <div class="project-skills">
+
+                                <span>SQL</span>
+                                <span>Excel</span>
+                                <span>Data Management</span>
+                                <span>Indicateurs agricoles</span>
+                                <span>Carbone</span>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Projet 06 -->
+
+                    <article class="project-card">
+
+                        <div class="project-meta">
+
+                            <div class="project-index">
+                                06
+                            </div>
+
+                            <div class="project-type">
+                                IoT · Capteurs · Data · Monitoring
+                            </div>
+
+                        </div>
+
+                        <div class="project-content">
+
+                            <h3>
+                                📡 IoT agricole — du capteur à la donnée
+                            </h3>
+
+                            <p>
+                                Conception d'une chaîne de traitement permettant
+                                de passer de l'acquisition de données par
+                                capteurs à leur transmission, leur migration
+                                et leur visualisation.
+                            </p>
+
+                            <div class="project-architecture">
+                                Capteur → Gateway → Transmission
+                                → Stockage → Analyse → Dashboard
+                            </div>
+
+                            <div class="project-skills">
+
+                                <span>NIRS</span>
+                                <span>MQTT</span>
+                                <span>HTTP</span>
+                                <span>FIWARE</span>
+                                <span>Grafana</span>
+                                <span>Modèles prédictifs</span>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Projet 07 -->
+
+                    <article class="project-card">
+
+                        <div class="project-meta">
+
+                            <div class="project-index">
+                                07
+                            </div>
+
+                            <div class="project-type">
+                                Agriculture de précision · Irrigation · IA
+                            </div>
+
+                        </div>
+
+                        <div class="project-content">
+
+                            <h3>
+                                🚜 Agriculture de précision
+                                & gestion de l'eau
+                            </h3>
+
+                            <p>
+                                Cas pratique consacré au bilan hydrique
+                                pour le pilotage de l'irrigation à partir
+                                de plusieurs données climatiques.
+                            </p>
+
+                            <p>
+                                Le projet explore également les applications
+                                de l'intelligence artificielle à la gestion
+                                de l'eau et l'utilisation de données
+                                géoréférencées pour produire des informations
+                                utiles au pilotage.
+                            </p>
+
+                            <div class="project-skills">
+
+                                <span>Bilan hydrique</span>
+                                <span>Irrigation</span>
+                                <span>IA</span>
+                                <span>GNSS</span>
+                                <span>NDVI</span>
+                                <span>SIG</span>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Projet 08 -->
+
+                    <article class="project-card">
+
+                        <div class="project-meta">
+
+                            <div class="project-index">
+                                08
+                            </div>
+
+                            <div class="project-type">
+                                Machine Learning · Deep Learning · Séries temporelles
+                            </div>
+
+                        </div>
+
+                        <div class="project-content">
+
+                            <h3>
+                                🤖 IA appliquée aux séries temporelles
+                            </h3>
+
+                            <p>
+                                Exploration de différentes applications
+                                de l'intelligence artificielle dans
+                                la chaîne agroalimentaire.
+                            </p>
+
+                            <p>
+                                Modèles prédictifs, séries temporelles,
+                                Deep Learning, traitement d'images,
+                                NLP et assistants virtuels open source.
+                            </p>
+
+                            <div class="project-skills">
+
+                                <span>Python</span>
+                                <span>Machine Learning</span>
+                                <span>Deep Learning</span>
+                                <span>NLP</span>
+                                <span>Computer Vision</span>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Projet 09 -->
+
+                    <article class="project-card">
+
+                        <div class="project-meta">
+
+                            <div class="project-index">
+                                09
+                            </div>
+
+                            <div class="project-type">
+                                Power BI · Dashboards · Data Visualization · Veille
+                            </div>
+
+                        </div>
+
+                        <div class="project-content">
+
+                            <h3>
+                                🧭 Outils d'aide à la décision
+                            </h3>
+
+                            <p>
+                                Développement d'outils permettant de transformer
+                                des données agricoles, économiques et
+                                environnementales en indicateurs directement
+                                exploitables pour la prise de décision.
+                            </p>
+
+                            <p>
+                                Tableaux de bord, visualisation d'indicateurs,
+                                agrégation de données et systèmes de veille.
+                            </p>
+
+                            <div class="project-skills">
+
+                                <span>Power BI</span>
+                                <span>Dashboards</span>
+                                <span>Data Visualization</span>
+                                <span>Systèmes de veille</span>
+
+                            </div>
+
+                        </div>
+
+                    </article>
 
                 </div>
 
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             CONTACT
+        ====================================================== -->
+
+        <section id="contact" class="contact">
+
+            <div class="container">
+
+                <div class="contact-box">
+
+                    <div>
+
+                        <div class="eyebrow">
+                            CONTACT
+                        </div>
+
+                        <h2>
+                            Construisons quelque chose
+                            d'utile pour l'agriculture.
+                        </h2>
+
+                        <p>
+                            Je recherche un stage de fin d'études de
+                            3 mois à partir de l'été 2027, dans les domaines
+                            de l'agriculture numérique, de la data,
+                            des SIG, de la télédétection, de l'IA ou
+                            de l'agriculture de précision.
+                        </p>
+
+                    </div>
+
+
+                    <div class="contact-actions">
+
+                        <a
+                            href="mailto:abdelnaim31@outlook.fr"
+                            class="contact-button"
+                        >
+                            Me contacter
+                        </a>
+
+                        <a
+                            href="https://www.linkedin.com/in/naimhamidi/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="contact-button"
+                        >
+                            LinkedIn
+                        </a>
+
+                        <a
+                            href="https://github.com/naim-hamidi-data"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="contact-button"
+                        >
+                            GitHub
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================================================
+         FOOTER
+    ========================================================== -->
+
+    <footer>
+
+        <div class="container">
+
+            <div class="footer-inner">
+
+                <div class="footer-brand">
+                    NAÏM HAMIDI
+                </div>
+
+                <div>
+                    DIGITAL AGRI · DATA · AGRICULTURE · SIG
+                </div>
+
+                <div>
+                    © 2026
+                </div>
 
             </div>
 
         </div>
 
-    </div>
-
-</section>
-
-
-
-<!-- =========================
-     EXPERIENCE
-========================= -->
-
-<section id="experience">
-
-    <div class="container">
-
-
-        <div class="section-header">
-
-            <div class="section-label">
-                04 — Expériences
-            </div>
-
-            <h2 class="section-title">
-                Agriculture,
-                industrie & data.
-            </h2>
-
-        </div>
-
-
-        <div class="experience">
-
-
-            <div class="experience-item">
-
-                <div class="experience-date">
-                    2025 — 2026
-                </div>
-
-                <div>
-
-                    <h3>
-                        Instructeur & Contrôleur PAC
-                    </h3>
-
-                    <div class="experience-company">
-                        Ministère de l'Agriculture · DDT Haute-Garonne
-                    </div>
-
-                    <p>
-                        Instruction et contrôle PAC,
-                        conditionnalité environnementale,
-                        analyse 3STR, Sentinel-2,
-                        RPG et analyses spatiales sous QGIS.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <div class="experience-item">
-
-                <div class="experience-date">
-                    2024
-                </div>
-
-                <div>
-
-                    <h3>
-                        Apprenti Category Manager
-                    </h3>
-
-                    <div class="experience-company">
-                        Groupement Les Mousquetaires
-                    </div>
-
-                    <p>
-                        Analyse de marchés, panels Kantar,
-                        Nielsen et A3 Distrib, assortiment
-                        et stratégie promotionnelle.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <div class="experience-item">
-
-                <div class="experience-date">
-                    2023
-                </div>
-
-                <div>
-
-                    <h3>
-                        Support projet RSE
-                    </h3>
-
-                    <div class="experience-company">
-                        Crédit Agricole Toulouse 31
-                    </div>
-
-                    <p>
-                        Structuration d'une base de données
-                        regroupant des indicateurs financiers,
-                        extra-financiers et carbone.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <div class="experience-item">
-
-                <div class="experience-date">
-                    2022
-                </div>
-
-                <div>
-
-                    <h3>
-                        Expérimentation & sélection variétale
-                    </h3>
-
-                    <div class="experience-company">
-                        Syngenta · Sarrians
-                    </div>
-
-                    <p>
-                        Suivi d'essais variétaux,
-                        collecte de données terrain,
-                        analyse statistique et sélection
-                        de variétés de melon et courgette.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================
-     CONTACT
-========================= -->
-
-<section id="contact">
-
-    <div class="container">
-
-        <div class="cta">
-
-            <h2>
-                Construisons
-                quelque chose d'utile.
-            </h2>
-
-            <p>
-
-                Je recherche un stage de fin d'études
-                de 3 mois à partir de l'été 2027,
-                dans les domaines de l'agriculture numérique,
-                de la data, du SIG, de l'IA ou de
-                l'agriculture de précision.
-
-            </p>
-
-
-            <a
-                href="mailto:abdelnaim31@outlook.fr"
-                class="button"
-            >
-                Me contacter
-            </a>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================
-     FOOTER
-========================= -->
-
-<footer>
-
-    <div class="container footer-inner">
-
-        <span>
-            © 2026 Naïm Hamidi
-        </span>
-
-        <span>
-            DIGITAL AGRI · DATA · AGRICULTURE · SIG
-        </span>
-
-    </div>
-
-</footer>
-
+    </footer>
 
 </body>
 </html>
