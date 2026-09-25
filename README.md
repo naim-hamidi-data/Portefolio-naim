@@ -123,7 +123,7 @@ Utilisation des données spatiales, capteurs et systèmes numériques pour optim
 **Stack**
 
 `GNSS` `NDVI` `Capteurs` `SIG agricole`
-`Cartographie` `Guidage automatique` `IA`
+`Cartographie de préconisation` `Guidage automatique` `IA`
 
 </td>
 <td>
@@ -142,9 +142,29 @@ Application de l'IA aux données agricoles et agroalimentaires.
 
 **Stack**
 
-`Séries temporelles` `Deep Learning`
-`Machine Learning` `NLP` `Computer Vision`
-`Assistants virtuels`
+`Séries temporelles` `Deep Learning` `Machine Learning`
+`NLP` `Computer Vision` `Assistants virtuels`
+
+</td>
+</tr>
+
+<tr>
+<td colspan="2">
+
+### 07 · Outils d'aide à la décision (OAD)
+
+Transformation de données agricoles, économiques et environnementales en informations directement exploitables pour la décision.
+
+**Projets**
+
+* Développement de tableaux de bord avec **Power BI**
+* Structuration et visualisation d'indicateurs
+* Développement de **systèmes de veille**
+* Agrégation de données provenant de différentes sources
+
+**Stack**
+
+`Power BI` `Dashboards` `Data Visualization` `Systèmes de veille`
 
 </td>
 </tr>
@@ -152,7 +172,7 @@ Application de l'IA aux données agricoles et agroalimentaires.
 
 ---
 
-## Projets
+# Projets
 
 ### 🌾 Analyse spatiale des surfaces agricoles
 
@@ -234,7 +254,25 @@ L'objectif est de structurer des données hétérogènes afin de permettre leur 
 
 ---
 
-### 💧 Agriculture de précision & gestion de l'eau
+### 📡 IoT agricole — du capteur à la donnée
+
+**IoT · Capteurs · Data · Monitoring**
+
+Conception d'une chaîne de traitement permettant de passer de l'acquisition de données par capteurs à leur transmission, leur migration et leur visualisation.
+
+**Architecture**
+
+**Capteur → Gateway → Transmission → Stockage → Analyse → Dashboard**
+
+**Stack**
+
+`NIRS` · `MQTT` · `HTTP` · `FIWARE` · `Grafana` · `Modèles prédictifs`
+
+**→ [Voir le projet](LIEN_PROJET_IOT)**
+
+---
+
+### 🚜 Agriculture de précision & gestion de l'eau
 
 **Agriculture de précision · Irrigation · IA**
 
@@ -250,25 +288,7 @@ Le projet explore également les applications de l'intelligence artificielle à 
 
 ---
 
-### 📡 IoT agricole — du capteur à la donnée
-
-**IoT · Capteurs · Data · Monitoring**
-
-Conception d'une chaîne de traitement permettant de passer de l'acquisition de données par capteurs à leur transmission, leur migration et leur visualisation.
-
-**Architecture étudiée**
-
-**Capteur → Gateway → Transmission → Stockage → Analyse → Dashboard**
-
-**Stack**
-
-`NIRS` · `MQTT` · `HTTP` · `FIWARE` · `Grafana` · `Modèles prédictifs`
-
-**→ [Voir le projet](LIEN_PROJET_IOT)**
-
----
-
-### 🤖 IA appliquée aux données agroalimentaires
+### 🤖 IA appliquée aux séries temporelles
 
 **Machine Learning · Deep Learning · Séries temporelles**
 
@@ -285,11 +305,33 @@ Exploration de différentes applications de l'intelligence artificielle dans la 
 
 `Python` · `Machine Learning` · `Deep Learning` · `NLP` · `Computer Vision`
 
-**→ [Voir les projets](LIEN_PROJET_IA)**
+**→ [Voir le projet](LIEN_PROJET_IA)**
 
 ---
 
-## Expériences
+### 🧭 Outils d'aide à la décision (OAD)
+
+**Power BI · Dashboards · Data Visualization · Veille**
+
+Développement d'outils permettant de transformer des données agricoles, économiques et environnementales en **indicateurs directement exploitables pour la prise de décision**.
+
+**Projets / compétences**
+
+* Développement de **tableaux de bord avec Power BI**.
+* Structuration et visualisation d'indicateurs.
+* Développement de **systèmes de veille**.
+* Agrégation de données provenant de différentes sources.
+* Mise en forme de données complexes pour faciliter leur interprétation.
+
+**Stack**
+
+`Power BI` · `Dashboards` · `Data Visualization` · `Systèmes de veille`
+
+**→ [Voir le projet](LIEN_PROJET_OAD)**
+
+---
+
+# Expériences
 
 ### 🏛️ Instructeur & Contrôleur PAC
 
@@ -359,7 +401,7 @@ Stage en exploitation de polyculture-polyélevage.
 
 ---
 
-## Formation
+# Formation
 
 ### 🇪🇸 Master Transformation Digitale de l'Agro-Industrie et du Secteur Forestier — DigitalAgri
 
@@ -379,7 +421,7 @@ Formation d'ingénieur agronome avec expériences en agriculture, agroalimentair
 
 ---
 
-## 🧰 Stack technique
+# 🧰 Stack technique
 
 ### Data & IA
 
@@ -408,13 +450,13 @@ Formation d'ingénieur agronome avec expériences en agriculture, agroalimentair
 
 ---
 
-## 🌍 Langues
+# 🌍 Langues
 
 🇫🇷 **Français** · 🇬🇧 **Anglais** · 🇪🇸 **Espagnol** · 🇩🇿 **Arabe dialectal** · **Arabe littéral** · 🇨🇳 **Mandarin — initiation**
 
 ---
 
-## 🌐 Un profil entre plusieurs mondes
+# 🌐 Un profil entre plusieurs mondes
 
 **AGRONOMIE**
 
@@ -440,7 +482,7 @@ Une donnée agricole n'a de valeur que lorsqu'elle permet de mieux comprendre un
 
 ---
 
-## 🎯 Ce que je recherche
+# 🎯 Ce que je recherche
 
 ### Stage de fin d'études · 3 mois · été 2027
 
@@ -459,7 +501,7 @@ Je recherche un environnement dans lequel je peux mobiliser simultanément mes c
 
 ---
 
-## 📬 Contact
+# 📬 Contact
 
 **Naïm Hamidi**
 Ingénieur agronome spécialisé en agriculture numérique
@@ -473,4 +515,3 @@ Ingénieur agronome spécialisé en agriculture numérique
   <br>
   <sub>Transformer les données agricoles en décisions opérationnelles.</sub>
 </p>
-
