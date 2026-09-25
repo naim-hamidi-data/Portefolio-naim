@@ -36,17 +36,14 @@ Ces expériences nourrissent une même démarche : rester curieux, comprendre de
 
 <div align="center">
 
-### 💼/🎓 FORMATION & EXPÉRIENCES PROFESSIONNELLES
+### 🎓 FORMATION & EXPÉRIENCES PROFESSIONNELLES 💼
 
-<img src="./assets/parcours-professionnel.png" width="850">
+<p align="center">
+  <img src="2019(1).png" alt="2019(1)" width="850">
+</p>
 
-<br><br>
+[Voir mon CV complet →]
 
-<a href="./CV_Naim_Hamidi.pdf">
-  <strong>📄 TÉLÉCHARGER MON CV</strong>
-</a>
-
-</div>
 
 ---
 
