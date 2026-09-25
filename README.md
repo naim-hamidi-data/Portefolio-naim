@@ -61,7 +61,7 @@ Analyse statistique, données agricoles, modèles prédictifs et visualisation.
 
 **Projets**
 
-* [Analyse statistique d'essais variétaux](LIEN_PROJET)
+* [Analyse statistique d'essais variétaux](./projet%20data%20%26%20ia/analyse-varietale/)
 * [Analyse de données de marchés](LIEN_PROJET)
 * [Création de bases de données agricoles](LIEN_PROJET)
 
