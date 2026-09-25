@@ -1,1 +1,255 @@
-→ structure de ton site.
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Naïm Hamidi | Digital Agriculture</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
+
+    <header>
+        <nav>
+
+            <div class="logo">
+                NAÏM HAMIDI
+            </div>
+
+            <ul class="menu">
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#presentation">Présentation</a></li>
+                <li><a href="#expertise">Expertise</a></li>
+                <li><a href="#projets">Projets</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+        </nav>
+    </header>
+
+
+    <!-- =========================
+         ACCUEIL
+    ========================== -->
+
+    <main>
+
+        <section id="accueil">
+
+            <p>DIGITAL AGRI · DATA · AGRICULTURE · SIG</p>
+
+            <h1>NAÏM HAMIDI</h1>
+
+            <h2>
+                Ingénieur agronome spécialisé
+                en agriculture numérique
+            </h2>
+
+            <p>
+                Transformer les données agricoles
+                en décisions opérationnelles.
+            </p>
+
+            <div>
+                <a href="#projets">Découvrir mes projets</a>
+                <a href="#contact">Me contacter</a>
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             PRÉSENTATION
+        ========================== -->
+
+        <section id="presentation">
+
+            <h2>Présentation</h2>
+
+            <p>
+                Ingénieur agronome formé en France et en Espagne,
+                je développe un profil à l'interface entre
+                agriculture, numérique et analyse des données.
+            </p>
+
+            <p>
+                Je m'intéresse particulièrement aux outils permettant
+                de transformer les données agricoles en informations
+                utiles à la prise de décision.
+            </p>
+
+        </section>
+
+
+        <!-- =========================
+             DOMAINES D'EXPERTISE
+        ========================== -->
+
+        <section id="expertise">
+
+            <h2>Domaines d'expertise</h2>
+
+            <div>
+
+                <article>
+                    <h3>🌾 Agriculture numérique</h3>
+                    <p>
+                        Agriculture de précision,
+                        systèmes d'aide à la décision
+                        et outils numériques agricoles.
+                    </p>
+                </article>
+
+                <article>
+                    <h3>📊 Data & IA</h3>
+                    <p>
+                        Analyse de données,
+                        visualisation et intelligence artificielle
+                        appliquée à l'agriculture.
+                    </p>
+                </article>
+
+                <article>
+                    <h3>🗺️ SIG & analyse spatiale</h3>
+                    <p>
+                        QGIS, données agricoles,
+                        cartographie et analyse spatiale.
+                    </p>
+                </article>
+
+                <article>
+                    <h3>🛰️ Télédétection</h3>
+                    <p>
+                        Imagerie satellitaire,
+                        observation des cultures et analyse territoriale.
+                    </p>
+                </article>
+
+                <article>
+                    <h3>📡 IoT & capteurs</h3>
+                    <p>
+                        Données issues de capteurs
+                        et suivi des systèmes agricoles.
+                    </p>
+                </article>
+
+                <article>
+                    <h3>🌍 Agriculture & environnement</h3>
+                    <p>
+                        Enjeux agricoles, environnementaux
+                        et accompagnement de la transition numérique.
+                    </p>
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             PROJETS
+        ========================== -->
+
+        <section id="projets">
+
+            <h2>Projets</h2>
+
+            <div>
+
+                <article>
+                    <h3>Analyse spatiale agricole</h3>
+                    <p>
+                        Analyse de données agricoles
+                        et cartographie avec les SIG.
+                    </p>
+                    <p>QGIS · SIG · Données agricoles</p>
+                </article>
+
+                <article>
+                    <h3>Télédétection</h3>
+                    <p>
+                        Analyse d'images satellitaires
+                        appliquée à l'agriculture.
+                    </p>
+                    <p>Sentinel-2 · Télédétection · Agriculture</p>
+                </article>
+
+                <article>
+                    <h3>Data & agriculture</h3>
+                    <p>
+                        Analyse et valorisation de données
+                        pour l'aide à la décision agricole.
+                    </p>
+                    <p>Data · Agriculture · OAD</p>
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             CONTACT
+        ========================== -->
+
+        <section id="contact">
+
+            <h2>Contact</h2>
+
+            <p>
+                Vous souhaitez échanger sur un projet,
+                une collaboration ou une opportunité de stage ?
+            </p>
+
+            <p>
+                <a href="mailto:ton-email@email.com">
+                    Email
+                </a>
+            </p>
+
+            <p>
+                <a href="#" target="_blank">
+                    LinkedIn
+                </a>
+            </p>
+
+            <p>
+                <a href="#" target="_blank">
+                    GitHub
+                </a>
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         PIED DE PAGE
+    ========================== -->
+
+    <footer>
+
+        <p>
+            © 2026 Naïm Hamidi
+        </p>
+
+        <p>
+            Digital Agriculture · Data · SIG
+        </p>
+
+    </footer>
+
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
