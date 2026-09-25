@@ -63,8 +63,7 @@ Analyse statistique, données agricoles, modèles prédictifs et visualisation.
 
 * Analyse statistique d'essais variétaux
 * Analyse de données de marchés
-* Création de bases de données agricoles
-* Indicateurs financiers, extra-financiers et carbone
+* Création de bases de données agricoles (indicateurs financiers, extra-financiers et carbone)
 
 **Stack**
 
@@ -80,8 +79,7 @@ De l'acquisition de données jusqu'à leur transmission, leur stockage et leur a
 
 **Projet**
 
-* Mise en place d'une chaîne complète de données issues de capteurs
-* Acquisition → transmission → migration → analyse
+* fictif : Technologies NIRS (infrarouges) et modèles prédictifs pour anticiper les maladies en élevage
 
 **Stack**
 
@@ -96,16 +94,16 @@ De l'acquisition de données jusqu'à leur transmission, leur stockage et leur a
 
 ### 03 · SIG & Analyse spatiale
 
-Analyse des territoires agricoles et croisement de données géographiques.
+Analyse spatiale et cartographie.
 
 **Projet**
 
-* Analyse de l'évolution des surfaces agricoles à l'échelle départementale
 * Identification d'évolutions de parcelles et d'anomalies déclaratives
+* Identification des zones à enjeux à contrôler dans le cadre de contrôle environnement
 
 **Stack**
 
-`QGIS` `ArcGIS` `Analyse spatiale`
+`QGIS` `ArcGIS` `Analyse spatiale` `Cartographie`
 `Données vectorielles` `Données raster`
 
 </td>
@@ -117,9 +115,8 @@ Exploitation de l'imagerie pour observer et suivre les surfaces agricoles.
 
 **Projet**
 
-* Suivi des surfaces agricoles en temps réel
-* Comparaison entre déclaration et réalité observée
-* Analyse Sentinel-2 et NDVI
+* Suivi des surfaces agricoles en temps réel via sentinel-2 : comparaison entre déclaration et réalité observée
+* Drones et calcul de NDVI : élaboration de orthomosaïque
 
 **Stack**
 
@@ -157,16 +154,14 @@ Application de l'IA aux données agricoles et agroalimentaires.
 
 **Projets**
 
-* Modèles prédictifs
-* Deep Learning
-* Traitement d'images
-* NLP
-* Assistants virtuels open source
+* Développement d’un modèle prédictif dans la chaîne agroalimentaire.
+* Traitement d’images et/ou de données NLP dans la chaîne agroalimentaire.
+* Développement d’assistants virtuels open source.
 
 **Stack**
 
 `Séries temporelles` `Deep Learning` `Machine Learning`
-`NLP` `Computer Vision` `Assistants virtuels`
+`NLP` `Assistants virtuels`
 
 </td>
 </tr>
@@ -181,9 +176,7 @@ Transformation de données agricoles, économiques et environnementales en infor
 **Projets**
 
 * Développement de tableaux de bord avec **Power BI**
-* Structuration et visualisation d'indicateurs
 * Développement de **systèmes de veille**
-* Agrégation de données provenant de différentes sources
 
 **Stack**
 
