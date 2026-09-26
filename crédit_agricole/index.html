@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Base de données agricole & analyse carbone — Naïm Hamidi</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                         Roboto, Helvetica, Arial, sans-serif;
+            background: #f7f7f5;
+            color: #171717;
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* =========================
+           NAVIGATION
+        ========================= */
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(247, 247, 245, 0.92);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid #e5e5e2;
+        }
+
+        .nav-inner {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand {
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+        }
+
+        .back {
+            font-size: 14px;
+            color: #666;
+            transition: 0.2s ease;
+        }
+
+        .back:hover {
+            color: #111;
+        }
+
+        /* =========================
+           GENERAL
+        ========================= */
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 30px;
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            padding: 110px 0 90px;
+            border-bottom: 1px solid #dededb;
+        }
+
+        .label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: #777;
+            margin-bottom: 25px;
+        }
+
+        h1 {
+            max-width: 950px;
+            font-size: clamp(48px, 7vw, 88px);
+            line-height: 0.98;
+            letter-spacing: -0.055em;
+            font-weight: 700;
+            margin-bottom: 35px;
+        }
+
+        .hero-description {
+            max-width: 760px;
+            font-size: 21px;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 35px;
+        }
+
+        .tag {
+            padding: 8px 14px;
+            border: 1px solid #d5d5d1;
+            border-radius: 100px;
+            font-size: 13px;
+            color: #555;
+            background: #fafaf8;
+        }
+
+        /* =========================
+           SECTIONS
+        ========================= */
+
+        section {
+            padding: 90px 0;
+            border-bottom: 1px solid #dededb;
+        }
+
+        .section-grid {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: 70px;
+        }
+
+        .section-number {
+            font-size: 12px;
+            color: #888;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        .section-content h2 {
+            font-size: 38px;
+            letter-spacing: -0.035em;
+            margin-bottom: 25px;
+        }
+
+        .section-content p {
+            max-width: 760px;
+            color: #555;
+            font-size: 17px;
+            margin-bottom: 20px;
+        }
+
+        /* =========================
+           CARDS
+        ========================= */
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+            margin-top: 35px;
+        }
+
+        .card {
+            background: #fff;
+            border: 1px solid #e2e2df;
+            border-radius: 18px;
+            padding: 28px;
+        }
+
+        .card h3 {
+            font-size: 18px;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            font-size: 15px;
+            margin-bottom: 0;
+        }
+
+        /* =========================
+           METRICS
+        ========================= */
+
+        .experiment {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-top: 35px;
+        }
+
+        .metric {
+            background: #171717;
+            color: white;
+            padding: 28px;
+            border-radius: 18px;
+        }
+
+        .metric-number {
+            font-size: 38px;
+            font-weight: 700;
+            letter-spacing: -0.04em;
+        }
+
+        .metric-label {
+            margin-top: 8px;
+            font-size: 13px;
+            color: #bbb;
+        }
+
+        /* =========================
+           PROCESS
+        ========================= */
+
+        .process {
+            margin-top: 35px;
+            border-top: 1px solid #dcdcd8;
+        }
+
+        .process-item {
+            display: grid;
+            grid-template-columns: 70px 1fr;
+            gap: 25px;
+            padding: 25px 0;
+            border-bottom: 1px solid #dcdcd8;
+        }
+
+        .process-number {
+            font-size: 13px;
+            color: #888;
+        }
+
+        .process-item h3 {
+            font-size: 19px;
+            margin-bottom: 5px;
+        }
+
+        .process-item p {
+            margin: 0;
+            font-size: 15px;
+        }
+
+        /* =========================
+           SKILLS
+        ========================= */
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 30px;
+        }
+
+        .skill {
+            background: white;
+            border: 1px solid #ddd;
+            padding: 11px 17px;
+            border-radius: 100px;
+            font-size: 14px;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            padding: 60px 0;
+            text-align: center;
+            color: #888;
+            font-size: 13px;
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 800px) {
+
+            .hero {
+                padding: 80px 0 65px;
+            }
+
+            .section-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .experiment {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .section-content h2 {
+                font-size: 32px;
+            }
+        }
+
+        @media (max-width: 500px) {
+
+            .container {
+                padding: 0 20px;
+            }
+
+            .nav-inner {
+                padding: 18px 20px;
+            }
+
+            h1 {
+                font-size: 48px;
+            }
+
+            .experiment {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+
+    <nav>
+        <div class="nav-inner">
+
+            <a href="../index.html" class="brand">
+                NAÏM HAMIDI
+            </a>
+
+            <a href="../index.html" class="back">
+                ← Retour au portfolio
+            </a>
+
+        </div>
+    </nav>
+
+
+    <!-- HERO -->
+
+    <header class="hero">
+        <div class="container">
+
+            <div class="label">
+                DATA · AGRICULTURE · RSE · CARBONE
+            </div>
+
+            <h1>
+                Structuration de données
+                agricoles pour l'analyse carbone
+            </h1>
+
+            <p class="hero-description">
+                Création et structuration d'une base de données agricole
+                permettant de rendre exploitables des données financières,
+                extra-financières et carbone liées aux financements du
+                marché de l'agriculture.
+            </p>
+
+            <div class="tags">
+                <span class="tag">Data agricole</span>
+                <span class="tag">RSE</span>
+                <span class="tag">Carbone</span>
+                <span class="tag">Excel</span>
+                <span class="tag">SQL</span>
+                <span class="tag">Structuration de données</span>
+            </div>
+
+        </div>
+    </header>
+
+
+    <!-- 01 -->
+
+    <section>
+        <div class="container">
+
+            <div class="section-grid">
+
+                <div class="section-number">
+                    01 — Mission
+                </div>
+
+                <div class="section-content">
+
+                    <h2>
+                        Transformer des données
+                        hétérogènes en données exploitables.
+                    </h2>
+
+                    <p>
+                        Lors de mon CDD au sein de la Caisse Régionale
+                        Crédit Agricole Toulouse 31, j'ai participé à un
+                        projet RSE consacré au marché de l'agriculture.
+                    </p>
+
+                    <p>
+                        La problématique était de structurer différentes
+                        sources de données afin de permettre leur analyse
+                        et de contribuer à la quantification des émissions
+                        carbone associées aux financements agricoles.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- 02 -->
+
+    <section>
+        <div class="container">
+
+            <div class="section-grid">
+
+                <div class="section-number">
+                    02 — Données
+                </div>
+
+                <div class="section-content">
+
+                    <h2>
+                        Croiser plusieurs dimensions
+                        de l'activité agricole.
+                    </h2>
+
+                    <div class="cards">
+
+                        <div class="card">
+                            <h3>Données financières</h3>
+                            <p>
+                                Informations permettant de caractériser
+                                les financements et leur poids dans le
+                                portefeuille agricole.
+                            </p>
+                        </div>
+
+                        <div class="card">
+                            <h3>Données extra-financières</h3>
+                            <p>
+                                Indicateurs complémentaires permettant
+                                de caractériser les exploitations et
+                                leurs activités.
+                            </p>
+                        </div>
+
+                        <div class="card">
+                            <h3>Données carbone</h3>
+                            <p>
+                                Données nécessaires à l'exploitation
+                                d'indicateurs liés aux émissions carbone
+                                du secteur agricole.
+                            </p>
+                        </div>
+
+                        <div class="card">
+                            <h3>Données agricoles</h3>
+                            <p>
+                                Informations permettant de relier les
+                                caractéristiques des exploitations aux
+                                données financières et environnementales.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- 03 -->
+
+    <section>
+        <div class="container">
+
+            <div class="section-grid">
+
+                <div class="section-number">
+                    03 — Périmètre
+                </div>
+
+                <div class="section-content">
+
+                    <h2>
+                        Une base construite autour
+                        des principales exploitations agricoles.
+                    </h2>
+
+                    <p>
+                        Le périmètre de travail portait sur les
+                        exploitations agricoles représentant les
+                        principales valeurs du portefeuille étudié.
+                    </p>
+
+                    <div class="experiment">
+
+                        <div class="metric">
+                            <div class="metric-number">400</div>
+                            <div class="metric-label">
+                                exploitations agricoles
+                            </div>
+                        </div>
+
+                        <div class="metric">
+                            <div class="metric-number">40</div>
+                            <div class="metric-label">
+                                conseillers concernés
+                            </div>
+                        </div>
+
+                        <div class="metric">
+                            <div class="metric-number">5</div>
+                            <div class="metric-label">
+                                feuilles Excel
+                            </div>
+                        </div>
+
+                        <div class="metric">
+                            <div class="metric-number">93%</div>
+                            <div class="metric-label">
+                                objectif atteint
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- 04 -->
+
+    <section>
+        <div class="container">
+
+            <div class="section-grid">
+
+                <div class="section-number">
+                    04 — Construction
+                </div>
+
+                <div class="section-content">
+
+                    <h2>
+                        De la collecte
+                        à la base de données.
+                    </h2>
+
+                    <p>
+                        Le travail a consisté à transformer des données
+                        provenant de différentes sources en une structure
+                        homogène pouvant être mise à jour et analysée.
+                    </p>
+
+                    <div class="process">
+
+                        <div class="process-item">
+                            <div class="process-number">01</div>
+                            <div>
+                                <h3>Collecte</h3>
+                                <p>
+                                    Extraction des données depuis les
+                                    outils internes de la Caisse.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="process-item">
+                            <div class="process-number">02</div>
+                            <div>
+                                <h3>Standardisation</h3>
+                                <p>
+                                    Création d'un guide de mise à jour
+                                    destiné aux 40 conseillers afin
+                                    d'harmoniser la collecte.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="process-item">
+                            <div class="process-number">03</div>
+                            <div>
+                                <h3>Nettoyage</h3>
+                                <p>
+                                    Contrôle, nettoyage et homogénéisation
+                                    des données avant leur intégration.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="process-item">
+                            <div class="process-number">04</div>
+                            <div>
+                                <h3>Enrichissement</h3>
+                                <p>
+                                    Intégration des données financières,
+                                    extra-financières et carbone.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="process-item">
+                            <div class="process-number">05</div>
+                            <div>
+                                <h3>Structuration</h3>
+                                <p>
+                                    Organisation des données dans une base
+                                    regroupant les 400 exploitations
+                                    agricoles étudiées.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="process-item">
+                            <div class="process-number">06</div>
+                            <div>
+                                <h3>Architecture</h3>
+                                <p>
+                                    Organisation de la base dans 5 feuilles
+                                    Excel représentant environ 4 000 à
+                                    6 000 lignes.
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- 05 -->
+
+    <section>
+        <div class="container">
+
+            <div class="section-grid">
+
+                <div class="section-number">
+                    05 — Standardisation
+                </div>
+
+                <div class="section-content">
+
+                    <h2>
+                        Créer un cadre commun
+                        pour fiabiliser les données.
+                    </h2>
+
+                    <p>
+                        Une partie importante du projet consistait à
+                        harmoniser la manière dont les données étaient
+                        renseignées et actualisées.
+                    </p>
+
+                    <div class="cards">
+
+                        <div class="card">
+                            <h3>Guide de mise à jour</h3>
+                            <p>
+                                Formalisation des règles nécessaires
+                                à l'actualisation de la base par les
+                                conseillers.
+                            </p>
+                        </div>
+
+                        <div class="card">
+                            <h3>Homogénéisation</h3>
+                            <p>
+                                Harmonisation des formats et des
+                                informations afin de faciliter leur
+                                exploitation.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- 06 -->
+
+    <section>
+        <div class="container">
+
+            <div class="section-grid">
+
+                <div class="section-number">
+                    06 — Exploitation
+                </div>
+
+                <div class="section-content">
+
+                    <h2>
+                        Préparer les données
+                        pour l'analyse carbone.
+                    </h2>
+
+                    <p>
+                        La structuration de la base permet de rapprocher
+                        les informations agricoles, financières et
+                        environnementales afin de disposer d'un socle
+                        de données exploitable.
+                    </p>
+
+                    <p>
+                        L'objectif était notamment de faciliter la
+                        quantification des émissions carbone associées
+                        aux financements du marché de l'agriculture.
+                    </p>
+
+                    <p>
+                        Le travail de structuration constitue ainsi une
+                        étape préalable à l'analyse et à l'exploitation
+                        des indicateurs carbone à l'échelle du portefeuille
+                        agricole.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- 07 -->
+
+    <section>
+        <div class="container">
+
+            <div class="section-grid">
+
+                <div class="section-number">
+                    07 — Résultats
+                </div>
+
+                <div class="section-content">
+
+                    <h2>
+                        Une base structurée
+                        pour rendre les données exploitables.
+                    </h2>
+
+                    <p>
+                        Le projet a permis de structurer une base portant
+                        sur 400 exploitations agricoles et de centraliser
+                        plusieurs catégories d'indicateurs nécessaires
+                        à leur analyse.
+                    </p>
+
+                    <p>
+                        L'architecture finale comprenait 5 feuilles Excel
+                        représentant environ 4 000 à 6 000 lignes de données.
+                    </p>
+
+                    <p>
+                        L'objectif de collecte et de structuration des
+                        données a été atteint à <strong>93 %</strong>.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- 08 -->
+
+    <section>
+        <div class="container">
+
+            <div class="section-grid">
+
+                <div class="section-number">
+                    08 — Compétences
+                </div>
+
+                <div class="section-content">
+
+                    <h2>
+                        Compétences mobilisées
+                    </h2>
+
+                    <div class="skills">
+
+                        <span class="skill">
+                            Data agricole
+                        </span>
+
+                        <span class="skill">
+                            Structuration de données
+                        </span>
+
+                        <span class="skill">
+                            Nettoyage de données
+                        </span>
+
+                        <span class="skill">
+                            SQL
+                        </span>
+
+                        <span class="skill">
+                            Excel
+                        </span>
+
+                        <span class="skill">
+                            Analyse de données
+                        </span>
+
+                        <span class="skill">
+                            Données carbone
+                        </span>
+
+                        <span class="skill">
+                            RSE
+                        </span>
+
+                        <span class="skill">
+                            Agriculture
+                        </span>
+
+                        <span class="skill">
+                            Standardisation
+                        </span>
+
+                        <span class="skill">
+                            Gestion de base de données
+                        </span>
+
+                        <span class="skill">
+                            Data quality
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="container">
+
+            <p>
+                NAÏM HAMIDI · Agriculture numérique · Data · SIG
+            </p>
+
+        </div>
+
+    </footer>
+
+</body>
+</html>
