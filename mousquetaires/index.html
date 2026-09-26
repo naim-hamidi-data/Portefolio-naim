@@ -1,0 +1,1689 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Analyse de marché & Business Intelligence — Naïm Hamidi</title>
+
+    <meta
+        name="description"
+        content="Analyse des performances commerciales et conception d'un outil Power BI dans le cadre d'une mission chez Les Mousquetaires."
+    >
+
+    <style>
+
+        /* =========================================================
+           RESET
+        ========================================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family:
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Helvetica,
+                Arial,
+                sans-serif;
+
+            background: #f7f7f5;
+            color: #111;
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+
+        /* =========================================================
+           NAVIGATION
+        ========================================================= */
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+
+            height: 72px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 6vw;
+
+            background: rgba(247, 247, 245, 0.88);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+
+            border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+        }
+
+        .brand {
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+        }
+
+        .back {
+            font-size: 14px;
+            color: #666;
+
+            transition: color 0.2s ease;
+        }
+
+        .back:hover {
+            color: #111;
+        }
+
+
+        /* =========================================================
+           GLOBAL
+        ========================================================= */
+
+        .container {
+            width: min(1120px, 88%);
+            margin: auto;
+        }
+
+        section {
+            padding: 100px 0;
+        }
+
+        .eyebrow {
+            margin-bottom: 18px;
+
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+
+            color: #777;
+        }
+
+        h2 {
+            max-width: 850px;
+
+            margin-bottom: 28px;
+
+            font-size: clamp(34px, 5vw, 58px);
+            line-height: 1.04;
+            letter-spacing: -0.045em;
+        }
+
+        .lead {
+            max-width: 760px;
+
+            font-size: 20px;
+            line-height: 1.65;
+
+            color: #555;
+        }
+
+
+        /* =========================================================
+           HERO
+        ========================================================= */
+
+        .hero {
+            min-height: 82vh;
+
+            display: flex;
+            align-items: center;
+
+            padding: 110px 0 100px;
+
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+        }
+
+        .hero-content {
+            max-width: 1000px;
+        }
+
+        .hero h1 {
+            max-width: 950px;
+
+            margin-bottom: 30px;
+
+            font-size: clamp(48px, 8vw, 94px);
+            line-height: 0.98;
+            letter-spacing: -0.065em;
+            font-weight: 700;
+        }
+
+        .hero-description {
+            max-width: 780px;
+
+            margin-bottom: 34px;
+
+            font-size: 21px;
+            line-height: 1.6;
+
+            color: #555;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 9px;
+        }
+
+        .tag {
+            padding: 8px 13px;
+
+            border: 1px solid #d8d8d5;
+            border-radius: 999px;
+
+            font-size: 12px;
+            font-weight: 600;
+
+            background: #fff;
+        }
+
+
+        /* =========================================================
+           INTRO / MISSION
+        ========================================================= */
+
+        .mission-grid {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+
+            gap: 80px;
+
+            align-items: start;
+        }
+
+        .mission-number {
+            font-size: 120px;
+            line-height: 0.8;
+
+            font-weight: 700;
+            letter-spacing: -0.08em;
+
+            color: #deded9;
+        }
+
+        .mission-text {
+            max-width: 720px;
+        }
+
+        .mission-text p {
+            margin-bottom: 20px;
+
+            font-size: 18px;
+            line-height: 1.7;
+
+            color: #444;
+        }
+
+        .mission-text strong {
+            color: #111;
+        }
+
+
+        /* =========================================================
+           DATA SOURCES
+        ========================================================= */
+
+        .data-flow {
+            margin-top: 55px;
+
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+
+            border-top: 1px solid #ccc;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .flow-item {
+            min-height: 190px;
+
+            padding: 28px 25px;
+
+            border-right: 1px solid #ddd;
+        }
+
+        .flow-item:last-child {
+            border-right: none;
+        }
+
+        .flow-number {
+            margin-bottom: 35px;
+
+            font-size: 12px;
+            font-weight: 700;
+
+            color: #888;
+        }
+
+        .flow-item h3 {
+            margin-bottom: 9px;
+
+            font-size: 20px;
+            letter-spacing: -0.02em;
+        }
+
+        .flow-item p {
+            font-size: 14px;
+            line-height: 1.6;
+
+            color: #666;
+        }
+
+
+        /* =========================================================
+           CATEGORIES
+        ========================================================= */
+
+        .categories {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+
+            margin-top: 50px;
+
+            gap: 16px;
+        }
+
+        .category {
+            min-height: 250px;
+
+            padding: 30px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            background: #fff;
+
+            border: 1px solid #e5e5e2;
+            border-radius: 18px;
+
+            transition:
+                transform 0.25s ease,
+                box-shadow 0.25s ease;
+        }
+
+        .category:hover {
+            transform: translateY(-5px);
+
+            box-shadow:
+                0 18px 45px rgba(0, 0, 0, 0.06);
+        }
+
+        .category-index {
+            font-size: 13px;
+            color: #999;
+        }
+
+        .category h3 {
+            max-width: 230px;
+
+            font-size: 28px;
+            line-height: 1.05;
+
+            letter-spacing: -0.035em;
+        }
+
+        .category span {
+            font-size: 13px;
+            color: #777;
+        }
+
+
+        /* =========================================================
+           KPI
+        ========================================================= */
+
+        .kpi-section {
+            background: #111;
+            color: #fff;
+        }
+
+        .kpi-section .eyebrow {
+            color: #999;
+        }
+
+        .kpi-section h2 {
+            color: #fff;
+        }
+
+        .kpi-section .lead {
+            color: #aaa;
+        }
+
+        .kpi-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+
+            margin-top: 60px;
+
+            gap: 1px;
+
+            background: #333;
+
+            border: 1px solid #333;
+        }
+
+        .kpi {
+            min-height: 190px;
+
+            padding: 30px;
+
+            background: #111;
+        }
+
+        .kpi-label {
+            margin-bottom: 40px;
+
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+
+            color: #777;
+        }
+
+        .kpi-name {
+            margin-bottom: 10px;
+
+            font-size: 28px;
+            font-weight: 600;
+
+            letter-spacing: -0.03em;
+        }
+
+        .kpi-description {
+            max-width: 250px;
+
+            font-size: 14px;
+            line-height: 1.5;
+
+            color: #999;
+        }
+
+
+        /* =========================================================
+           POWER BI
+        ========================================================= */
+
+        .powerbi {
+            margin-top: 55px;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            gap: 60px;
+
+            align-items: center;
+        }
+
+        .dashboard {
+            min-height: 440px;
+
+            padding: 24px;
+
+            background: #fff;
+
+            border: 1px solid #ddd;
+            border-radius: 20px;
+
+            box-shadow:
+                0 20px 60px rgba(0, 0, 0, 0.07);
+        }
+
+        .dashboard-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding-bottom: 18px;
+
+            border-bottom: 1px solid #eee;
+        }
+
+        .dashboard-title {
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .dashboard-status {
+            font-size: 11px;
+            color: #888;
+        }
+
+        .dashboard-body {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+
+            gap: 14px;
+
+            margin-top: 18px;
+        }
+
+        .dashboard-card {
+            min-height: 110px;
+
+            padding: 18px;
+
+            background: #f5f5f3;
+
+            border-radius: 12px;
+        }
+
+        .dashboard-card.large {
+            grid-row: span 2;
+            min-height: 235px;
+        }
+
+        .fake-label {
+            margin-bottom: 12px;
+
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+
+            color: #888;
+        }
+
+        .fake-value {
+            font-size: 30px;
+            font-weight: 700;
+            letter-spacing: -0.04em;
+        }
+
+        .fake-chart {
+            height: 130px;
+
+            margin-top: 20px;
+
+            display: flex;
+            align-items: flex-end;
+            gap: 7px;
+        }
+
+        .bar {
+            flex: 1;
+
+            border-radius: 4px 4px 0 0;
+
+            background: #222;
+            opacity: 0.15;
+        }
+
+        .bar:nth-child(1) { height: 35%; }
+        .bar:nth-child(2) { height: 55%; }
+        .bar:nth-child(3) { height: 42%; }
+        .bar:nth-child(4) { height: 72%; }
+        .bar:nth-child(5) { height: 60%; }
+        .bar:nth-child(6) { height: 88%; }
+        .bar:nth-child(7) { height: 78%; }
+
+        .powerbi-text h3 {
+            margin-bottom: 20px;
+
+            font-size: 34px;
+            line-height: 1.1;
+
+            letter-spacing: -0.04em;
+        }
+
+        .powerbi-text p {
+            margin-bottom: 18px;
+
+            font-size: 17px;
+            line-height: 1.7;
+
+            color: #555;
+        }
+
+        .process {
+            margin-top: 30px;
+        }
+
+        .process-row {
+            display: flex;
+            gap: 20px;
+
+            padding: 17px 0;
+
+            border-top: 1px solid #ddd;
+        }
+
+        .process-row:last-child {
+            border-bottom: 1px solid #ddd;
+        }
+
+        .process-number {
+            width: 25px;
+
+            font-size: 12px;
+            color: #999;
+        }
+
+        .process-name {
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+
+        /* =========================================================
+           ANALYSIS
+        ========================================================= */
+
+        .analysis-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            gap: 18px;
+
+            margin-top: 55px;
+        }
+
+        .analysis-card {
+            padding: 35px;
+
+            background: #fff;
+
+            border: 1px solid #e5e5e2;
+            border-radius: 18px;
+        }
+
+        .analysis-card h3 {
+            margin-bottom: 15px;
+
+            font-size: 24px;
+
+            letter-spacing: -0.03em;
+        }
+
+        .analysis-card p {
+            font-size: 15px;
+            line-height: 1.7;
+
+            color: #666;
+        }
+
+
+        /* =========================================================
+           CONFIDENTIALITE
+        ========================================================= */
+
+        .confidentiality {
+            margin-top: 45px;
+
+            padding: 25px 30px;
+
+            border-left: 3px solid #111;
+
+            background: #ededeb;
+        }
+
+        .confidentiality strong {
+            display: block;
+
+            margin-bottom: 7px;
+
+            font-size: 14px;
+        }
+
+        .confidentiality p {
+            font-size: 14px;
+            color: #666;
+        }
+
+
+        /* =========================================================
+           COMPETENCES
+        ========================================================= */
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+
+            gap: 10px;
+
+            margin-top: 45px;
+        }
+
+        .skill {
+            padding: 10px 15px;
+
+            background: #fff;
+
+            border: 1px solid #ddd;
+            border-radius: 999px;
+
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+
+        /* =========================================================
+           FOOTER
+        ========================================================= */
+
+        footer {
+            padding: 70px 0;
+
+            border-top: 1px solid #ddd;
+
+            color: #777;
+        }
+
+        footer .footer-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        footer strong {
+            color: #111;
+        }
+
+        footer p {
+            font-size: 13px;
+        }
+
+
+        /* =========================================================
+           RESPONSIVE
+        ========================================================= */
+
+        @media (max-width: 850px) {
+
+            section {
+                padding: 75px 0;
+            }
+
+            .mission-grid,
+            .powerbi {
+                grid-template-columns: 1fr;
+                gap: 45px;
+            }
+
+            .data-flow {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .flow-item:nth-child(2) {
+                border-right: none;
+            }
+
+            .flow-item:nth-child(3),
+            .flow-item:nth-child(4) {
+                border-top: 1px solid #ddd;
+            }
+
+            .categories {
+                grid-template-columns: 1fr;
+            }
+
+            .kpi-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .analysis-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+
+        @media (max-width: 600px) {
+
+            nav {
+                padding: 0 5%;
+            }
+
+            .hero {
+                min-height: auto;
+                padding: 80px 0;
+            }
+
+            .hero h1 {
+                font-size: 50px;
+            }
+
+            .hero-description {
+                font-size: 18px;
+            }
+
+            .data-flow,
+            .kpi-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .flow-item {
+                border-right: none;
+                border-bottom: 1px solid #ddd;
+            }
+
+            .flow-item:last-child {
+                border-bottom: none;
+            }
+
+            .dashboard-body {
+                grid-template-columns: 1fr;
+            }
+
+            .dashboard-card.large {
+                grid-row: auto;
+            }
+
+            footer .footer-inner {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =========================================================
+         NAVIGATION
+    ========================================================= -->
+
+    <nav>
+
+        <!-- À ADAPTER SELON L'EMPLACEMENT DE TON DOSSIER -->
+        <a href="../../index.html" class="brand">
+            NAÏM HAMIDI
+        </a>
+
+        <a href="../../index.html" class="back">
+            ← Retour au portfolio
+        </a>
+
+    </nav>
+
+
+
+    <!-- =========================================================
+         HERO
+    ========================================================= -->
+
+    <header class="hero">
+
+        <div class="container hero-content">
+
+            <div class="eyebrow">
+                Business Intelligence · Grande distribution
+            </div>
+
+            <h1>
+                Analyse de marché &
+                pilotage de la performance commerciale
+            </h1>
+
+            <p class="hero-description">
+                Analyse des performances commerciales et conception
+                d'un outil Power BI à partir de données de marché
+                et de données économiques internes, dans le cadre
+                d'une mission chez Les Mousquetaires.
+            </p>
+
+            <div class="tags">
+
+                <span class="tag">
+                    Analyse de marché
+                </span>
+
+                <span class="tag">
+                    Business Intelligence
+                </span>
+
+                <span class="tag">
+                    Power BI
+                </span>
+
+                <span class="tag">
+                    Données commerciales
+                </span>
+
+                <span class="tag">
+                    Analyse promotionnelle
+                </span>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =========================================================
+         MISSION
+    ========================================================= -->
+
+    <section>
+
+        <div class="container">
+
+            <div class="mission-grid">
+
+                <div>
+
+                    <div class="eyebrow">
+                        01 · Mission
+                    </div>
+
+                    <div class="mission-number">
+                        01
+                    </div>
+
+                </div>
+
+
+                <div class="mission-text">
+
+                    <h2>
+                        Transformer des données commerciales
+                        en information exploitable.
+                    </h2>
+
+                    <p>
+                        Dans le cadre de ma mission au sein des
+                        <strong>Groupements des Mousquetaires</strong>,
+                        l'objectif était d'exploiter différentes sources
+                        de données afin d'analyser les performances
+                        commerciales de plusieurs catégories de produits.
+                    </p>
+
+                    <p>
+                        Le travail porte notamment sur les catégories
+                        <strong>Liquides</strong>,
+                        <strong>Petfood</strong> et
+                        <strong>Pains & Pâtisseries industrielles</strong>.
+                    </p>
+
+                    <p>
+                        L'approche combine l'analyse de données de marché,
+                        la lecture des performances commerciales et
+                        l'exploitation de données économiques internes
+                        afin de construire des indicateurs permettant
+                        de mieux comprendre les dynamiques de vente
+                        et les performances promotionnelles.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+         SOURCES DE DONNEES
+    ========================================================= -->
+
+    <section>
+
+        <div class="container">
+
+            <div class="eyebrow">
+                02 · Sources de données
+            </div>
+
+            <h2>
+                Croiser les données
+                pour comprendre le marché.
+            </h2>
+
+            <p class="lead">
+                La méthodologie repose sur la confrontation de données
+                de marché, de données concurrentielles et de données
+                économiques internes.
+            </p>
+
+
+            <div class="data-flow">
+
+                <div class="flow-item">
+
+                    <div class="flow-number">
+                        01
+                    </div>
+
+                    <h3>
+                        Données marché
+                    </h3>
+
+                    <p>
+                        Analyse des marchés et des tendances de
+                        consommation à partir des panels disponibles.
+                    </p>
+
+                </div>
+
+
+                <div class="flow-item">
+
+                    <div class="flow-number">
+                        02
+                    </div>
+
+                    <h3>
+                        Veille concurrentielle
+                    </h3>
+
+                    <p>
+                        Observation des pratiques promotionnelles
+                        et comparaison des offres concurrentes.
+                    </p>
+
+                </div>
+
+
+                <div class="flow-item">
+
+                    <div class="flow-number">
+                        03
+                    </div>
+
+                    <h3>
+                        Données internes
+                    </h3>
+
+                    <p>
+                        Exploitation des données économiques internes
+                        et des indicateurs de performance commerciale.
+                    </p>
+
+                </div>
+
+
+                <div class="flow-item">
+
+                    <div class="flow-number">
+                        04
+                    </div>
+
+                    <h3>
+                        Analyse
+                    </h3>
+
+                    <p>
+                        Structuration des données et construction
+                        d'indicateurs destinés au pilotage.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+         CATEGORIES
+    ========================================================= -->
+
+    <section>
+
+        <div class="container">
+
+            <div class="eyebrow">
+                03 · Périmètre
+            </div>
+
+            <h2>
+                Trois univers commerciaux,
+                une même logique d'analyse.
+            </h2>
+
+
+            <div class="categories">
+
+                <div class="category">
+
+                    <span class="category-index">
+                        CAT. 01
+                    </span>
+
+                    <h3>
+                        Liquides
+                    </h3>
+
+                    <span>
+                        Analyse des performances commerciales
+                    </span>
+
+                </div>
+
+
+                <div class="category">
+
+                    <span class="category-index">
+                        CAT. 02
+                    </span>
+
+                    <h3>
+                        Petfood
+                    </h3>
+
+                    <span>
+                        Analyse du marché et des performances
+                    </span>
+
+                </div>
+
+
+                <div class="category">
+
+                    <span class="category-index">
+                        CAT. 03
+                    </span>
+
+                    <h3>
+                        Pains & Pâtisseries industrielles
+                    </h3>
+
+                    <span>
+                        Suivi des indicateurs commerciaux
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+         KPI
+    ========================================================= -->
+
+    <section class="kpi-section">
+
+        <div class="container">
+
+            <div class="eyebrow">
+                04 · Indicateurs
+            </div>
+
+            <h2>
+                Lire la performance
+                à travers les bons indicateurs.
+            </h2>
+
+            <p class="lead">
+                Le tableau de bord s'appuie sur plusieurs indicateurs
+                économiques et promotionnels permettant de suivre
+                les performances des catégories et des opérations.
+            </p>
+
+
+            <div class="kpi-grid">
+
+                <div class="kpi">
+
+                    <div class="kpi-label">
+                        KPI 01
+                    </div>
+
+                    <div class="kpi-name">
+                        CA valeur
+                    </div>
+
+                    <div class="kpi-description">
+                        Suivi du chiffre d'affaires généré
+                        par les ventes.
+                    </div>
+
+                </div>
+
+
+                <div class="kpi">
+
+                    <div class="kpi-label">
+                        KPI 02
+                    </div>
+
+                    <div class="kpi-name">
+                        CA volume
+                    </div>
+
+                    <div class="kpi-description">
+                        Lecture de la performance commerciale
+                        en volume.
+                    </div>
+
+                </div>
+
+
+                <div class="kpi">
+
+                    <div class="kpi-label">
+                        KPI 03
+                    </div>
+
+                    <div class="kpi-name">
+                        Quantité
+                    </div>
+
+                    <div class="kpi-description">
+                        Suivi des quantités vendues
+                        sur les différentes catégories.
+                    </div>
+
+                </div>
+
+
+                <div class="kpi">
+
+                    <div class="kpi-label">
+                        KPI 04
+                    </div>
+
+                    <div class="kpi-name">
+                        Colis
+                    </div>
+
+                    <div class="kpi-description">
+                        Analyse des volumes exprimés
+                        en colis.
+                    </div>
+
+                </div>
+
+
+                <div class="kpi">
+
+                    <div class="kpi-label">
+                        KPI 05
+                    </div>
+
+                    <div class="kpi-name">
+                        Mécanique promo
+                    </div>
+
+                    <div class="kpi-description">
+                        Identification des différents
+                        dispositifs promotionnels.
+                    </div>
+
+                </div>
+
+
+                <div class="kpi">
+
+                    <div class="kpi-label">
+                        KPI 06
+                    </div>
+
+                    <div class="kpi-name">
+                        Taux de générosité
+                    </div>
+
+                    <div class="kpi-description">
+                        Mise en relation de l'intensité
+                        promotionnelle et des performances.
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+         POWER BI
+    ========================================================= -->
+
+    <section>
+
+        <div class="container">
+
+            <div class="eyebrow">
+                05 · Business Intelligence
+            </div>
+
+            <h2>
+                Construire un outil de pilotage
+                à partir de données brutes.
+            </h2>
+
+
+            <div class="powerbi">
+
+
+                <!-- FAUSSE INTERFACE VISUELLE -->
+                <div class="dashboard">
+
+                    <div class="dashboard-header">
+
+                        <div class="dashboard-title">
+                            PERFORMANCE COMMERCIALE
+                        </div>
+
+                        <div class="dashboard-status">
+                            POWER BI · DASHBOARD
+                        </div>
+
+                    </div>
+
+
+                    <div class="dashboard-body">
+
+                        <div class="dashboard-card large">
+
+                            <div class="fake-label">
+                                Évolution du CA
+                            </div>
+
+                            <div class="fake-value">
+                                —
+                            </div>
+
+                            <div class="fake-chart">
+
+                                <div class="bar"></div>
+                                <div class="bar"></div>
+                                <div class="bar"></div>
+                                <div class="bar"></div>
+                                <div class="bar"></div>
+                                <div class="bar"></div>
+                                <div class="bar"></div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="dashboard-card">
+
+                            <div class="fake-label">
+                                CA volume
+                            </div>
+
+                            <div class="fake-value">
+                                —
+                            </div>
+
+                        </div>
+
+
+                        <div class="dashboard-card">
+
+                            <div class="fake-label">
+                                Taux générosité
+                            </div>
+
+                            <div class="fake-value">
+                                —
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- TEXTE POWER BI -->
+                <div class="powerbi-text">
+
+                    <h3>
+                        De la donnée brute
+                        au tableau de bord.
+                    </h3>
+
+                    <p>
+                        Les données économiques sont structurées afin
+                        de construire un environnement de pilotage
+                        permettant de consulter les performances
+                        selon différentes dimensions.
+                    </p>
+
+                    <p>
+                        L'objectif n'est pas uniquement de produire
+                        des graphiques, mais de créer une interface
+                        permettant de passer rapidement de
+                        l'indicateur à son interprétation.
+                    </p>
+
+
+                    <div class="process">
+
+                        <div class="process-row">
+
+                            <div class="process-number">
+                                01
+                            </div>
+
+                            <div class="process-name">
+                                Collecte des données
+                            </div>
+
+                        </div>
+
+
+                        <div class="process-row">
+
+                            <div class="process-number">
+                                02
+                            </div>
+
+                            <div class="process-name">
+                                Nettoyage & structuration
+                            </div>
+
+                        </div>
+
+
+                        <div class="process-row">
+
+                            <div class="process-number">
+                                03
+                            </div>
+
+                            <div class="process-name">
+                                Modélisation des données
+                            </div>
+
+                        </div>
+
+
+                        <div class="process-row">
+
+                            <div class="process-number">
+                                04
+                            </div>
+
+                            <div class="process-name">
+                                Création des KPI
+                            </div>
+
+                        </div>
+
+
+                        <div class="process-row">
+
+                            <div class="process-number">
+                                05
+                            </div>
+
+                            <div class="process-name">
+                                Visualisation Power BI
+                            </div>
+
+                        </div>
+
+
+                        <div class="process-row">
+
+                            <div class="process-number">
+                                06
+                            </div>
+
+                            <div class="process-name">
+                                Analyse & aide à la décision
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+         ANALYSE
+    ========================================================= -->
+
+    <section>
+
+        <div class="container">
+
+            <div class="eyebrow">
+                06 · Analyse
+            </div>
+
+            <h2>
+                Répondre aux questions
+                derrière les indicateurs.
+            </h2>
+
+            <p class="lead">
+                Le tableau de bord permet de passer d'une simple
+                lecture descriptive des données à une analyse
+                des facteurs associés à la performance commerciale.
+            </p>
+
+
+            <div class="analysis-grid">
+
+
+                <div class="analysis-card">
+
+                    <h3>
+                        Performance des catégories
+                    </h3>
+
+                    <p>
+                        Comparer les performances des catégories
+                        et identifier les évolutions du chiffre
+                        d'affaires et des volumes.
+                    </p>
+
+                </div>
+
+
+                <div class="analysis-card">
+
+                    <h3>
+                        Dynamique des volumes
+                    </h3>
+
+                    <p>
+                        Mettre en relation chiffre d'affaires,
+                        quantités vendues et nombre de colis
+                        afin de mieux caractériser les performances.
+                    </p>
+
+                </div>
+
+
+                <div class="analysis-card">
+
+                    <h3>
+                        Performance promotionnelle
+                    </h3>
+
+                    <p>
+                        Observer les résultats associés aux
+                        différentes mécaniques promotionnelles
+                        et à leur niveau de générosité.
+                    </p>
+
+                </div>
+
+
+                <div class="analysis-card">
+
+                    <h3>
+                        Contribution des produits
+                    </h3>
+
+                    <p>
+                        Identifier les produits ou segments qui
+                        contribuent aux performances observées
+                        à l'intérieur des différentes catégories.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="confidentiality">
+
+                <strong>
+                    Données confidentielles
+                </strong>
+
+                <p>
+                    Les données économiques utilisées dans ce projet
+                    sont issues de données internes. Les valeurs
+                    commerciales, références et informations
+                    sensibles ne sont pas publiées dans ce portfolio.
+                    Les représentations présentées ici sont
+                    uniquement destinées à illustrer la démarche
+                    méthodologique et l'architecture de l'outil.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+         COMPETENCES
+    ========================================================= -->
+
+    <section>
+
+        <div class="container">
+
+            <div class="eyebrow">
+                07 · Compétences
+            </div>
+
+            <h2>
+                Data · Business · Décision
+            </h2>
+
+            <p class="lead">
+                Une mission à l'interface entre analyse de données,
+                compréhension des marchés et construction d'outils
+                d'aide à la décision.
+            </p>
+
+
+            <div class="skills">
+
+                <span class="skill">
+                    DATA ANALYSIS
+                </span>
+
+                <span class="skill">
+                    POWER BI
+                </span>
+
+                <span class="skill">
+                    BUSINESS INTELLIGENCE
+                </span>
+
+                <span class="skill">
+                    KPI
+                </span>
+
+                <span class="skill">
+                    DATA VISUALIZATION
+                </span>
+
+                <span class="skill">
+                    MARKET ANALYSIS
+                </span>
+
+                <span class="skill">
+                    PROMOTION ANALYSIS
+                </span>
+
+                <span class="skill">
+                    KANTAR
+                </span>
+
+                <span class="skill">
+                    NIELSEN
+                </span>
+
+                <span class="skill">
+                    A3 DISTRIB
+                </span>
+
+                <span class="skill">
+                    EXCEL
+                </span>
+
+                <span class="skill">
+                    GRANDE DISTRIBUTION
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+         FOOTER
+    ========================================================= -->
+
+    <footer>
+
+        <div class="container">
+
+            <div class="footer-inner">
+
+                <p>
+                    <strong>NAÏM HAMIDI</strong>
+                    · Ingénieur agronome spécialisé en agriculture numérique
+                </p>
+
+                <p>
+                    Analyse de données · BI · Agriculture
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+</body>
+</html>
