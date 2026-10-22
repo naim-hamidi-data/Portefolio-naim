@@ -2,7 +2,6 @@
 <tr>
 <td width="30%" align="center">
 
-<img src="image/photo_naim.png" width="220px" alt="Naïm Hamidi">
 
 </td>
 
