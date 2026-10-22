@@ -1,1429 +1,271 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Naïm Hamidi — Digital Agriculture · Data · SIG</title>
-
-    <meta
-        name="description"
-        content="Naïm Hamidi — Ingénieur agronome spécialisé en agriculture numérique, data, SIG, télédétection, IA et agriculture de précision."
-    >
-
-    <style>
-
-        /* =========================================================
-           BASE
-        ========================================================= */
-
-        :root {
-            --background: #f7f7f5;
-            --surface: #ffffff;
-            --surface-soft: #f1f1ee;
-            --text: #111111;
-            --text-secondary: #6f6f6a;
-            --border: #deded9;
-            --accent: #111111;
-            --max-width: 1180px;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family:
-                -apple-system,
-                BlinkMacSystemFont,
-                "Segoe UI",
-                Helvetica,
-                Arial,
-                sans-serif;
-
-            background: var(--background);
-            color: var(--text);
-            line-height: 1.6;
-        }
-
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-
-        img {
-            max-width: 100%;
-            display: block;
-        }
-
-        .container {
-            width: min(100% - 48px, var(--max-width));
-            margin: 0 auto;
-        }
-
-
-        /* =========================================================
-           NAVIGATION
-        ========================================================= */
-
-        nav {
-            position: sticky;
-            top: 0;
-            z-index: 100;
-
-            background: rgba(247, 247, 245, 0.88);
-            backdrop-filter: blur(18px);
-            -webkit-backdrop-filter: blur(18px);
-
-            border-bottom: 1px solid rgba(0, 0, 0, 0.07);
-        }
-
-        .nav-inner {
-            width: min(100% - 48px, var(--max-width));
-            height: 72px;
-            margin: auto;
-
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .logo {
-            font-size: 15px;
-            font-weight: 700;
-            letter-spacing: 0.08em;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 28px;
-            align-items: center;
-        }
-
-        .nav-links a {
-            font-size: 14px;
-            color: var(--text-secondary);
-            transition: color 0.2s ease;
-        }
-
-        .nav-links a:hover {
-            color: var(--text);
-        }
-
-
-        /* =========================================================
-           HERO
-        ========================================================= */
-
-        .hero {
-            min-height: calc(100vh - 72px);
-
-            display: grid;
-            grid-template-columns: 1.15fr 0.85fr;
-            align-items: center;
-
-            gap: 80px;
-            padding: 90px 0;
-        }
-
-        .eyebrow {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-
-            font-size: 12px;
-            font-weight: 700;
-            letter-spacing: 0.13em;
-            color: var(--text-secondary);
-
-            text-transform: uppercase;
-            margin-bottom: 25px;
-        }
-
-        .eyebrow::before {
-            content: "";
-            width: 28px;
-            height: 1px;
-            background: var(--text);
-        }
-
-        .hero h1 {
-            font-size: clamp(52px, 7vw, 92px);
-            line-height: 0.95;
-            letter-spacing: -0.055em;
-            font-weight: 700;
-
-            margin-bottom: 26px;
-        }
-
-        .hero-role {
-            font-size: clamp(20px, 2.5vw, 30px);
-            line-height: 1.25;
-            font-weight: 500;
-
-            max-width: 620px;
-            margin-bottom: 18px;
-        }
-
-        .hero-domain {
-            font-size: 13px;
-            font-weight: 700;
-            letter-spacing: 0.12em;
-            color: var(--text-secondary);
-
-            margin-bottom: 32px;
-        }
-
-        .hero-description {
-            max-width: 650px;
-
-            font-size: 18px;
-            line-height: 1.7;
-            color: var(--text-secondary);
-
-            margin-bottom: 38px;
-        }
-
-        .hero-actions {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-        }
-
-        .button {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-
-            min-height: 48px;
-            padding: 0 22px;
-
-            border-radius: 999px;
-
-            font-size: 14px;
-            font-weight: 600;
-
-            transition:
-                transform 0.2s ease,
-                background 0.2s ease,
-                border-color 0.2s ease;
-        }
-
-        .button:hover {
-            transform: translateY(-2px);
-        }
-
-        .button.primary {
-            background: var(--text);
-            color: white;
-        }
-
-        .button.secondary {
-            border: 1px solid var(--border);
-            background: white;
-        }
-
-
-        /* =========================================================
-           PHOTO
-        ========================================================= */
-
-        .portrait {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .portrait img {
-            width: min(420px, 100%);
-            aspect-ratio: 1 / 1;
-
-            object-fit: cover;
-
-            border-radius: 32px;
-
-            background: var(--surface);
-            border: 1px solid var(--border);
-
-            box-shadow:
-                0 30px 80px rgba(0, 0, 0, 0.10);
-        }
-
-
-        /* =========================================================
-           SECTIONS
-        ========================================================= */
-
-        section {
-            padding: 120px 0;
-            border-top: 1px solid var(--border);
-        }
-
-        .section-header {
-            display: grid;
-            grid-template-columns: 0.35fr 1fr;
-
-            gap: 50px;
-            margin-bottom: 65px;
-        }
-
-        .section-number {
-            font-size: 12px;
-            font-weight: 700;
-            letter-spacing: 0.12em;
-            color: var(--text-secondary);
-        }
-
-        .section-title {
-            font-size: clamp(38px, 5vw, 64px);
-            line-height: 1;
-            letter-spacing: -0.045em;
-        }
-
-        .section-intro {
-            max-width: 780px;
-            margin-top: 20px;
-
-            color: var(--text-secondary);
-            font-size: 18px;
-        }
-
-
-        /* =========================================================
-           À PROPOS
-        ========================================================= */
-
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1.3fr 0.7fr;
-            gap: 80px;
-        }
-
-        .about-text {
-            font-size: 20px;
-            line-height: 1.75;
-        }
-
-        .about-text p + p {
-            margin-top: 24px;
-        }
-
-        .about-text strong {
-            color: var(--text);
-        }
-
-        .search-box {
-            margin-top: 38px;
-
-            padding: 28px;
-
-            border: 1px solid var(--border);
-            border-radius: 20px;
-
-            background: var(--surface);
-        }
-
-        .search-label {
-            font-size: 11px;
-            font-weight: 700;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-
-            color: var(--text-secondary);
-
-            margin-bottom: 10px;
-        }
-
-        .search-text {
-            font-size: 20px;
-            font-weight: 600;
-        }
-
-        .languages {
-            padding: 28px;
-
-            border: 1px solid var(--border);
-            border-radius: 20px;
-
-            background: var(--surface);
-        }
-
-        .languages-title {
-            font-size: 11px;
-            font-weight: 700;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-
-            color: var(--text-secondary);
-
-            margin-bottom: 20px;
-        }
-
-        .language-list {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
-        .language {
-            font-size: 15px;
-            padding-bottom: 12px;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .language:last-child {
-            border-bottom: none;
-            padding-bottom: 0;
-        }
-
-        .interest-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-
-            margin-top: 28px;
-        }
-
-        .tag {
-            display: inline-flex;
-
-            padding: 7px 11px;
-
-            border: 1px solid var(--border);
-            border-radius: 999px;
-
-            background: var(--surface);
-
-            font-size: 12px;
-            color: var(--text-secondary);
-        }
-
-
-        /* =========================================================
-           EXPERTISE ET PROJET
-        ========================================================= */
-
-        .expertise-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-
-            gap: 16px;
-        }
-
-        .expertise-card {
-            padding: 34px;
-
-            background: var(--surface);
-
-            border: 1px solid var(--border);
-            border-radius: 24px;
-
-            transition:
-                transform 0.25s ease,
-                box-shadow 0.25s ease;
-        }
-
-        .expertise-card:hover {
-            transform: translateY(-4px);
-
-            box-shadow:
-                0 20px 50px rgba(0, 0, 0, 0.07);
-        }
-
-        .expertise-card.full {
-            grid-column: 1 / -1;
-        }
-
-        .expertise-number {
-            font-size: 12px;
-            font-weight: 700;
-            letter-spacing: 0.12em;
-            color: var(--text-secondary);
-
-            margin-bottom: 18px;
-        }
-
-        .expertise-card h3 {
-            font-size: 25px;
-            letter-spacing: -0.025em;
-            margin-bottom: 13px;
-        }
-
-        .expertise-description {
-            color: var(--text-secondary);
-            margin-bottom: 22px;
-        }
-
-        .project-list {
-            margin: 0 0 24px 18px;
-        }
-
-        .project-list li {
-            margin-bottom: 8px;
-        }
-
-        .project-list a {
-            text-decoration: underline;
-            text-decoration-color: #c9c9c4;
-            text-underline-offset: 3px;
-        }
-
-        .stack {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 7px;
-        }
-
-        .stack span {
-            padding: 6px 9px;
-
-            background: var(--surface-soft);
-
-            border-radius: 7px;
-
-            font-size: 11px;
-            color: var(--text-secondary);
-        }
-
-
-        /* =========================================================
-           CONTACT
-        ========================================================= */
-
-        .contact {
-            padding-bottom: 80px;
-        }
-
-        .contact-box {
-            display: grid;
-            grid-template-columns: 1fr auto;
-
-            align-items: end;
-
-            gap: 50px;
-
-            padding: 60px;
-
-            background: var(--text);
-            color: white;
-
-            border-radius: 30px;
-        }
-
-        .contact-box .eyebrow {
-            color: #a4a4a0;
-        }
-
-        .contact-box .eyebrow::before {
-            background: white;
-        }
-
-        .contact-box h2 {
-            max-width: 760px;
-
-            font-size: clamp(38px, 5vw, 68px);
-            line-height: 1;
-
-            letter-spacing: -0.05em;
-
-            margin-bottom: 22px;
-        }
-
-        .contact-box p {
-            max-width: 650px;
-
-            color: #b8b8b3;
-            font-size: 17px;
-        }
-
-        .contact-actions {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .contact-button {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-
-            min-height: 48px;
-            padding: 0 20px;
-
-            border-radius: 999px;
-
-            background: white;
-            color: black;
-
-            font-size: 13px;
-            font-weight: 700;
-        }
-
-
-        /* =========================================================
-           FOOTER
-        ========================================================= */
-
-        footer {
-            padding: 30px 0 45px;
-
-            color: var(--text-secondary);
-
-            font-size: 12px;
-        }
-
-        .footer-inner {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-
-            gap: 20px;
-
-            border-top: 1px solid var(--border);
-
-            padding-top: 25px;
-        }
-
-        .footer-brand {
-            font-weight: 700;
-            color: var(--text);
-            letter-spacing: 0.08em;
-        }
-
-
-        /* =========================================================
-           RESPONSIVE
-        ========================================================= */
-
-        @media (max-width: 900px) {
-
-            .hero {
-                grid-template-columns: 1fr;
-                gap: 50px;
-                padding-top: 70px;
-            }
-
-            .portrait {
-                justify-content: flex-start;
-            }
-
-            .portrait img {
-                width: min(360px, 100%);
-            }
-
-            .section-header {
-                grid-template-columns: 1fr;
-                gap: 15px;
-            }
-
-            .about-grid {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-
-            .project-card {
-                grid-template-columns: 1fr;
-                gap: 25px;
-            }
-
-            .contact-box {
-                grid-template-columns: 1fr;
-                align-items: start;
-            }
-        }
-
-
-        @media (max-width: 700px) {
-
-            .container,
-            .nav-inner {
-                width: min(100% - 30px, var(--max-width));
-            }
-
-            .nav-inner {
-                height: 64px;
-            }
-
-            .nav-links {
-                display: none;
-            }
-
-            .hero {
-                min-height: auto;
-                padding: 70px 0 90px;
-            }
-
-            .hero h1 {
-                font-size: 56px;
-            }
-
-            .hero-description {
-                font-size: 16px;
-            }
-
-            section {
-                padding: 80px 0;
-            }
-
-            .expertise-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .expertise-card.full {
-                grid-column: auto;
-            }
-
-            .project-card {
-                padding: 28px;
-            }
-
-            .project-content h3 {
-                font-size: 24px;
-            }
-
-            .contact-box {
-                padding: 35px 25px;
-            }
-
-            .footer-inner {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-        }
-
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Naïm Hamidi — Agricultural Engineer · AgTech. Building resilient agriculture and empowering farmers’ choices. Looking for an internship in summer 2027.">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#fafbfa">
+  <title>Naïm HAMIDI — Agricultural Engineer · AgTech</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23213830'/%3E%3Ctext x='32' y='42' text-anchor='middle' font-family='Arial,sans-serif' font-size='32' font-weight='700' fill='white'%3EN%3C/text%3E%3C/svg%3E">
+  <!-- Apply the saved theme before painting, to avoid a flash of the wrong theme. -->
+  <script>
+    (() => {
+      let theme;
+      try { theme = localStorage.getItem('naim-portfolio-theme'); } catch (_) {}
+      if (theme !== 'light' && theme !== 'dark') {
+        theme = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.dataset.theme = theme;
+    })();
+  </script>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #fafbfa;
+      --text: #19211d;
+      --muted: #646d67;
+      --border: #dce2dd;
+      --card: rgba(244,246,244,.9);
+      --hover: #fff;
+      --grid: rgba(74,99,81,.075);
+      --green: #326549;
+      --badge: #edf4ee;
+      --badge-border: #d5e5d9;
+      --shadow: 0 8px 28px rgba(27,48,34,.045);
+    }
+    :root[data-theme="dark"] {
+      color-scheme: dark;
+      --bg: #151917;
+      --text: #ecf0ec;
+      --muted: #a4afa7;
+      --border: #333c36;
+      --card: rgba(30,36,32,.93);
+      --hover: #252d28;
+      --grid: rgba(166,195,174,.065);
+      --green: #a3d5b1;
+      --badge: #21392a;
+      --badge-border: #36533e;
+      --shadow: 0 8px 28px rgba(0,0,0,.14);
+    }
+    * { box-sizing: border-box; }
+    [hidden] { display: none !important; }
+    html { min-width: 280px; }
+    body {
+      margin: 0;
+      min-height: 100svh;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.6;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      background-image: linear-gradient(var(--grid) 1px, transparent 1px), linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+      background-size: 36px 36px;
+      -webkit-mask-image: radial-gradient(ellipse at 50% 38%, #000 12%, transparent 76%);
+      mask-image: radial-gradient(ellipse at 50% 38%, #000 12%, transparent 76%);
+    }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; }
+    svg { display: block; width: 19px; height: 19px; flex-shrink: 0; }
+    :focus-visible { outline: 2px solid var(--green); outline-offset: 5px; }
+    .skip-link { position: fixed; top: -100px; left: 16px; z-index: 5; padding: 8px 16px; background: var(--bg); border: 1px solid var(--border); border-radius: 8px; }
+    .skip-link:focus { top: 16px; }
+    .theme-toggle {
+      position: absolute;
+      top: 22px;
+      right: 24px;
+      display: grid;
+      place-items: center;
+      width: 42px;
+      height: 42px;
+      padding: 0;
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      background: var(--card);
+      color: var(--muted);
+      cursor: pointer;
+      transition: color .2s, background .2s;
+    }
+    .theme-toggle:hover { color: var(--text); background: var(--hover); }
+    .sun { display: none; }
+    [data-theme="dark"] .sun { display: block; }
+    [data-theme="dark"] .moon { display: none; }
+    main { width: min(100% - 40px, 620px); margin: 0 auto; padding: 108px 0 48px; }
+    .intro { text-align: center; }
+    h1 { margin: 0; font-size: clamp(36px, 6vw, 50px); line-height: 1.12; font-weight: 750; letter-spacing: -2px; }
+    .role { margin: 13px 0 19px; font-size: 16px; letter-spacing: -.2px; }
+    .availability {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin: 0;
+      padding: 5px 12px;
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--green);
+      background: var(--badge);
+      border: 1px solid var(--badge-border);
+      border-radius: 30px;
+    }
+    .availability::before { content: ""; width: 5px; height: 5px; border-radius: 50%; background: currentColor; flex-shrink: 0; }
+    .slogan { margin: 24px auto 0; max-width: 400px; font-size: 14px; line-height: 1.8; color: var(--muted); }
+    .projects { margin-top: 58px; }
+    h2 { margin: 0 0 16px; font-size: 10px; text-transform: uppercase; font-weight: 600; letter-spacing: 2px; text-align: center; color: var(--muted); }
+    .project-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+    .project-card {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      padding: 22px;
+      border: 1px solid var(--border);
+      border-radius: 13px;
+      background: var(--card);
+      transition: transform .2s, border-color .2s, background .2s, box-shadow .2s;
+    }
+    .project-card:hover { transform: translateY(-3px); border-color: var(--muted); background: var(--hover); box-shadow: var(--shadow); }
+    .project-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
+    h3 { margin: 0; font-size: 15px; font-weight: 600; letter-spacing: -.25px; line-height: 1.45; }
+    .project-top svg { width: 16px; height: 16px; margin-top: 3px; color: var(--muted); }
+    .description { margin: 13px 0 22px; color: var(--muted); font-size: 12px; line-height: 1.8; }
+    .project-cta { display: flex; align-items: center; gap: 6px; margin-top: auto; font-size: 11px; color: var(--green); font-weight: 600; }
+    .project-cta svg { width: 13px; height: 13px; }
+    footer { margin-top: 54px; text-align: center; }
+    .contact-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; }
+    .pill { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 42px; padding: 8px 15px; font-size: 12px; border: 1px solid var(--border); background: var(--card); border-radius: 24px; transition: background .2s, border-color .2s; }
+    .pill svg { width: 15px; height: 15px; color: var(--muted); }
+    .pill:hover { background: var(--hover); border-color: var(--muted); }
+    .socials { display: flex; justify-content: center; gap: 8px; margin-top: 16px; }
+    .socials a { display: flex; align-items: center; gap: 6px; padding: 8px 10px; min-height: 40px; color: var(--muted); font-size: 11px; border-radius: 6px; }
+    .socials svg { width: 16px; height: 16px; }
+    .socials a:hover { color: var(--text); }
+    @media (max-width: 520px) {
+      main { width: min(100% - 36px, 380px); padding-top: 98px; }
+      .theme-toggle { top: 17px; right: 18px; }
+      h1 { letter-spacing: -1.5px; }
+      .role { font-size: 15px; }
+      .projects { margin-top: 44px; }
+      .project-grid { grid-template-columns: 1fr; gap: 12px; }
+      .project-card { padding: 21px; }
+      .description { font-size: 13px; margin-bottom: 18px; }
+      footer { margin-top: 38px; }
+      .pill { font-size: 11px; padding-inline: 12px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { transition: none !important; }
+      .project-card:hover { transform: none; }
+    }
+    @media print {
+      :root { --bg: #fff; --text: #000; --muted: #444; --card: #fff; --green: #333; --border: #ccc; --badge: #fff; --badge-border: #ccc; }
+      body::before, .theme-toggle { display: none; }
+      main { padding-top: 30px; }
+      .project-card { break-inside: avoid; }
+    }
+  </style>
 </head>
-
-
 <body>
+  <a class="skip-link" href="#projects">Skip to projects</a>
+  <button class="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch to dark mode" hidden>
+    <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.2 15.3A8.5 8.5 0 0 1 8.7 3.8 8.5 8.5 0 1 0 20.2 15.3Z"/></svg>
+    <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4m0-14.2-1.4 1.4M6.3 17.7l-1.4 1.4"/></svg>
+  </button>
 
-    <!-- =========================================================
-         NAVIGATION
-    ========================================================== -->
+  <main>
+    <header class="intro">
+      <h1>Naïm HAMIDI</h1>
+      <p class="role">Agricultural Engineer · AgTech</p>
+      <p class="availability">Looking for an internship · Summer 2027</p>
+      <p class="slogan">Building resilient agriculture.<br>Empowering farmers’ choices.</p>
+    </header>
 
-    <nav>
-        <div class="nav-inner">
-
-            <a href="#top" class="logo">
-                NAÏM HAMIDI
-            </a>
-
-            <div class="nav-links">
-
-                <a href="#about">
-                    À propos
-                </a>
-
-                <a href="#expertise&projets">
-                    Expertise & Projets
-                </a>
-
-                <a href="#contact">
-                    Contact
-                </a>
-
+    <section class="projects" id="projects" aria-labelledby="projects-title">
+      <h2 id="projects-title">Selected projects</h2>
+      <div class="project-grid">
+        <!-- PROJECT 1 — duplicate an entire <article> to add a new project. -->
+        <article>
+          <a class="project-card" href="https://naim-hamidi-data.github.io/assistant-aides-pac/" target="_blank" rel="noopener noreferrer" aria-label="Explore CAP Assistant (opens in a new tab)">
+            <div class="project-top">
+              <h3>CAP Assistant</h3>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg>
             </div>
-
-        </div>
-    </nav>
-
-
-    <main id="top">
-
-
-        <!-- =====================================================
-             HERO
-        ====================================================== -->
-
-        <div class="container">
-
-            <section class="hero" style="border-top: none;">
-
-                <div>
-
-                    <div class="eyebrow">
-                        DIGITAL AGRICULTURE · DATA · GIS
-                    </div>
-
-                    <h1>
-                        NAÏM<br>
-                        HAMIDI
-                    </h1>
-
-                    <div class="hero-role">
-                        Ingénieur agronome spécialisé en agriculture numérique
-                    </div>
-
-                    <p class="hero-description">
-                        Transformer les données agricoles en informations
-                        exploitables pour mieux comprendre les situations,
-                        identifier les options et appuyer la décision.
-                    </p>
-
-                    <div class="hero-actions">
-
-                        <a
-                            href="#expertise&projets"
-                            class="button primary"
-                        >
-                            Voir mes projets
-                        </a>
-
-                        <a
-                            href="#contact"
-                            class="button secondary"
-                        >
-                            Me contacter
-                        </a>
-
-                        <a
-                            href="CV_Naïm_Hamidi_stage-2.pdf"
-                            target="_blank"
-                            class="button secondary"
-                        >
-                            Voir mon CV
-                        </a>
-
-                    </div>
-
-                </div>
-
-
-                <div class="portrait">
-
-                    <img
-                        src="image/photo_naim.png"
-                        alt="Naïm Hamidi"
-                    >
-
-                </div>
-
-            </section>
-
-        </div>
-
-
-        <!-- =====================================================
-             À PROPOS
-        ====================================================== -->
-
-        <section id="about">
-
-            <div class="container">
-
-                <div class="section-header">
-
-                    <div class="section-number">
-                        01 / À PROPOS
-                    </div>
-
-                    <div>
-
-                        <h2 class="section-title">
-                            Agriculture.<br>
-                            Données.<br>
-                            Décision.
-                        </h2>
-
-                    </div>
-
-                </div>
-
-
-                <div class="about-grid">
-
-                    <div class="about-text">
-
-                        <p>
-                            Ingénieur agronome formé en
-                            <strong>France et en Espagne</strong>,
-                            je développe un profil à l'interface entre
-                            <strong>agriculture, numérique, données et analyse spatiale</strong>.
-                        </p>
-
-                        <p>
-                            Je m'intéresse particulièrement aux applications
-                            de l'agriculture numérique permettant de mieux
-                            observer les systèmes agricoles, comprendre leur
-                            fonctionnement et accompagner les décisions.
-                        </p>
-
-
-                        <div class="search-box">
-
-                            <div class="search-label">
-                                Recherche
-                            </div>
-
-                            <div class="search-text">
-                                Stage de fin d'études · 3 mois · été 2027
-                            </div>
-
-                        </div>
-
-
-                        <div class="interest-tags">
-
-                            <span class="tag">
-                                Digital Agriculture
-                            </span>
-
-                            <span class="tag">
-                                AgTech
-                            </span>
-
-                            <span class="tag">
-                                Precision Agriculture
-                            </span>
-
-                            <span class="tag">
-                                Data
-                            </span>
-
-                            <span class="tag">
-                                Remote Sensing
-                            </span>
-
-                            <span class="tag">
-                                GIS
-                            </span>
-
-                            <span class="tag">
-                                AI
-                            </span>
-
-                            <span class="tag">
-                                Smart Farming
-                            </span>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="languages">
-
-                        <div class="languages-title">
-                            Langues
-                        </div>
-
-                        <div class="language-list">
-
-                            <div class="language">
-                                🇫🇷 <strong>Français</strong>
-                            </div>
-
-                            <div class="language">
-                                🇬🇧 <strong>Anglais</strong>
-                            </div>
-
-                            <div class="language">
-                                🇪🇸 <strong>Espagnol</strong>
-                            </div>
-
-                            <div class="language">
-                                🇩🇿 <strong>Arabe dialectal</strong>
-                            </div>
-
-                            <div class="language">
-                                <strong>Arabe littéral</strong>
-                                 <span style="color:#777;">
-                                    · initiation
-                            </div>
-
-                            <div class="language">
-                                🇨🇳 <strong>Mandarin</strong>
-                                <span style="color:#777;">
-                                    · initiation
-                                </span>
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
+            <p class="description">A web tool helping farmers identify and estimate Common Agricultural Policy payments based on their farm’s characteristics.</p>
+            <span class="project-cta">Explore project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5"/></svg></span>
+          </a>
+        </article>
+
+        <!-- PROJECT 2 -->
+        <article>
+          <a class="project-card" href="https://naim-hamidi-data.github.io/condi-environnement/" target="_blank" rel="noopener noreferrer" aria-label="Explore Environmental Self-Assessment (opens in a new tab)">
+            <div class="project-top">
+              <h3>Environmental<br>Self-Assessment</h3>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg>
             </div>
-
-        </section>
-
-
-        <!-- =====================================================
-             EXPERTISE & PROJETS
-        ====================================================== -->
-
-        <section id="expertise">
-
-            <div class="container">
-
-                <div class="section-header">
-
-                    <div class="section-number">
-                        02 / EXPERTISE & PROJETS
-                    </div>
-
-                    <div>
-
-                        <h2 class="section-title">
-                            Sept domaines.<br>
-                            Une même logique.
-                        </h2>
-
-                        <p class="section-intro">
-                            Mobiliser les outils numériques adaptés
-                            à chaque problématique agricole.
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                <div class="expertise-grid">
-
-
-                    <!-- 01 -->
-
-                    <article class="expertise-card">
-
-                        <div class="expertise-number">
-                            01
-                        </div>
-
-                        <h3>
-                            Data Analytics & IA
-                        </h3>
-
-                        <p class="expertise-description">
-                            Analyse statistique, données agricoles,
-                            modèles prédictifs et visualisation.
-                        </p>
-                        Projets :
-                        <ul class="project-list">
-
-                            <li>
-                                <a href="projet%20data%20%26%20ia/analyse-varietale/">
-                                    Analyse statistique d'essais variétaux
-                                </a>
-                            </li>
-
-                            <li>
-                               <a href="mousquetaires/">
-                                   Analyse de données de marchés
-                               </a>
-                            </li>
-
-                            <li>
-                                <a href="crédit_agricole/">
-                                    Création de bases de données RSE agricoles
-                                </a>
-                            </li>
-
-                        </ul>
-
-                        <div class="stack">
-
-                            <span>Python</span>
-                            <span>SQL</span>
-                            <span>NoSQL</span>
-                            <span>Excel</span>
-                            <span>Power BI</span>
-                            <span>Machine Learning</span>
-                            <span>Data Analytics</span>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- 02 -->
-
-                    <article class="expertise-card">
-
-                        <div class="expertise-number">
-                            02
-                        </div>
-
-                        <h3>
-                            IoT & Capteurs
-                        </h3>
-
-                        <p class="expertise-description">
-                            De l'acquisition de données jusqu'à leur
-                            transmission, leur stockage et leur analyse.
-                        </p>
-
-                        <ul class="project-list">
-
-                            <li>
-                                Technologies NIRS (infrarouges) et modèles prédictifs pour anticiper les maladies en élevage
-                            </li>
-
-                            <li>
-                                Pose de capteurs pour la mesure des données du sol
-                            </li>
-
-                        </ul>
-
-                        <div class="stack">
-
-                            <span>NIRS</span>
-                            <span>Capteurs</span>
-                            <span>MQTT</span>
-                            <span>HTTP</span>
-                            <span>FIWARE</span>
-                            <span>Gateway</span>
-                            <span>Grafana</span>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- 03 -->
-
-                    <article class="expertise-card">
-
-                        <div class="expertise-number">
-                            03
-                        </div>
-
-                        <h3>
-                            SIG & Cartographie
-                        </h3>
-
-                        <p class="expertise-description">
-                            Analyse spatiale et cartographie des
-                            territoires agricoles.
-                        </p>
-
-                        <ul class="project-list">
-
-                            <li>
-                                Identification d'évolutions de parcelles et d'anomalies déclaratives
-                            </li>
-
-                            <li>
-                                Identification des zones à enjeux à contrôler dans le cadre du contrôle environnemental
-                            </li>
-
-                        </ul>
-
-                        <div class="stack">
-
-                            <span>QGIS</span>
-                            <span>ArcGIS</span>
-                            <span>Analyse spatiale</span>
-                            <span>Cartographie</span>
-                            <span>Données vectorielles</span>
-                            <span>Données raster</span>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- 04 -->
-
-                    <article class="expertise-card">
-
-                        <div class="expertise-number">
-                            04
-                        </div>
-
-                        <h3>
-                            Télédétection & Imagerie satellitaire
-                        </h3>
-
-                        <p class="expertise-description">
-                            Exploitation de l'imagerie pour observer
-                            et suivre les surfaces agricoles.
-                        </p>
-
-                        <ul class="project-list">
-
-                            <li>
-                                Suivi des surfaces agricoles via Sentinel-2 : comparaison déclaration / réalité observée
-                            </li>
-
-                            <li>
-                                Drones et calcul de NDVI : élaboration d'orthomosaïques
-                            </li>
-
-                        </ul>
-
-                        <div class="stack">
-
-                            <span>Sentinel-2</span>
-                            <span>Google Earth Engine</span>
-                            <span>Python</span>
-                            <span>JavaScript</span>
-                            <span>NDVI</span>
-                            <span>Drones</span>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- 05 -->
-
-                    <article class="expertise-card">
-
-                        <div class="expertise-number">
-                            05
-                        </div>
-
-                        <h3>
-                            Agriculture de précision
-                        </h3>
-
-                        <p class="expertise-description">
-                            Utilisation des données spatiales, capteurs
-                            et systèmes numériques pour optimiser
-                            les interventions agricoles.
-                        </p>
-
-                        <ul class="project-list">
-
-                            <li>
-                                Bilan hydrique pour le pilotage de l'irrigation
-                            </li>
-
-                            <li>
-                                IA appliquée à la gestion de l'eau
-                            </li>
-
-                            <li>
-                                Cartographie de préconisation
-                            </li>
-
-                            <li>
-                                Guidage et gestion des équipements agricoles
-                            </li>
-
-                        </ul>
-
-                        <div class="stack">
-
-                            <span>GNSS</span>
-                            <span>NDVI</span>
-                            <span>Capteurs</span>
-                            <span>SIG agricole</span>
-                            <span>IA</span>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- 06 -->
-
-                    <article class="expertise-card">
-
-                        <div class="expertise-number">
-                            06
-                        </div>
-
-                        <h3>
-                            IA & Séries temporelles
-                        </h3>
-
-                        <p class="expertise-description">
-                            Application de l'IA aux données agricoles
-                            et agroalimentaires.
-                        </p>
-
-                        <ul class="project-list">
-
-                            <li>
-                                Développement d'un modèle prédictif dans la chaîne agroalimentaire
-                            </li>
-
-                            <li>
-                                Traitement d'images et/ou de données NLP dans la chaîne agroalimentaire
-                            </li>
-
-                            <li>
-                                Développement d'assistants virtuels open source
-                            </li>
-
-                        </ul>
-
-                        <div class="stack">
-
-                            <span>Machine Learning</span>
-                            <span>Deep Learning</span>
-                            <span>Séries temporelles</span>
-                            <span>NLP</span>
-                            <span>Computer Vision</span>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- 07 -->
-
-                    <article class="expertise-card full">
-
-                        <div class="expertise-number">
-                            07
-                        </div>
-
-                        <h3>
-                            Outils d'aide à la décision
-                        </h3>
-
-                        <p class="expertise-description">
-                            Transformation de données agricoles,
-                            économiques et environnementales en
-                            informations directement exploitables
-                            pour la décision.
-                        </p>
-
-                        <ul class="project-list">
-
-                            <li>
-                                Développement de tableaux de bord avec Power BI
-                            </li>
-
-                            <li>
-                                Structuration et visualisation d'indicateurs
-                            </li>
-
-                            <li>
-                                Développement de systèmes de veille
-                            </li>
-
-                            <li>
-                                Agrégation de données provenant de différentes sources
-                            </li>
-
-                        </ul>
-
-                        <div class="stack">
-
-                            <span>Power BI</span>
-                            <span>Dashboards</span>
-                            <span>Data Visualization</span>
-                            <span>Systèmes de veille</span>
-
-                        </div>
-
-                    </article>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =====================================================
-             CONTACT
-        ====================================================== -->
-
-        <section id="contact" class="contact">
-
-            <div class="container">
-
-                <div class="contact-box">
-
-                    <div>
-
-                        <div class="eyebrow">
-                            CONTACT
-                        </div>
-
-                        <h2>
-                            Construisons quelque chose
-                            d'utile pour l'agriculture.
-                        </h2>
-
-                        <p>
-                            Je recherche un stage de fin d'études de
-                            3 mois à partir de l'été 2027, dans les domaines
-                            de l'agriculture numérique, de la data,
-                            des SIG, de la télédétection, de l'IA ou
-                            de l'agriculture de précision.
-                        </p>
-
-                    </div>
-
-
-                    <div class="contact-actions">
-
-                        <a
-                            href="mailto:abdelnaim31@outlook.fr"
-                            class="contact-button"
-                        >
-                            Me contacter
-                        </a>
-
-                        <a
-                            href="https://www.linkedin.com/in/naimhamidi/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="contact-button"
-                        >
-                            LinkedIn
-                        </a>
-
-                        <a
-                            href="https://github.com/naim-hamidi-data"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="contact-button"
-                        >
-                            GitHub
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-    </main>
-
-
-    <!-- =========================================================
-         FOOTER
-    ========================================================== -->
-
-    <footer>
-
-        <div class="container">
-
-            <div class="footer-inner">
-
-                <div class="footer-brand">
-                    NAÏM HAMIDI
-                </div>
-
-                <div>
-                    DIGITAL AGRI · DATA · AGRICULTURE · SIG
-                </div>
-
-                <div>
-                    © 2026
-                </div>
-
-            </div>
-
-        </div>
-
+            <p class="description">A guided questionnaire helping farmers review environmental requirements and identify points to check on their farm.</p>
+            <span class="project-cta">Explore project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5"/></svg></span>
+          </a>
+        </article>
+      </div>
+    </section>
+
+    <footer aria-label="Contact and CV">
+      <div class="contact-links">
+        <a class="pill" href="mailto:abdelnaim31@outlook.fr">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7 8 6 8-6"/></svg>
+          abdelnaim31@outlook.fr
+        </a>
+        <!-- Replace this PDF with your next CV, keeping the same filename. -->
+        <a class="pill" href="assets/CV_Naim_Hamidi.pdf" download="CV_Naim_Hamidi.pdf">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m-4-4 4 4 4-4M4 16v4a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-4"/></svg>
+          Download CV
+        </a>
+      </div>
+      <nav class="socials" aria-label="Social profiles">
+        <a href="https://github.com/naim-hamidi-data" target="_blank" rel="noopener noreferrer" aria-label="GitHub (opens in a new tab)">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .9a11.1 11.1 0 0 0-3.51 21.63c.56.1.76-.24.76-.54v-2.07c-3.1.67-3.75-1.32-3.75-1.32-.5-1.28-1.24-1.62-1.24-1.62-1.01-.69.08-.68.08-.68 1.12.08 1.71 1.15 1.71 1.15.99 1.7 2.59 1.21 3.22.93.1-.72.39-1.21.7-1.49-2.47-.28-5.07-1.24-5.07-5.49 0-1.21.43-2.2 1.14-2.98-.12-.28-.5-1.41.11-2.94 0 0 .93-.3 3.05 1.14a10.6 10.6 0 0 1 5.56 0c2.12-1.44 3.05-1.14 3.05-1.14.61 1.53.23 2.66.11 2.94.71.78 1.14 1.77 1.14 2.98 0 4.26-2.6 5.21-5.08 5.48.4.35.75 1.03.75 2.07v3.04c0 .3.2.65.77.54A11.1 11.1 0 0 0 12 .9Z"/></svg>
+          GitHub
+        </a>
+        <a href="https://www.linkedin.com/in/naimhamidi/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn (opens in a new tab)">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 2H3.55C2.69 2 2 2.68 2 3.52v16.96c0 .84.69 1.52 1.55 1.52h16.9c.86 0 1.55-.68 1.55-1.52V3.52c0-.84-.69-1.52-1.55-1.52ZM7.93 18.75H4.98V9.2h2.95v9.55ZM6.46 7.9a1.71 1.71 0 1 1 0-3.42 1.71 1.71 0 0 1 0 3.42Zm12.29 10.85H15.8v-4.65c0-1.11-.02-2.54-1.55-2.54-1.55 0-1.79 1.21-1.79 2.46v4.73H9.51V9.2h2.83v1.3h.04c.4-.76 1.36-1.56 2.79-1.56 2.98 0 3.58 1.96 3.58 4.51v5.3Z"/></svg>
+          LinkedIn
+        </a>
+      </nav>
     </footer>
+  </main>
 
+  <script>
+    (() => {
+      const root = document.documentElement;
+      const button = document.querySelector('.theme-toggle');
+      const media = matchMedia('(prefers-color-scheme: dark)');
+      let manualChoice = false;
+      try { manualChoice = ['light', 'dark'].includes(localStorage.getItem('naim-portfolio-theme')); } catch (_) {}
+
+      function applyTheme(theme) {
+        root.dataset.theme = theme;
+        const label = theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode';
+        button.setAttribute('aria-label', label);
+        button.title = label;
+        document.querySelector('meta[name="theme-color"]').content = theme === 'dark' ? '#151917' : '#fafbfa';
+      }
+      applyTheme(root.dataset.theme || 'light');
+      button.hidden = false;
+      button.addEventListener('click', () => {
+        const theme = root.dataset.theme === 'dark' ? 'light' : 'dark';
+        manualChoice = true;
+        applyTheme(theme);
+        try { localStorage.setItem('naim-portfolio-theme', theme); } catch (_) {}
+      });
+      media.addEventListener('change', event => {
+        if (!manualChoice) applyTheme(event.matches ? 'dark' : 'light');
+      });
+    })();
+  </script>
 </body>
 </html>
