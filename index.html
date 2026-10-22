@@ -120,6 +120,7 @@
     .projects { margin-top: 58px; }
     h2 { margin: 0 0 16px; font-size: 10px; text-transform: uppercase; font-weight: 600; letter-spacing: 2px; text-align: center; color: var(--muted); }
     .project-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+    .project-wide { grid-column: 1 / -1; }
     .project-card {
       display: flex;
       flex-direction: column;
@@ -209,6 +210,18 @@
             </div>
             <p class="description">A guided questionnaire helping farmers review environmental requirements and identify points to check on their farm.</p>
             <span class="project-cta">Explore project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5"/></svg></span>
+          </a>
+        </article>
+
+        <!-- PROJECT 3 — QGIS mapping -->
+        <article class="project-wide">
+          <a class="project-card" href="assets/carto-risk.pdf" target="_blank" rel="noopener noreferrer" aria-label="View QGIS nitrate pollution risk and biodiversity map (PDF, opens in a new tab)">
+            <div class="project-top">
+              <h3>Spatial Analysis of Nitrate Pollution Risk Areas and Biodiversity Feature Conservation on Farms</h3>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg>
+            </div>
+            <p class="description">Spatial analysis with QGIS to map nitrate pollution risk areas, watercourse buffer zones and hedgerows, supporting water protection and biodiversity conservation on farms.</p>
+            <span class="project-cta">View map · PDF <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5"/></svg></span>
           </a>
         </article>
       </div>
