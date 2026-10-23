@@ -220,16 +220,11 @@
       </div>
     </section>
 
-    <footer data-i18n-aria="contact" aria-label="Contact and CV">
+    <footer data-i18n-aria="contact" aria-label="Contact">
       <div class="contact-links">
         <a class="pill" href="mailto:abdelnaim31@outlook.fr">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7 8 6 8-6"/></svg>
           abdelnaim31@outlook.fr
-        </a>
-        <!-- Replace this PDF with your next CV, keeping the same filename. -->
-        <a class="pill" href="assets/CV_Naim_Hamidi.pdf" download="CV_Naim_Hamidi.pdf" data-cv-download>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m-4-4 4 4 4-4M4 16v4a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-4"/></svg>
-          <span data-i18n="cv">Download CV</span>
         </a>
       </div>
       <nav class="socials" data-i18n-aria="social" aria-label="Social profiles">
@@ -266,11 +261,11 @@
     "gisTitle": "Spatial Analysis of Nitrate Pollution Risk Areas and Biodiversity Feature Conservation on Farms",
     "gisDescription": "Spatial analysis with QGIS to map nitrate pollution risk areas, watercourse buffer zones and hedgerows, supporting water protection and biodiversity conservation on farms.",
     "map": "View map · PDF",
-    "cv": "Download CV",
+
     "languageLabel": "Choose a language",
     "lightMode": "Switch to light mode",
     "darkMode": "Switch to dark mode",
-    "contact": "Contact and CV",
+    "contact": "Contact",
     "social": "Social profiles",
     "capLabel": "Explore CAP Assistant (opens in a new tab)",
     "envLabel": "Explore Environmental Self-Assessment (opens in a new tab)",
@@ -296,11 +291,11 @@
     "gisTitle": "Analyse spatiale des zones à risque de pollution par les nitrates et préservation des éléments de biodiversité sur les exploitations agricoles",
     "gisDescription": "Analyse spatiale avec QGIS pour cartographier les zones à risque de pollution par les nitrates, les zones tampons des cours d’eau et les haies, afin de contribuer à la protection de l’eau et de la biodiversité.",
     "map": "Voir la carte · PDF",
-    "cv": "Télécharger le CV",
+
     "languageLabel": "Choisir une langue",
     "lightMode": "Activer le mode clair",
     "darkMode": "Activer le mode sombre",
-    "contact": "Contact et CV",
+    "contact": "Contact",
     "social": "Réseaux sociaux",
     "capLabel": "Découvrir l’Assistant PAC (nouvel onglet)",
     "envLabel": "Découvrir l’autodiagnostic environnemental (nouvel onglet)",
@@ -326,11 +321,11 @@
     "gisTitle": "Análisis espacial de zonas de riesgo de contaminación por nitratos y conservación de elementos de biodiversidad en explotaciones agrícolas",
     "gisDescription": "Análisis espacial con QGIS para cartografiar zonas de riesgo de contaminación por nitratos, franjas de protección de cursos de agua y setos, contribuyendo a la protección del agua y la biodiversidad.",
     "map": "Ver el mapa · PDF",
-    "cv": "Descargar CV",
+
     "languageLabel": "Elegir idioma",
     "lightMode": "Activar el modo claro",
     "darkMode": "Activar el modo oscuro",
-    "contact": "Contacto y CV",
+    "contact": "Contacto",
     "social": "Redes sociales",
     "capLabel": "Ver el Asistente PAC (se abre en una pestaña nueva)",
     "envLabel": "Ver la autoevaluación ambiental (se abre en una pestaña nueva)",
@@ -357,27 +352,11 @@
         themeButton.setAttribute('aria-label', label);
         themeButton.title = label;
       }
-      // Each language uses its matching CV already stored in assets.
-      function updateCV(language) {
-        const cvFiles = {
-          en: 'CV_Naim_Hamidi.pdf',
-          fr: 'CV_Naim_Hamidi_FR.pdf',
-          es: 'CV_Naim_Hamidi_ES.pdf'
-        };
-        const filename = cvFiles[language] || cvFiles.en;
-        document.querySelectorAll('[data-cv-download]').forEach(link => {
-          link.setAttribute('href', 'assets/' + filename);
-          link.setAttribute('download', filename);
-          link.setAttribute('hreflang', language);
-        });
-      }
-
       function applyLanguage(nextLanguage) {
         if (!Object.prototype.hasOwnProperty.call(translations, nextLanguage)) return;
         language = nextLanguage;
         const text = translations[language];
         root.lang = language;
-        updateCV(language);
         document.querySelectorAll('[data-i18n]').forEach(element => {
           const value = text[element.dataset.i18n];
           if (typeof value === 'string') element.textContent = value;
