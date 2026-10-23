@@ -227,7 +227,7 @@
           abdelnaim31@outlook.fr
         </a>
         <!-- Replace this PDF with your next CV, keeping the same filename. -->
-        <a class="pill" href="assets/CV_Naim_Hamidi.pdf" download="CV_Naim_Hamidi.pdf">
+        <a class="pill" href="assets/CV_Naim_Hamidi.pdf" download="CV_Naim_Hamidi.pdf" data-cv-download>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m-4-4 4 4 4-4M4 16v4a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-4"/></svg>
           <span data-i18n="cv">Download CV</span>
         </a>
@@ -357,11 +357,27 @@
         themeButton.setAttribute('aria-label', label);
         themeButton.title = label;
       }
+      // Each language uses its matching CV already stored in assets.
+      function updateCV(language) {
+        const cvFiles = {
+          en: 'CV_Naim_Hamidi.pdf',
+          fr: 'CV_Naim_Hamidi_FR.pdf',
+          es: 'CV_Naim_Hamidi_ES.pdf'
+        };
+        const filename = cvFiles[language] || cvFiles.en;
+        document.querySelectorAll('[data-cv-download]').forEach(link => {
+          link.setAttribute('href', 'assets/' + filename);
+          link.setAttribute('download', filename);
+          link.setAttribute('hreflang', language);
+        });
+      }
+
       function applyLanguage(nextLanguage) {
         if (!Object.prototype.hasOwnProperty.call(translations, nextLanguage)) return;
         language = nextLanguage;
         const text = translations[language];
         root.lang = language;
+        updateCV(language);
         document.querySelectorAll('[data-i18n]').forEach(element => {
           const value = text[element.dataset.i18n];
           if (typeof value === 'string') element.textContent = value;
