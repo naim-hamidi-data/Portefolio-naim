@@ -142,9 +142,60 @@
     .availability { max-width:100%; text-align:center; }
     @media(max-width:520px) { .language-switch { top:17px; right:70px; } }
     @media print { .language-switch { display:none; } }
+
+    .season-widget { position:absolute; top:18px; left:24px; z-index:5; --season-ink:#6c865c; }
+    .season-widget[data-season="summer"] { --season-ink:#b59246; }
+    .season-widget[data-season="autumn"] { --season-ink:#ae704f; }
+    .season-widget[data-season="winter"] { --season-ink:#7d9fae; }
+    .season-launcher { position:relative; width:224px; padding:5px 6px 10px; }
+    #seasons-heading { margin:0 0 8px; color:var(--muted); font-size:10px; line-height:1.4; letter-spacing:.2px; }
+    .avatar-row { display:flex; gap:8px; position:relative; z-index:1; }
+    .avatar-button { position:relative; display:grid; place-items:center; width:44px; height:44px; padding:2px; border:1px solid var(--border); border-radius:50%; background:var(--card); cursor:pointer; overflow:hidden; transition:transform .18s,border-color .18s; }
+    .avatar-button:hover { transform:translateY(-2px); border-color:var(--season-ink); }
+    .avatar-button[aria-expanded="true"] { border:2px solid var(--season-ink); }
+    .avatar-button img { width:100%; height:100%; object-fit:cover; border-radius:50%; position:absolute; inset:0; }
+    .avatar-fallback,.portrait-fallback { color:var(--season-ink); font-family:Georgia,serif; }
+    .season-card { position:absolute; top:91px; left:0; width:360px; max-height:calc(100svh - 135px); overflow:auto; padding:26px; border:1px solid var(--border); border-radius:16px; background:var(--bg); box-shadow:0 12px 40px #10201620; }
+    .season-close { position:absolute; top:10px; right:10px; z-index:2; width:34px; height:34px; border:0; border-radius:50%; color:var(--muted); background:var(--card); font-size:24px; cursor:pointer; }
+    .season-portrait { width:86px; height:86px; position:relative; display:grid; place-items:center; border-radius:50%; border:1px solid var(--season-ink); margin-bottom:18px; overflow:hidden; }
+    .season-portrait img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+    .portrait-fallback { font-size:30px; }
+    .season-name { position:relative; margin:0 0 5px; color:var(--season-ink); font-size:11px; }
+    #season-title { position:relative; color:var(--text); text-align:left; text-transform:none; letter-spacing:-.3px; font-family:Georgia,serif; font-size:24px; font-weight:normal; line-height:1.3; }
+    .season-story { position:relative; margin:15px 0 0; color:var(--text); font-size:13px; line-height:1.85; }
+    .launcher-decoration,.card-decoration { pointer-events:none; position:absolute; inset:0; overflow:hidden; border-radius:inherit; }
+    .season-ornament { position:absolute; opacity:0; color:var(--season-ink); transition:opacity .25s; width:115px; height:115px; right:-5px; top:-6px; }
+    .launcher-decoration .season-ornament { width:72px; height:72px; right:-4px; top:0; }
+    .season-widget[data-season="spring"] .season-ornament.spring,.season-widget[data-season="summer"] .season-ornament.summer,.season-widget[data-season="autumn"] .season-ornament.autumn,.season-widget[data-season="winter"] .season-ornament.winter { opacity:.26; }
+    .season-widget[data-season] .season-card { animation:season-in .18s ease-out; }
+    @keyframes season-in { from { opacity:0; transform:translateY(-5px); } to { opacity:1; transform:translateY(0); } }
+    @media(max-width:700px) {
+      .season-widget { top:76px; left:18px; }
+      .season-launcher { width:230px; }
+      .season-card { top:88px; width:min(360px,calc(100vw - 36px)); max-height:calc(100svh - 182px); padding:23px; }
+      main { padding-top:174px; }
+    }
+    @media(prefers-reduced-motion:reduce) { .season-card { animation:none!important; } }
+    @media print { .season-widget { display:none; } }
   </style>
 </head>
 <body>
+  <aside class="season-widget" aria-labelledby="seasons-heading" hidden>
+    <div class="season-launcher">
+      <p id="seasons-heading">Four seasons to get to know me</p>
+      <div class="avatar-row"><button type="button" class="avatar-button" data-season="spring" aria-expanded="false" aria-controls="season-card" aria-label="Spring" title="Spring"><span class="avatar-fallback" aria-hidden="true">S</span><img src="assets/avatar_printemps.png" alt="" width="42" height="42"></button><button type="button" class="avatar-button" data-season="summer" aria-expanded="false" aria-controls="season-card" aria-label="Summer" title="Summer"><span class="avatar-fallback" aria-hidden="true">S</span><img src="assets/avatar_ete.png" alt="" width="42" height="42"></button><button type="button" class="avatar-button" data-season="autumn" aria-expanded="false" aria-controls="season-card" aria-label="Autumn" title="Autumn"><span class="avatar-fallback" aria-hidden="true">A</span><img src="assets/avatar_automne.png" alt="" width="42" height="42"></button><button type="button" class="avatar-button" data-season="winter" aria-expanded="false" aria-controls="season-card" aria-label="Winter" title="Winter"><span class="avatar-fallback" aria-hidden="true">W</span><img src="assets/avatar_hiver.png" alt="" width="42" height="42"></button></div>
+      <div class="launcher-decoration"><svg class="season-ornament spring" viewBox="0 0 130 130" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M30 110Q65 70 80 16M50 77q-27-26-33-6 12 18 33 6M66 49q29-7 26 12-17 9-26-12"/><g transform="translate(78 24)"><ellipse cy="-9" rx="5" ry="9"/><ellipse cy="9" rx="5" ry="9"/><ellipse cx="9" rx="9" ry="5"/><ellipse cx="-9" rx="9" ry="5"/><circle r="4"/></g></svg><svg class="season-ornament summer" viewBox="0 0 130 130" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M30 118 70 14M47 74q-27-8-20-22 16 3 20 22m2-5q26 7 25-12-15-3-25 12M57 49q-22-7-17-20 15 1 17 20m2-5q23 5 22-11-14-3-22 11M65 28q-15-8-11-19 12 2 11 19m2-5q18 0 15-13-11 0-15 13M39 100q-26-7-22-23 18 2 22 23m2-4q27 6 27-14-17-1-27 14"/></svg><svg class="season-ornament autumn" viewBox="0 0 130 130" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M28 108 84 24M35 92C8 59 37 14 89 17c9 48-12 82-54 75Z M45 77 25 54m31 7 24-5M64 49 48 31"/><path d="m91 111 14-24m-14 24c-21-9-11-29 20-32 6 20-3 35-20 32Z"/></svg><svg class="season-ornament winter" viewBox="0 0 130 130" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g><path d="M60 15v90M21 37l78 46M21 83l78-46M48 23l12 12 12-12M48 97l12-12 12 12M24 52l17-5-4-17m46 60-4-17 17-5M37 90l4-17-17-5m72-16-17-5 4-17"/></g></svg></div>
+    </div>
+    <section id="season-card" class="season-card" aria-labelledby="season-title" tabindex="-1" hidden>
+      <button class="season-close" type="button" aria-label="Close" title="Close">×</button>
+      <div class="card-decoration"><svg class="season-ornament spring" viewBox="0 0 130 130" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M30 110Q65 70 80 16M50 77q-27-26-33-6 12 18 33 6M66 49q29-7 26 12-17 9-26-12"/><g transform="translate(78 24)"><ellipse cy="-9" rx="5" ry="9"/><ellipse cy="9" rx="5" ry="9"/><ellipse cx="9" rx="9" ry="5"/><ellipse cx="-9" rx="9" ry="5"/><circle r="4"/></g></svg><svg class="season-ornament summer" viewBox="0 0 130 130" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M30 118 70 14M47 74q-27-8-20-22 16 3 20 22m2-5q26 7 25-12-15-3-25 12M57 49q-22-7-17-20 15 1 17 20m2-5q23 5 22-11-14-3-22 11M65 28q-15-8-11-19 12 2 11 19m2-5q18 0 15-13-11 0-15 13M39 100q-26-7-22-23 18 2 22 23m2-4q27 6 27-14-17-1-27 14"/></svg><svg class="season-ornament autumn" viewBox="0 0 130 130" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M28 108 84 24M35 92C8 59 37 14 89 17c9 48-12 82-54 75Z M45 77 25 54m31 7 24-5M64 49 48 31"/><path d="m91 111 14-24m-14 24c-21-9-11-29 20-32 6 20-3 35-20 32Z"/></svg><svg class="season-ornament winter" viewBox="0 0 130 130" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g><path d="M60 15v90M21 37l78 46M21 83l78-46M48 23l12 12 12-12M48 97l12-12 12 12M24 52l17-5-4-17m46 60-4-17 17-5M37 90l4-17-17-5m72-16-17-5 4-17"/></g></svg></div>
+      <div class="season-portrait"><span class="portrait-fallback" aria-hidden="true"></span><img id="season-portrait" alt="" width="86" height="86"></div>
+      <p class="season-name"></p>
+      <h2 id="season-title"></h2>
+      <p class="season-story"></p>
+    </section>
+  </aside>
+
   <a class="skip-link" href="#projects" data-i18n="skip">Skip to projects</a>
 
 
@@ -392,6 +443,69 @@
       media.addEventListener('change', event => {
         if (!manualTheme) applyTheme(event.matches ? 'dark' : 'light');
       });
+    })();
+  </script>
+
+  <script>
+    (() => {
+      const stories = {"fr": {"heading": "Quatre saisons pour me découvrir", "close": "Fermer", "hint": "Choisissez un portrait", "spring": ["Printemps", "Explorer", "Les bourgeons s’ouvrent, les premiers insectes reprennent leurs chemins. J’ai cette même curiosité vagabonde : passer d’une langue à une autre, m’attarder sur une idée, entrer dans un univers dont je ne connais pas encore les codes. Et laisser chaque rencontre déplacer un peu mon regard."], "summer": ["Été", "Vibrer", "L’été a l’énergie des journées qui débordent. Je retrouve cet élan dans le mouvement du sport, les départs en voyage, une conversation qui se prolonge ou un rire partagé. C’est là que je prends des forces, au contact des autres."], "autumn": ["Automne", "Lire les traces", "Quand les feuilles tombent, le paysage laisse paraître ses lignes. J’aime ce moment où regarder autrement permet de comprendre davantage. Sur une carte, je suis le fil de l’eau, les contours d’une parcelle, la continuité d’une haie : peu à peu, les détails composent un ensemble. Dans ce que j’entreprends, l’analyse commence par cette attention."], "winter": ["Hiver", "Préparer la suite", "Bien avant le gel, les réserves se constituent et les refuges se préparent. Cette attention portée à ce qui vient me ressemble. Comprendre les aléas, reconnaître les fragilités, garder des possibilités d’action : c’est ce que je cherche en me formant aux risques agricoles. Préparer la suite, même lorsque l’horizon reste incertain."]}, "en": {"heading": "Four seasons to get to know me", "close": "Close", "hint": "Choose a portrait", "spring": ["Spring", "Explore", "Buds unfold, and the first insects find their paths again. I share that wandering curiosity: moving between languages, lingering over an idea, stepping into a world whose ways I have yet to learn. And letting each encounter shift my perspective a little."], "summer": ["Summer", "Feel the energy", "Summer carries the energy of days that spill over. I find that same momentum in sport, setting off on a journey, a conversation that lingers, or shared laughter. That is where I draw strength: in the company of others."], "autumn": ["Autumn", "Read the traces", "As the leaves fall, the landscape reveals its lines. I love that moment when looking differently brings deeper understanding. On a map, I follow the course of water, the outlines of a field, the continuity of a hedgerow: little by little, details form a whole. In everything I undertake, analysis begins with this attention."], "winter": ["Winter", "Prepare for what comes next", "Long before the frost, stores are gathered and shelters prepared. That attentiveness to what lies ahead feels familiar to me. Understanding uncertainty, recognising vulnerabilities, keeping options open: this is what I seek in studying agricultural risks. Preparing for what comes next, even when the horizon remains unclear."]}, "es": {"heading": "Cuatro estaciones para conocerme", "close": "Cerrar", "hint": "Elige un retrato", "spring": ["Primavera", "Explorar", "Las yemas se abren y los primeros insectos retoman sus caminos. Comparto esa curiosidad errante: pasar de una lengua a otra, detenerme en una idea, adentrarme en un mundo cuyas claves aún desconozco. Y dejar que cada encuentro transforme un poco mi mirada."], "summer": ["Verano", "Vibrar", "El verano tiene la energía de los días que se desbordan. Encuentro ese mismo impulso en el deporte, al emprender un viaje, en una conversación que se alarga o en una risa compartida. Ahí recupero fuerzas: en el encuentro con los demás."], "autumn": ["Otoño", "Leer las huellas", "Cuando caen las hojas, el paisaje deja ver sus líneas. Me gusta ese momento en el que mirar de otra manera permite comprender mejor. En un mapa, sigo el curso del agua, los contornos de una parcela, la continuidad de un seto: poco a poco, los detalles componen un conjunto. En todo lo que emprendo, el análisis comienza con esa atención."], "winter": ["Invierno", "Preparar lo que viene", "Mucho antes de las heladas, se reúnen reservas y se preparan refugios. Me reconozco en esa atención a lo que está por venir. Comprender los riesgos, reconocer las fragilidades, mantener abiertas las posibilidades de actuar: eso es lo que busco al formarme en riesgos agrícolas. Preparar lo que viene, incluso cuando el horizonte sigue siendo incierto."]}};
+      const images = {"spring": "avatar_printemps.png", "summer": "avatar_ete.png", "autumn": "avatar_automne.png", "winter": "avatar_hiver.png"};
+      const widget = document.querySelector('.season-widget');
+      const card = document.querySelector('#season-card');
+      const buttons = [...widget.querySelectorAll('[data-season]')];
+      const portrait = document.querySelector('#season-portrait');
+      const closeButton = widget.querySelector('.season-close');
+      let selected = null;
+      let trigger = null;
+      function language() { return Object.hasOwn(stories, document.documentElement.lang) ? document.documentElement.lang : 'en'; }
+      function render() {
+        const copy = stories[language()];
+        document.querySelector('#seasons-heading').textContent = copy.heading;
+        closeButton.setAttribute('aria-label', copy.close);
+        closeButton.title = copy.close;
+        buttons.forEach(button => {
+          const key = button.dataset.season;
+          button.title = copy[key][0] + ' — ' + copy[key][1];
+          button.setAttribute('aria-label', button.title);
+          button.setAttribute('aria-expanded', String(selected === key));
+          button.querySelector('.avatar-fallback').textContent = copy[key][0][0];
+        });
+        if (!selected) return;
+        const [season, title, story] = copy[selected];
+        widget.dataset.season = selected;
+        widget.querySelector('.season-name').textContent = season;
+        document.querySelector('#season-title').textContent = title;
+        widget.querySelector('.season-story').textContent = story;
+        widget.querySelector('.portrait-fallback').textContent = season[0];
+        const source = 'assets/' + images[selected];
+        if (portrait.getAttribute('src') !== source) { portrait.hidden = false; portrait.src = source; }
+        portrait.alt = 'Naïm Hamidi — ' + season;
+      }
+      function close(restoreFocus) {
+        card.hidden = true;
+        selected = null;
+        delete widget.dataset.season;
+        render();
+        if (restoreFocus && trigger) trigger.focus();
+      }
+      buttons.forEach(button => button.addEventListener('click', () => {
+        if (selected === button.dataset.season) { close(true); return; }
+        selected = button.dataset.season;
+        trigger = button;
+        render();
+        card.hidden = false;
+        card.focus({preventScroll:true});
+      }));
+      closeButton.addEventListener('click', () => close(true));
+      document.addEventListener('keydown', event => { if (event.key === 'Escape' && selected) close(true); });
+      document.addEventListener('click', event => { if (selected && !widget.contains(event.target) && !event.target.closest('.language-switch, .theme-toggle')) close(false); });
+      widget.querySelectorAll('img').forEach(img => {
+        img.addEventListener('error', () => { img.hidden = true; });
+        if (img.getAttribute('src') && img.complete && !img.naturalWidth) img.hidden = true;
+      });
+      new MutationObserver(render).observe(document.documentElement, {attributes:true, attributeFilter:['lang']});
+      render();
+      widget.hidden = false;
     })();
   </script>
 </body>
