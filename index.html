@@ -143,52 +143,82 @@
     @media(max-width:520px) { .language-switch { top:17px; right:70px; } }
     @media print { .language-switch { display:none; } }
 
-    .season-widget { position:absolute; top:18px; left:24px; z-index:5; --season-ink:#6c865c; }
-    .season-widget[data-season="summer"] { --season-ink:#b59246; }
-    .season-widget[data-season="autumn"] { --season-ink:#ae704f; }
-    .season-widget[data-season="winter"] { --season-ink:#7d9fae; }
-    .season-launcher { position:relative; width:224px; padding:5px 6px 10px; }
-    #seasons-heading { margin:0 0 8px; color:var(--muted); font-size:10px; line-height:1.4; letter-spacing:.2px; }
-    .avatar-row { display:flex; gap:8px; position:relative; z-index:1; }
-    .avatar-button { position:relative; display:grid; place-items:center; width:44px; height:44px; padding:2px; border:1px solid var(--border); border-radius:50%; background:var(--card); cursor:pointer; overflow:hidden; transition:transform .18s,border-color .18s; }
-    .avatar-button:hover { transform:translateY(-2px); border-color:var(--season-ink); }
-    .avatar-button[aria-expanded="true"] { border:2px solid var(--season-ink); }
-    .avatar-button img { width:100%; height:100%; object-fit:cover; border-radius:50%; position:absolute; inset:0; }
+
+    /* The portrait and story sit on an organic stain drawn on the notebook itself. */
+    .season-widget { position:absolute; top:20px; left:24px; z-index:3; width:290px; padding:8px 10px 30px; isolation:isolate; --season-ink:#57734a; }
+    .season-widget[data-season="summer"] { --season-ink:#8b681f; }
+    .season-widget[data-season="autumn"] { --season-ink:#8d5134; }
+    .season-widget[data-season="winter"] { --season-ink:#577887; }
+    .season-widget::before { content:""; position:absolute; inset:-15px -8px; z-index:-2; pointer-events:none; border-radius:47% 53% 62% 38% / 38% 46% 54% 62%; background:radial-gradient(ellipse at 40% 30%,var(--bg) 10%,transparent 72%); }
+    .season-washes { position:absolute; inset:-20px -21px -34px -15px; pointer-events:none; z-index:-1; }
+    .season-washes .wash { position:absolute; inset:0; width:100%; height:100%; object-fit:fill; opacity:0; transition:opacity .35s; mix-blend-mode:multiply; }
+    .season-widget[data-season="spring"] .wash.spring,.season-widget[data-season="summer"] .wash.summer,.season-widget[data-season="autumn"] .wash.autumn,.season-widget[data-season="winter"] .wash.winter { opacity:.68; }
+    .season-launcher { position:relative; padding:0 0 6px; }
+    #seasons-heading { margin:0 0 10px; color:var(--muted); font-size:10px; line-height:1.5; letter-spacing:.15px; }
+    .avatar-row { display:flex; gap:9px; align-items:center; min-height:50px; }
+    .avatar-button { position:relative; display:grid; place-items:center; width:43px; height:43px; padding:0; border:1px solid var(--border); border-radius:50%; background:var(--bg); cursor:pointer; overflow:hidden; transition:transform .2s,border-color .2s; }
+    .avatar-button:hover { transform:translateY(-3px); border-color:var(--season-ink); }
+    .avatar-button[aria-expanded="true"] { transform:scale(1.1); border:2px solid var(--season-ink); }
+    .avatar-button img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; border-radius:50%; }
     .avatar-fallback,.portrait-fallback { color:var(--season-ink); font-family:Georgia,serif; }
-    .season-card { position:absolute; top:91px; left:0; width:360px; max-height:calc(100svh - 135px); overflow:auto; padding:26px; border:1px solid var(--border); border-radius:16px; background:var(--bg); box-shadow:0 12px 40px #10201620; }
-    .season-close { position:absolute; top:10px; right:10px; z-index:2; width:34px; height:34px; border:0; border-radius:50%; color:var(--muted); background:var(--card); font-size:24px; cursor:pointer; }
-    .season-portrait { width:86px; height:86px; position:relative; display:grid; place-items:center; border-radius:50%; border:1px solid var(--season-ink); margin-bottom:18px; overflow:hidden; }
+    .season-note { position:relative; width:100%; margin:14px 0 0; padding:10px 14px 24px 12px; background:transparent; border:0; border-radius:0; box-shadow:none; overflow:visible; }
+    .season-note:focus { outline:none; }
+    .season-close { position:absolute; top:7px; right:8px; padding:0; width:28px; height:28px; background:transparent; color:var(--muted); border:0; font-size:19px; cursor:pointer; opacity:.7; }
+    .season-close:hover { opacity:1; }
+    .season-portrait { position:relative; width:78px; height:78px; display:grid; place-items:center; border-radius:46% 54% 50% 50%; margin:0 0 17px; overflow:hidden; }
     .season-portrait img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
     .portrait-fallback { font-size:30px; }
-    .season-name { position:relative; margin:0 0 5px; color:var(--season-ink); font-size:11px; }
-    #season-title { position:relative; color:var(--text); text-align:left; text-transform:none; letter-spacing:-.3px; font-family:Georgia,serif; font-size:24px; font-weight:normal; line-height:1.3; }
-    .season-story { position:relative; margin:15px 0 0; color:var(--text); font-size:13px; line-height:1.85; }
-    .launcher-decoration,.card-decoration { pointer-events:none; position:absolute; inset:0; overflow:hidden; border-radius:inherit; }
-    .season-ornament { position:absolute; opacity:0; color:var(--season-ink); transition:opacity .25s; width:115px; height:115px; right:-5px; top:-6px; }
-    .launcher-decoration .season-ornament { width:72px; height:72px; right:-4px; top:0; }
-    .season-widget[data-season="spring"] .season-ornament.spring,.season-widget[data-season="summer"] .season-ornament.summer,.season-widget[data-season="autumn"] .season-ornament.autumn,.season-widget[data-season="winter"] .season-ornament.winter { opacity:.26; }
-    .season-widget[data-season] .season-card { animation:season-in .18s ease-out; }
-    @keyframes season-in { from { opacity:0; transform:translateY(-5px); } to { opacity:1; transform:translateY(0); } }
-    @media(max-width:700px) {
-      .season-widget { top:76px; left:18px; }
-      .season-launcher { width:230px; }
-      .season-card { top:88px; width:min(360px,calc(100vw - 36px)); max-height:calc(100svh - 182px); padding:23px; }
-      main { padding-top:174px; }
+    .season-name { margin:0 0 5px; color:var(--season-ink); font-size:11px; }
+    #season-title { text-align:left; font-family:Georgia,serif; font-size:24px; font-weight:normal; line-height:1.3; text-transform:none; letter-spacing:-.4px; color:var(--text); }
+    .season-story { margin:15px 0 0; font-size:12px; line-height:1.95; color:var(--text); }
+    [data-theme="dark"] .season-widget { --season-ink:#b5c8a6; }
+    [data-theme="dark"] .season-widget[data-season="summer"] { --season-ink:#ddc185; }
+    [data-theme="dark"] .season-widget[data-season="autumn"] { --season-ink:#d7a187; }
+    [data-theme="dark"] .season-widget[data-season="winter"] { --season-ink:#aecbd8; }
+    [data-theme="dark"] .season-washes .wash { mix-blend-mode:screen; }
+    [data-theme="dark"] .season-widget[data-season] .wash { opacity:0; }
+    [data-theme="dark"] .season-widget[data-season="spring"] .wash.spring,[data-theme="dark"] .season-widget[data-season="summer"] .wash.summer,[data-theme="dark"] .season-widget[data-season="autumn"] .wash.autumn,[data-theme="dark"] .season-widget[data-season="winter"] .wash.winter { opacity:.13; }
+    @media(min-width:1201px) and (max-width:1320px) { .season-widget { left:14px; width:250px; } .season-note { padding-inline:10px; } }
+    @media(max-width:1200px) {
+      .season-widget { position:relative; top:auto; left:auto; width:min(100% - 48px,340px); margin:88px 0 0 24px; padding-bottom:20px; }
+      main { padding-top:32px; }
+      .season-note { padding-inline:20px; }
+      .season-washes { inset:-15px -18px -22px; }
     }
-    @media(prefers-reduced-motion:reduce) { .season-card { animation:none!important; } }
+    @media(max-width:520px) { .season-widget { margin-left:18px; width:calc(100% - 50px); max-width:320px; } }
+    @media(prefers-reduced-motion:reduce) { .season-washes .wash,.avatar-button { transition:none; } }
     @media print { .season-widget { display:none; } }
+
+    /* The softly diffused stain picks up the actual portrait background. */
+    .season-widget { --portrait-tint:180 192 170; }
+    .season-widget[data-season]::before {
+      inset:-15px -12px -12px;
+      background:radial-gradient(ellipse at 35% 25%,rgb(var(--portrait-tint) / .26),transparent 66%),radial-gradient(ellipse at 70% 65%,rgb(var(--portrait-tint) / .2),transparent 69%);
+      filter:blur(8px);
+    }
+    [data-theme="dark"] .season-widget[data-season]::before { opacity:.55; }
+
+    @media(min-width:1201px) {
+      .margin-sketches .soil { top:530px; }
+      .margin-sketches .sensor { top:860px; }
+      .margin-sketches .screen { top:1130px; }
+      main { min-height:1400px; }
+    }
+    .season-widget[data-season="spring"] .wash.spring,.season-widget[data-season="summer"] .wash.summer,.season-widget[data-season="autumn"] .wash.autumn,.season-widget[data-season="winter"] .wash.winter { opacity:.48; }
+    [data-theme="dark"] .season-widget[data-season="spring"] .wash.spring,[data-theme="dark"] .season-widget[data-season="summer"] .wash.summer,[data-theme="dark"] .season-widget[data-season="autumn"] .wash.autumn,[data-theme="dark"] .season-widget[data-season="winter"] .wash.winter { opacity:.13; }
   </style>
 </head>
 <body>
   <aside class="season-widget" aria-labelledby="seasons-heading" hidden>
+<div class="season-washes" aria-hidden="true"><img class="wash spring" src="assets/season-wash-spring.webp" alt="" width="1088" height="1456"><img class="wash summer" src="assets/season-wash-summer.webp" alt="" width="1088" height="1456"><img class="wash autumn" src="assets/season-wash-autumn.webp" alt="" width="1088" height="1456"><img class="wash winter" src="assets/season-wash-winter.webp" alt="" width="1088" height="1456"></div>
     <div class="season-launcher">
       <p id="seasons-heading">Four seasons to get to know me</p>
       <div class="avatar-row"><button type="button" class="avatar-button" data-season="spring" aria-expanded="false" aria-controls="season-card" aria-label="Spring" title="Spring"><span class="avatar-fallback" aria-hidden="true">S</span><img src="assets/avatar_printemps.png" alt="" width="42" height="42"></button><button type="button" class="avatar-button" data-season="summer" aria-expanded="false" aria-controls="season-card" aria-label="Summer" title="Summer"><span class="avatar-fallback" aria-hidden="true">S</span><img src="assets/avatar_ete.png" alt="" width="42" height="42"></button><button type="button" class="avatar-button" data-season="autumn" aria-expanded="false" aria-controls="season-card" aria-label="Autumn" title="Autumn"><span class="avatar-fallback" aria-hidden="true">A</span><img src="assets/avatar_automne.png" alt="" width="42" height="42"></button><button type="button" class="avatar-button" data-season="winter" aria-expanded="false" aria-controls="season-card" aria-label="Winter" title="Winter"><span class="avatar-fallback" aria-hidden="true">W</span><img src="assets/avatar_hiver.png" alt="" width="42" height="42"></button></div>
-      <div class="launcher-decoration"><svg class="season-ornament spring" viewBox="0 0 130 130" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M30 110Q65 70 80 16M50 77q-27-26-33-6 12 18 33 6M66 49q29-7 26 12-17 9-26-12"/><g transform="translate(78 24)"><ellipse cy="-9" rx="5" ry="9"/><ellipse cy="9" rx="5" ry="9"/><ellipse cx="9" rx="9" ry="5"/><ellipse cx="-9" rx="9" ry="5"/><circle r="4"/></g></svg><svg class="season-ornament summer" viewBox="0 0 130 130" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M30 118 70 14M47 74q-27-8-20-22 16 3 20 22m2-5q26 7 25-12-15-3-25 12M57 49q-22-7-17-20 15 1 17 20m2-5q23 5 22-11-14-3-22 11M65 28q-15-8-11-19 12 2 11 19m2-5q18 0 15-13-11 0-15 13M39 100q-26-7-22-23 18 2 22 23m2-4q27 6 27-14-17-1-27 14"/></svg><svg class="season-ornament autumn" viewBox="0 0 130 130" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M28 108 84 24M35 92C8 59 37 14 89 17c9 48-12 82-54 75Z M45 77 25 54m31 7 24-5M64 49 48 31"/><path d="m91 111 14-24m-14 24c-21-9-11-29 20-32 6 20-3 35-20 32Z"/></svg><svg class="season-ornament winter" viewBox="0 0 130 130" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g><path d="M60 15v90M21 37l78 46M21 83l78-46M48 23l12 12 12-12M48 97l12-12 12 12M24 52l17-5-4-17m46 60-4-17 17-5M37 90l4-17-17-5m72-16-17-5 4-17"/></g></svg></div>
+      
     </div>
-    <section id="season-card" class="season-card" aria-labelledby="season-title" tabindex="-1" hidden>
+    <section id="season-card" class="season-note" aria-labelledby="season-title" tabindex="-1" hidden>
       <button class="season-close" type="button" aria-label="Close" title="Close">×</button>
-      <div class="card-decoration"><svg class="season-ornament spring" viewBox="0 0 130 130" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M30 110Q65 70 80 16M50 77q-27-26-33-6 12 18 33 6M66 49q29-7 26 12-17 9-26-12"/><g transform="translate(78 24)"><ellipse cy="-9" rx="5" ry="9"/><ellipse cy="9" rx="5" ry="9"/><ellipse cx="9" rx="9" ry="5"/><ellipse cx="-9" rx="9" ry="5"/><circle r="4"/></g></svg><svg class="season-ornament summer" viewBox="0 0 130 130" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M30 118 70 14M47 74q-27-8-20-22 16 3 20 22m2-5q26 7 25-12-15-3-25 12M57 49q-22-7-17-20 15 1 17 20m2-5q23 5 22-11-14-3-22 11M65 28q-15-8-11-19 12 2 11 19m2-5q18 0 15-13-11 0-15 13M39 100q-26-7-22-23 18 2 22 23m2-4q27 6 27-14-17-1-27 14"/></svg><svg class="season-ornament autumn" viewBox="0 0 130 130" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M28 108 84 24M35 92C8 59 37 14 89 17c9 48-12 82-54 75Z M45 77 25 54m31 7 24-5M64 49 48 31"/><path d="m91 111 14-24m-14 24c-21-9-11-29 20-32 6 20-3 35-20 32Z"/></svg><svg class="season-ornament winter" viewBox="0 0 130 130" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g><path d="M60 15v90M21 37l78 46M21 83l78-46M48 23l12 12 12-12M48 97l12-12 12 12M24 52l17-5-4-17m46 60-4-17 17-5M37 90l4-17-17-5m72-16-17-5 4-17"/></g></svg></div>
+      
       <div class="season-portrait"><span class="portrait-fallback" aria-hidden="true"></span><img id="season-portrait" alt="" width="86" height="86"></div>
       <p class="season-name"></p>
       <h2 id="season-title"></h2>
@@ -457,6 +487,40 @@
       const closeButton = widget.querySelector('.season-close');
       let selected = null;
       let trigger = null;
+      const portraitTints = {};
+      const defaultTints = {spring:[171,195,151],summer:[222,189,113],autumn:[198,146,111],winter:[158,188,205]};
+      function applyPortraitTint() {
+        const color = portraitTints[selected] || defaultTints[selected];
+        if (!color) return;
+        widget.style.setProperty('--portrait-tint', color.join(' '));
+      }
+      function readPortraitBackground(image, season) {
+        if (!image.naturalWidth) return;
+        try {
+          const canvas = document.createElement('canvas');
+          canvas.width = canvas.height = 48;
+          const context = canvas.getContext('2d', {willReadFrequently:true});
+          context.drawImage(image, 0, 0, 48, 48);
+          const pixels = context.getImageData(0, 0, 48, 48).data;
+          const buckets = new Map();
+          // Background is sampled along the perimeter, away from the face.
+          for (let y = 0; y < 48; y++) for (let x = 0; x < 48; x++) {
+            if (x >= 6 && x < 42 && y >= 6 && y < 42) continue;
+            const i = (y * 48 + x) * 4;
+            if (pixels[i + 3] < 200) continue;
+            const rgb = [pixels[i], pixels[i+1], pixels[i+2]];
+            const key = rgb.map(v => Math.floor(v / 32)).join(',');
+            const bucket = buckets.get(key) || {count:0, sums:[0,0,0]};
+            bucket.count++;
+            rgb.forEach((v,j) => bucket.sums[j] += v);
+            buckets.set(key,bucket);
+          }
+          const dominant = [...buckets.values()].sort((a,b) => b.count - a.count)[0];
+          if (!dominant) return;
+          portraitTints[season] = dominant.sums.map(v => Math.round(v / dominant.count));
+          if (selected === season) applyPortraitTint();
+        } catch (_) { /* Keep the seasonal fallback if image pixels cannot be read. */ }
+      }
       function language() { return Object.hasOwn(stories, document.documentElement.lang) ? document.documentElement.lang : 'en'; }
       function render() {
         const copy = stories[language()];
@@ -473,6 +537,7 @@
         if (!selected) return;
         const [season, title, story] = copy[selected];
         widget.dataset.season = selected;
+        applyPortraitTint();
         widget.querySelector('.season-name').textContent = season;
         document.querySelector('#season-title').textContent = title;
         widget.querySelector('.season-story').textContent = story;
@@ -494,14 +559,17 @@
         trigger = button;
         render();
         card.hidden = false;
-        card.focus({preventScroll:true});
       }));
       closeButton.addEventListener('click', () => close(true));
       document.addEventListener('keydown', event => { if (event.key === 'Escape' && selected) close(true); });
-      document.addEventListener('click', event => { if (selected && !widget.contains(event.target) && !event.target.closest('.language-switch, .theme-toggle')) close(false); });
-      widget.querySelectorAll('img').forEach(img => {
+      widget.querySelectorAll('.avatar-button img, #season-portrait').forEach(img => {
         img.addEventListener('error', () => { img.hidden = true; });
         if (img.getAttribute('src') && img.complete && !img.naturalWidth) img.hidden = true;
+      });
+      buttons.forEach(button => {
+        const image = button.querySelector('img');
+        image.addEventListener('load', () => readPortraitBackground(image, button.dataset.season));
+        if (image.complete && image.naturalWidth) readPortraitBackground(image, button.dataset.season);
       });
       new MutationObserver(render).observe(document.documentElement, {attributes:true, attributeFilter:['lang']});
       render();
