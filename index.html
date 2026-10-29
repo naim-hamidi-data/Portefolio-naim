@@ -212,7 +212,7 @@
   <aside class="season-widget" aria-labelledby="seasons-heading" hidden>
 <div class="season-washes" aria-hidden="true"><img class="wash spring" src="assets/season-wash-spring.webp" alt="" width="1088" height="1456"><img class="wash summer" src="assets/season-wash-summer.webp" alt="" width="1088" height="1456"><img class="wash autumn" src="assets/season-wash-autumn.webp" alt="" width="1088" height="1456"><img class="wash winter" src="assets/season-wash-winter.webp" alt="" width="1088" height="1456"></div>
     <div class="season-launcher">
-      <p id="seasons-heading">Four seasons to get to know me</p>
+      <p id="seasons-heading">Skills</p>
       <div class="avatar-row"><button type="button" class="avatar-button" data-season="spring" aria-expanded="false" aria-controls="season-card" aria-label="Spring" title="Spring"><span class="avatar-fallback" aria-hidden="true">S</span><img src="assets/avatar_printemps.png" alt="" width="42" height="42"></button><button type="button" class="avatar-button" data-season="summer" aria-expanded="false" aria-controls="season-card" aria-label="Summer" title="Summer"><span class="avatar-fallback" aria-hidden="true">S</span><img src="assets/avatar_ete.png" alt="" width="42" height="42"></button><button type="button" class="avatar-button" data-season="autumn" aria-expanded="false" aria-controls="season-card" aria-label="Autumn" title="Autumn"><span class="avatar-fallback" aria-hidden="true">A</span><img src="assets/avatar_automne.png" alt="" width="42" height="42"></button><button type="button" class="avatar-button" data-season="winter" aria-expanded="false" aria-controls="season-card" aria-label="Winter" title="Winter"><span class="avatar-fallback" aria-hidden="true">W</span><img src="assets/avatar_hiver.png" alt="" width="42" height="42"></button></div>
       
     </div>
@@ -478,7 +478,83 @@
 
   <script>
     (() => {
-      const stories = {"fr": {"heading": "Quatre saisons pour me découvrir", "close": "Fermer", "hint": "Choisissez un portrait", "spring": ["Printemps", "Explorer", "Les bourgeons s’ouvrent, les premiers insectes reprennent leurs chemins. J’ai cette même curiosité vagabonde : passer d’une langue à une autre, m’attarder sur une idée, entrer dans un univers dont je ne connais pas encore les codes. Et laisser chaque rencontre déplacer un peu mon regard."], "summer": ["Été", "Vibrer", "L’été a l’énergie des journées qui débordent. Je retrouve cet élan dans le mouvement du sport, les départs en voyage, une conversation qui se prolonge ou un rire partagé. C’est là que je prends des forces, au contact des autres."], "autumn": ["Automne", "Lire les traces", "Quand les feuilles tombent, le paysage laisse paraître ses lignes. J’aime ce moment où regarder autrement permet de comprendre davantage. Sur une carte, je suis le fil de l’eau, les contours d’une parcelle, la continuité d’une haie : peu à peu, les détails composent un ensemble. Dans ce que j’entreprends, l’analyse commence par cette attention."], "winter": ["Hiver", "Préparer la suite", "Bien avant le gel, les réserves se constituent et les refuges se préparent. Cette attention portée à ce qui vient me ressemble. Comprendre les aléas, reconnaître les fragilités, garder des possibilités d’action : c’est ce que je cherche en me formant aux risques agricoles. Préparer la suite, même lorsque l’horizon reste incertain."]}, "en": {"heading": "Four seasons to get to know me", "close": "Close", "hint": "Choose a portrait", "spring": ["Spring", "Explore", "Buds unfold, and the first insects find their paths again. I share that wandering curiosity: moving between languages, lingering over an idea, stepping into a world whose ways I have yet to learn. And letting each encounter shift my perspective a little."], "summer": ["Summer", "Feel the energy", "Summer carries the energy of days that spill over. I find that same momentum in sport, setting off on a journey, a conversation that lingers, or shared laughter. That is where I draw strength: in the company of others."], "autumn": ["Autumn", "Read the traces", "As the leaves fall, the landscape reveals its lines. I love that moment when looking differently brings deeper understanding. On a map, I follow the course of water, the outlines of a field, the continuity of a hedgerow: little by little, details form a whole. In everything I undertake, analysis begins with this attention."], "winter": ["Winter", "Prepare for what comes next", "Long before the frost, stores are gathered and shelters prepared. That attentiveness to what lies ahead feels familiar to me. Understanding uncertainty, recognising vulnerabilities, keeping options open: this is what I seek in studying agricultural risks. Preparing for what comes next, even when the horizon remains unclear."]}, "es": {"heading": "Cuatro estaciones para conocerme", "close": "Cerrar", "hint": "Elige un retrato", "spring": ["Primavera", "Explorar", "Las yemas se abren y los primeros insectos retoman sus caminos. Comparto esa curiosidad errante: pasar de una lengua a otra, detenerme en una idea, adentrarme en un mundo cuyas claves aún desconozco. Y dejar que cada encuentro transforme un poco mi mirada."], "summer": ["Verano", "Vibrar", "El verano tiene la energía de los días que se desbordan. Encuentro ese mismo impulso en el deporte, al emprender un viaje, en una conversación que se alarga o en una risa compartida. Ahí recupero fuerzas: en el encuentro con los demás."], "autumn": ["Otoño", "Leer las huellas", "Cuando caen las hojas, el paisaje deja ver sus líneas. Me gusta ese momento en el que mirar de otra manera permite comprender mejor. En un mapa, sigo el curso del agua, los contornos de una parcela, la continuidad de un seto: poco a poco, los detalles componen un conjunto. En todo lo que emprendo, el análisis comienza con esa atención."], "winter": ["Invierno", "Preparar lo que viene", "Mucho antes de las heladas, se reúnen reservas y se preparan refugios. Me reconozco en esa atención a lo que está por venir. Comprender los riesgos, reconocer las fragilidades, mantener abiertas las posibilidades de actuar: eso es lo que busco al formarme en riesgos agrícolas. Preparar lo que viene, incluso cuando el horizonte sigue siendo incierto."]}};
+      const stories = {
+  "fr": {
+    "heading": "Compétences",
+    "close": "Fermer",
+    "hint": "Choisissez un domaine de compétences",
+    "spring": [
+      "Printemps",
+      "Agriculture et agronomie",
+      "Systèmes de production agricole, filières agroalimentaires, réglementation de la PAC, contrôles agroenvironnementaux et expérimentation agricole."
+    ],
+    "summer": [
+      "Été",
+      "Compétences transversales",
+      "Relation avec les agriculteurs, écoute et pédagogie. Traduction d’informations techniques en conseils compréhensibles, travail en équipe et communication dans un contexte multiculturel."
+    ],
+    "autumn": [
+      "Automne",
+      "AgTech et agriculture numérique",
+      "Analyse et visualisation de données, cartographie QGIS et télédétection. Développement d’outils d’aide à la décision, intelligence artificielle et utilisation de capteurs connectés (IoT) pour comprendre et accompagner les systèmes agricoles."
+    ],
+    "winter": [
+      "Hiver",
+      "Gestion des risques agricoles",
+      "Identification des aléas, évaluation des situations et estimation des pertes agricoles. Constitution et suivi de dossiers de sinistres pour accompagner la prise de décision."
+    ]
+  },
+  "en": {
+    "heading": "Skills",
+    "close": "Close",
+    "hint": "Choose a skill area",
+    "spring": [
+      "Spring",
+      "Agriculture and agronomy",
+      "Agricultural production systems, agrifood sectors, Common Agricultural Policy (CAP) regulations, agri-environmental inspections and agricultural experimentation."
+    ],
+    "summer": [
+      "Summer",
+      "Transferable skills",
+      "Farmer engagement, active listening and clear explanations. Turning technical information into practical, understandable advice, teamwork and communication in multicultural settings."
+    ],
+    "autumn": [
+      "Autumn",
+      "AgTech and digital agriculture",
+      "Data analysis and visualisation, QGIS mapping and remote sensing. Development of decision support tools, artificial intelligence and the use of connected sensors (IoT) to understand and support agricultural systems."
+    ],
+    "winter": [
+      "Winter",
+      "Agricultural risk management",
+      "Identification of hazards, assessment of situations and estimation of agricultural losses. Preparation and follow-up of agricultural insurance claims to support decision-making."
+    ]
+  },
+  "es": {
+    "heading": "Competencias",
+    "close": "Cerrar",
+    "hint": "Elige un área de competencias",
+    "spring": [
+      "Primavera",
+      "Agricultura y agronomía",
+      "Sistemas de producción agrícola, sectores agroalimentarios, normativa de la Política Agrícola Común (PAC), controles agroambientales y experimentación agrícola."
+    ],
+    "summer": [
+      "Verano",
+      "Competencias transversales",
+      "Relación con los agricultores, escucha activa y capacidad pedagógica. Traducción de información técnica en consejos comprensibles, trabajo en equipo y comunicación en contextos multiculturales."
+    ],
+    "autumn": [
+      "Otoño",
+      "AgTech y agricultura digital",
+      "Análisis y visualización de datos, cartografía con QGIS y teledetección. Desarrollo de herramientas de apoyo a la decisión, inteligencia artificial y uso de sensores conectados (IoT) para comprender y acompañar los sistemas agrícolas."
+    ],
+    "winter": [
+      "Invierno",
+      "Gestión de riesgos agrícolas",
+      "Identificación de riesgos, evaluación de situaciones y estimación de pérdidas agrícolas. Preparación y seguimiento de expedientes de siniestros para apoyar la toma de decisiones."
+    ]
+  }
+};
       const images = {"spring": "avatar_printemps.png", "summer": "avatar_ete.png", "autumn": "avatar_automne.png", "winter": "avatar_hiver.png"};
       const widget = document.querySelector('.season-widget');
       const card = document.querySelector('#season-card');
