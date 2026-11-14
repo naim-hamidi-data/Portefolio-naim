@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Naïm Hamidi — Agricultural Engineer · AgTech. Building resilient agriculture and empowering farmers’ choices. Looking for an internship in summer 2027.">
+  <meta name="description" content="Naïm Hamidi — Agricultural Engineer · AgTech. Building resilient agriculture and empowering farmers’ choices. Seeking a fixed-term role or a V.I.E. assignment from June 2027.">
   <meta name="color-scheme" content="light dark">
   <meta name="theme-color" content="#fdfdfb">
   <title>Naïm HAMIDI — Agricultural Engineer · AgTech</title>
@@ -144,88 +144,112 @@
     @media print { .language-switch { display:none; } }
 
 
-    /* The portrait and story sit on an organic stain drawn on the notebook itself. */
-    .season-widget { position:absolute; top:20px; left:24px; z-index:3; width:290px; padding:8px 10px 30px; isolation:isolate; --season-ink:#57734a; }
-    .season-widget[data-season="summer"] { --season-ink:#8b681f; }
-    .season-widget[data-season="autumn"] { --season-ink:#8d5134; }
-    .season-widget[data-season="winter"] { --season-ink:#577887; }
-    .season-widget::before { content:""; position:absolute; inset:-15px -8px; z-index:-2; pointer-events:none; border-radius:47% 53% 62% 38% / 38% 46% 54% 62%; background:radial-gradient(ellipse at 40% 30%,var(--bg) 10%,transparent 72%); }
-    .season-washes { position:absolute; inset:-20px -21px -34px -15px; pointer-events:none; z-index:-1; }
-    .season-washes .wash { position:absolute; inset:0; width:100%; height:100%; object-fit:fill; opacity:0; transition:opacity .35s; mix-blend-mode:multiply; }
-    .season-widget[data-season="spring"] .wash.spring,.season-widget[data-season="summer"] .wash.summer,.season-widget[data-season="autumn"] .wash.autumn,.season-widget[data-season="winter"] .wash.winter { opacity:.68; }
-    .season-launcher { position:relative; padding:0 0 6px; }
-    #seasons-heading { margin:0 0 10px; color:var(--muted); font-size:10px; line-height:1.5; letter-spacing:.15px; }
-    .avatar-row { display:flex; gap:9px; align-items:center; min-height:50px; }
-    .avatar-button { position:relative; display:grid; place-items:center; width:43px; height:43px; padding:0; border:1px solid var(--border); border-radius:50%; background:var(--bg); cursor:pointer; overflow:hidden; transition:transform .2s,border-color .2s; }
-    .avatar-button:hover { transform:translateY(-3px); border-color:var(--season-ink); }
-    .avatar-button[aria-expanded="true"] { transform:scale(1.1); border:2px solid var(--season-ink); }
-    .avatar-button img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; border-radius:50%; }
-    .avatar-fallback,.portrait-fallback { color:var(--season-ink); font-family:Georgia,serif; }
-    .season-note { position:relative; width:100%; margin:14px 0 0; padding:10px 14px 24px 12px; background:transparent; border:0; border-radius:0; box-shadow:none; overflow:visible; }
-    .season-note:focus { outline:none; }
-    .season-close { position:absolute; top:7px; right:8px; padding:0; width:28px; height:28px; background:transparent; color:var(--muted); border:0; font-size:19px; cursor:pointer; opacity:.7; }
-    .season-close:hover { opacity:1; }
-    .season-portrait { position:relative; width:78px; height:78px; display:grid; place-items:center; border-radius:46% 54% 50% 50%; margin:0 0 17px; overflow:hidden; }
-    .season-portrait img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
-    .portrait-fallback { font-size:30px; }
-    .season-name { margin:0 0 5px; color:var(--season-ink); font-size:11px; }
-    #season-title { text-align:left; font-family:Georgia,serif; font-size:24px; font-weight:normal; line-height:1.3; text-transform:none; letter-spacing:-.4px; color:var(--text); }
-    .season-story { margin:15px 0 0; font-size:12px; line-height:1.95; color:var(--text); }
-    [data-theme="dark"] .season-widget { --season-ink:#b5c8a6; }
-    [data-theme="dark"] .season-widget[data-season="summer"] { --season-ink:#ddc185; }
-    [data-theme="dark"] .season-widget[data-season="autumn"] { --season-ink:#d7a187; }
-    [data-theme="dark"] .season-widget[data-season="winter"] { --season-ink:#aecbd8; }
-    [data-theme="dark"] .season-washes .wash { mix-blend-mode:screen; }
-    [data-theme="dark"] .season-widget[data-season] .wash { opacity:0; }
-    [data-theme="dark"] .season-widget[data-season="spring"] .wash.spring,[data-theme="dark"] .season-widget[data-season="summer"] .wash.summer,[data-theme="dark"] .season-widget[data-season="autumn"] .wash.autumn,[data-theme="dark"] .season-widget[data-season="winter"] .wash.winter { opacity:.13; }
-    @media(min-width:1201px) and (max-width:1320px) { .season-widget { left:14px; width:250px; } .season-note { padding-inline:10px; } }
-    @media(max-width:1200px) {
-      .season-widget { position:relative; top:auto; left:auto; width:min(100% - 48px,340px); margin:88px 0 0 24px; padding-bottom:20px; }
-      main { padding-top:32px; }
-      .season-note { padding-inline:20px; }
-      .season-washes { inset:-15px -18px -22px; }
-    }
-    @media(max-width:520px) { .season-widget { margin-left:18px; width:calc(100% - 50px); max-width:320px; } }
-    @media(prefers-reduced-motion:reduce) { .season-washes .wash,.avatar-button { transition:none; } }
-    @media print { .season-widget { display:none; } }
-
-    /* The softly diffused stain picks up the actual portrait background. */
-    .season-widget { --portrait-tint:180 192 170; }
-    .season-widget[data-season]::before {
-      inset:-15px -12px -12px;
-      background:radial-gradient(ellipse at 35% 25%,rgb(var(--portrait-tint) / .26),transparent 66%),radial-gradient(ellipse at 70% 65%,rgb(var(--portrait-tint) / .2),transparent 69%);
-      filter:blur(8px);
-    }
-    [data-theme="dark"] .season-widget[data-season]::before { opacity:.55; }
-
     @media(min-width:1201px) {
       .margin-sketches .soil { top:530px; }
       .margin-sketches .sensor { top:860px; }
       .margin-sketches .screen { top:1130px; }
       main { min-height:1400px; }
     }
-    .season-widget[data-season="spring"] .wash.spring,.season-widget[data-season="summer"] .wash.summer,.season-widget[data-season="autumn"] .wash.autumn,.season-widget[data-season="winter"] .wash.winter { opacity:.48; }
-    [data-theme="dark"] .season-widget[data-season="spring"] .wash.spring,[data-theme="dark"] .season-widget[data-season="summer"] .wash.summer,[data-theme="dark"] .season-widget[data-season="autumn"] .wash.autumn,[data-theme="dark"] .season-widget[data-season="winter"] .wash.winter { opacity:.13; }
+
+    .growing-projects {
+      display:grid;
+      grid-template-columns:104px minmax(0,1fr);
+      gap:22px;
+      align-items:center;
+      margin-top:16px;
+      padding:24px 26px;
+      border:1px dashed var(--badge-border);
+      border-radius:10px;
+      background:var(--badge);
+    }
+    .growing-projects h3 { color:var(--green); font-size:17px; }
+    .growing-topics { display:grid; gap:7px; list-style:none; margin:10px 0 0; padding:0; }
+    .growing-topics li { color:var(--muted); font-size:13px; }
+    .growing-topics strong { color:var(--text); font-weight:600; }
+    .field-sign { position:relative; width:104px; height:88px; color:var(--green); }
+    .field-sign::before {
+      content:""; position:absolute; inset:7px 20px auto 5px; height:36px;
+      transform:rotate(-6deg); border:1px solid; border-radius:4px 3px 5px 2px;
+      background:repeating-linear-gradient(3deg,transparent 0 8px,currentColor 9px,transparent 10px 12px);
+      opacity:.62;
+    }
+    .field-sign::after {
+      content:""; position:absolute; left:37px; top:42px; width:6px; height:31px;
+      border:1px solid; border-top:0; transform:rotate(-5deg); opacity:.62;
+    }
+    .field-furrows {
+      position:absolute; inset:auto 2px 5px; height:8px; opacity:.55;
+      border-top:1px solid; border-bottom:1px solid; border-radius:50%; transform:rotate(-4deg);
+    }
+    .field-sprout { position:absolute; width:1px; height:19px; background:currentColor; bottom:13px; left:67px; transform:rotate(-7deg); }
+    .field-sprout::before,.field-sprout::after { position:absolute; content:""; width:9px; height:5px; border:1px solid; }
+    .field-sprout::before { left:-9px; top:5px; border-radius:90% 10% 75% 10%; transform:rotate(29deg); }
+    .field-sprout::after { left:0; top:1px; border-radius:10% 90% 10% 75%; transform:rotate(-30deg); }
+    .field-sprout:last-child { left:88px; bottom:16px; transform:rotate(8deg) scale(.76); }
+
+    .skills-map { margin-top:52px; }
+    .parcel-grid {
+      display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:4px 7px;
+      width:min(100%,470px); margin:0 auto;
+    }
+    .skill-parcel {
+      position:relative; isolation:isolate; display:grid; justify-items:center; align-content:center;
+      gap:8px; min-height:112px; min-width:0; padding:12px 9px; border:0;
+      background:transparent; color:var(--text); font-size:12px; font-weight:600;
+      text-align:center; cursor:pointer; border-radius:12px;
+      --furrow:color-mix(in srgb,var(--text) 9%,transparent);
+    }
+    .skill-parcel::before {
+      position:absolute; z-index:-1; inset:0; content:""; clip-path:var(--outline);
+      background-color:var(--parcel-dirt);
+      background-image:repeating-linear-gradient(var(--angle),transparent 0 9px,var(--furrow) 9px 10px);
+    }
+    .skill-parcel:hover::before,.skill-parcel[aria-pressed="true"]::before { background-color:var(--parcel-active); }
+    .skill-parcel[aria-pressed="true"] .skill-name { text-decoration:underline; text-underline-offset:3px; }
+    .skill-parcel img {
+      display:block; width:42px; height:42px; object-fit:cover; border-radius:50%;
+      background:var(--bg); border:1px solid var(--border);
+    }
+    .skill-name {
+      max-width:100%; padding:1px 5px; border-radius:4px; overflow-wrap:anywhere;
+      background:color-mix(in srgb,var(--parcel-dirt) 87%,transparent);
+    }
+    .skill-parcel[data-skill="agronomy"] {
+      --outline:polygon(7% 17%,86% 2%,98% 88%,11% 97%,1% 61%); --angle:27deg;
+      --parcel-dirt:#e7eee0; --parcel-active:#cadcc0;
+    }
+    .skill-parcel[data-skill="terrain"] {
+      --outline:polygon(2% 8%,83% 12%,99% 42%,94% 98%,13% 87%); --angle:78deg;
+      --parcel-dirt:#f4ebd4; --parcel-active:#ead6a7;
+    }
+    .skill-parcel[data-skill="agtech"] {
+      --outline:polygon(8% 5%,97% 0%,91% 91%,22% 99%,3% 75%); --angle:140deg;
+      --parcel-dirt:#f0e4da; --parcel-active:#e6cbb6;
+    }
+    .skill-parcel[data-skill="risk"] {
+      --outline:polygon(9% 0%,96% 9%,96% 63%,75% 92%,1% 97%); --angle:59deg;
+      --parcel-dirt:#e1ebf0; --parcel-active:#cbdfe9;
+    }
+    [data-theme="dark"] .skill-parcel[data-skill="agronomy"] { --parcel-dirt:#293d2f; --parcel-active:#3b5541; }
+    [data-theme="dark"] .skill-parcel[data-skill="terrain"] { --parcel-dirt:#423821; --parcel-active:#554624; }
+    [data-theme="dark"] .skill-parcel[data-skill="agtech"] { --parcel-dirt:#423128; --parcel-active:#583e31; }
+    [data-theme="dark"] .skill-parcel[data-skill="risk"] { --parcel-dirt:#283d48; --parcel-active:#38525e; }
+    .skill-note {
+      width:min(100%,470px); margin:14px auto 0; padding:12px 8px 0;
+      border-top:1px solid var(--border); min-height:88px;
+    }
+    .skill-note h3 { margin-bottom:4px; }
+    .skill-note p { margin:0; color:var(--muted); font-size:13px; }
+    .skills-instruction { text-align:center; margin:-8px 0 12px; color:var(--muted); font-size:12px; }
+    @media(max-width:520px) {
+      .growing-projects { grid-template-columns:1fr; gap:8px; padding:16px 20px 20px; }
+      .field-sign { height:60px; transform:scale(.73); transform-origin:top left; }
+      .skills-map { margin-top:40px; }
+    }
+    @media print { .growing-projects,.skills-map { break-inside:avoid; } }
   </style>
 </head>
 <body>
-  <aside class="season-widget" aria-labelledby="seasons-heading" hidden>
-<div class="season-washes" aria-hidden="true"><img class="wash spring" src="assets/season-wash-spring.webp" alt="" width="1088" height="1456"><img class="wash summer" src="assets/season-wash-summer.webp" alt="" width="1088" height="1456"><img class="wash autumn" src="assets/season-wash-autumn.webp" alt="" width="1088" height="1456"><img class="wash winter" src="assets/season-wash-winter.webp" alt="" width="1088" height="1456"></div>
-    <div class="season-launcher">
-      <p id="seasons-heading">Skills</p>
-      <div class="avatar-row"><button type="button" class="avatar-button" data-season="spring" aria-expanded="false" aria-controls="season-card" aria-label="Spring" title="Spring"><span class="avatar-fallback" aria-hidden="true">S</span><img src="assets/avatar_printemps.png" alt="" width="42" height="42"></button><button type="button" class="avatar-button" data-season="summer" aria-expanded="false" aria-controls="season-card" aria-label="Summer" title="Summer"><span class="avatar-fallback" aria-hidden="true">S</span><img src="assets/avatar_ete.png" alt="" width="42" height="42"></button><button type="button" class="avatar-button" data-season="autumn" aria-expanded="false" aria-controls="season-card" aria-label="Autumn" title="Autumn"><span class="avatar-fallback" aria-hidden="true">A</span><img src="assets/avatar_automne.png" alt="" width="42" height="42"></button><button type="button" class="avatar-button" data-season="winter" aria-expanded="false" aria-controls="season-card" aria-label="Winter" title="Winter"><span class="avatar-fallback" aria-hidden="true">W</span><img src="assets/avatar_hiver.png" alt="" width="42" height="42"></button></div>
-      
-    </div>
-    <section id="season-card" class="season-note" aria-labelledby="season-title" tabindex="-1" hidden>
-      <button class="season-close" type="button" aria-label="Close" title="Close">×</button>
-      
-      <div class="season-portrait"><span class="portrait-fallback" aria-hidden="true"></span><img id="season-portrait" alt="" width="86" height="86"></div>
-      <p class="season-name"></p>
-      <h2 id="season-title"></h2>
-      <p class="season-story"></p>
-    </section>
-  </aside>
-
   <a class="skip-link" href="#projects" data-i18n="skip">Skip to projects</a>
 
 
@@ -249,7 +273,7 @@
     <header class="intro" id="top">
       <h1>Naïm HAMIDI</h1>
       <p class="role" data-i18n="role">Agricultural Engineer · AgTech</p>
-      <p class="availability" data-i18n="availability">Looking for an internship · Summer 2027</p>
+      <p class="availability" data-i18n="availability">Seeking a fixed-term role or a V.I.E. assignment from June 2027</p>
       <p class="slogan"><span data-i18n="slogan1">Building resilient agriculture.</span><br><span data-i18n="slogan2">Empowering farmers’ choices.</span></p>
     </header>
 
@@ -299,6 +323,46 @@
           </a>
         </article>
       </div>
+      <section class="growing-projects" aria-labelledby="growing-title">
+        <div class="field-sign" aria-hidden="true">
+          <span class="field-furrows"></span><span class="field-sprout"></span><span class="field-sprout"></span>
+        </div>
+        <div>
+          <h3 id="growing-title" data-i18n="growingTitle">Projects taking root</h3>
+          <ul class="growing-topics" role="list">
+            <li><strong data-i18n="forecastTitle">Data and forecasting</strong> — <span data-i18n="forecastDescription">Python, SQL, data analysis, big data, AI and predictive modelling.</span></li>
+            <li><strong data-i18n="precisionTitle">Precision agriculture</strong> — <span data-i18n="precisionDescription">Remote sensing, sensors, IoT and cloud computing.</span></li>
+            <li><strong data-i18n="decisionTitle">Traceability and decision support</strong> — <span data-i18n="decisionDescription">Decision support tools and dashboards built with Power BI or Looker Studio.</span></li>
+          </ul>
+        </div>
+      </section>
+    </section>
+
+    <section class="skills-map" aria-labelledby="skills-title">
+      <div class="section-heading"><h2 id="skills-title" data-i18n="skillsTitle">Skills</h2></div>
+      <p class="skills-instruction" data-i18n="skillsInstruction">Choose a field to explore a skill.</p>
+      <div class="parcel-grid" role="group" aria-labelledby="skills-title">
+        <button class="skill-parcel" type="button" data-skill="agronomy" aria-controls="skill-note" aria-pressed="false">
+          <img src="assets/avatar_printemps.png" alt="" width="42" height="42" loading="lazy">
+          <span class="skill-name" data-i18n="agronomyTitle">Agronomy</span>
+        </button>
+        <button class="skill-parcel" type="button" data-skill="terrain" aria-controls="skill-note" aria-pressed="true">
+          <img src="assets/avatar_ete.png" alt="" width="42" height="42" loading="lazy">
+          <span class="skill-name" data-i18n="terrainTitle">Working with farmers</span>
+        </button>
+        <button class="skill-parcel" type="button" data-skill="agtech" aria-controls="skill-note" aria-pressed="false">
+          <img src="assets/avatar_automne.png" alt="" width="42" height="42" loading="lazy">
+          <span class="skill-name" data-i18n="agtechTitle">AgTech and data</span>
+        </button>
+        <button class="skill-parcel" type="button" data-skill="risk" aria-controls="skill-note" aria-pressed="false">
+          <img src="assets/avatar_hiver.png" alt="" width="42" height="42" loading="lazy">
+          <span class="skill-name" data-i18n="riskTitle">Agricultural risk management</span>
+        </button>
+      </div>
+      <div class="skill-note" id="skill-note" aria-live="polite" aria-atomic="true">
+        <h3>Working with farmers</h3>
+        <p>Listening to farmers, learning from their firsthand experience and explaining technical topics clearly.</p>
+      </div>
     </section>
 
     <footer data-i18n-aria="contact" aria-label="Contact">
@@ -327,7 +391,7 @@
   "en": {
     "skip": "Skip to projects",
     "role": "Agricultural Engineer · AgTech",
-    "availability": "Looking for an internship · Summer 2027",
+    "availability": "Seeking a fixed-term role or a V.I.E. assignment from June 2027",
     "slogan1": "Building resilient agriculture.",
     "slogan2": "Empowering farmers’ choices.",
     "projects": "Selected projects",
@@ -342,7 +406,6 @@
     "gisTitle": "Spatial Analysis of Nitrate Pollution Risk Areas and Biodiversity Feature Conservation on Farms",
     "gisDescription": "Spatial analysis with QGIS to map nitrate pollution risk areas, watercourse buffer zones and hedgerows, supporting water protection and biodiversity conservation on farms.",
     "map": "View map · PDF",
-
     "languageLabel": "Choose a language",
     "lightMode": "Switch to light mode",
     "darkMode": "Switch to dark mode",
@@ -352,12 +415,29 @@
     "envLabel": "Explore Environmental Self-Assessment (opens in a new tab)",
     "gisLabel": "View QGIS nitrate pollution risk and biodiversity map (PDF, opens in a new tab)",
     "githubLabel": "GitHub (opens in a new tab)",
-    "linkedinLabel": "LinkedIn (opens in a new tab)"
+    "linkedinLabel": "LinkedIn (opens in a new tab)",
+    "growingTitle": "Projects taking root",
+    "forecastTitle": "Data and forecasting",
+    "forecastDescription": "Python, SQL, data analysis, big data, AI and predictive modelling.",
+    "precisionTitle": "Precision agriculture",
+    "precisionDescription": "Remote sensing, sensors, IoT and cloud computing.",
+    "decisionTitle": "Traceability and decision support",
+    "decisionDescription": "Decision support tools and dashboards built with Power BI or Looker Studio.",
+    "skillsTitle": "Skills",
+    "skillsInstruction": "Choose a field to explore a skill.",
+    "agronomyTitle": "Agronomy",
+    "agronomyDescription": "Farming systems, agricultural trials and Common Agricultural Policy (CAP) regulations.",
+    "terrainTitle": "Working with farmers",
+    "terrainDescription": "Listening to farmers, learning from their firsthand experience and explaining technical topics clearly.",
+    "agtechTitle": "AgTech and data",
+    "agtechDescription": "Python, QGIS, remote sensing and decision support tools.",
+    "riskTitle": "Agricultural risk management",
+    "riskDescription": "Identifying hazards, assessing losses and preparing insurance claim files."
   },
   "fr": {
     "skip": "Aller aux projets",
     "role": "Ingénieur agronome · AgTech",
-    "availability": "À la recherche d’un stage · Été 2027",
+    "availability": "À la recherche d’un CDD ou d’une mission V.I.E. à partir de juin 2027",
     "slogan1": "Pour une agriculture plus résiliente.",
     "slogan2": "Donner aux agriculteurs la liberté de choisir.",
     "projects": "Mes projets",
@@ -372,7 +452,6 @@
     "gisTitle": "Analyse spatiale des zones à risque de pollution par les nitrates et préservation des éléments de biodiversité sur les exploitations agricoles",
     "gisDescription": "Analyse spatiale avec QGIS pour cartographier les zones à risque de pollution par les nitrates, les zones tampons des cours d’eau et les haies, afin de contribuer à la protection de l’eau et de la biodiversité.",
     "map": "Voir la carte · PDF",
-
     "languageLabel": "Choisir une langue",
     "lightMode": "Activer le mode clair",
     "darkMode": "Activer le mode sombre",
@@ -382,12 +461,29 @@
     "envLabel": "Découvrir l’autodiagnostic environnemental (nouvel onglet)",
     "gisLabel": "Voir la carte QGIS des risques de pollution par les nitrates et de la biodiversité (PDF, nouvel onglet)",
     "githubLabel": "GitHub (nouvel onglet)",
-    "linkedinLabel": "LinkedIn (nouvel onglet)"
+    "linkedinLabel": "LinkedIn (nouvel onglet)",
+    "growingTitle": "Projets en culture",
+    "forecastTitle": "Données et prévision",
+    "forecastDescription": "Python, SQL, analyse de données, Big Data, IA et modèles prédictifs.",
+    "precisionTitle": "Agriculture de précision",
+    "precisionDescription": "Télédétection, capteurs, IoT et cloud computing.",
+    "decisionTitle": "Traçabilité et aide à la décision",
+    "decisionDescription": "Outils d’aide à la décision et tableaux de bord avec Power BI ou Looker Studio.",
+    "skillsTitle": "Compétences",
+    "skillsInstruction": "Choisis une parcelle pour découvrir une compétence.",
+    "agronomyTitle": "Agronomie",
+    "agronomyDescription": "Systèmes de production, expérimentation agricole et réglementation de la PAC.",
+    "terrainTitle": "Relation terrain",
+    "terrainDescription": "Écouter les agriculteurs, apprendre de leur expérience du terrain et expliquer les sujets techniques avec clarté.",
+    "agtechTitle": "AgTech et données",
+    "agtechDescription": "Python, QGIS, télédétection et outils d’aide à la décision.",
+    "riskTitle": "Risques agricoles",
+    "riskDescription": "Identification des aléas, estimation des pertes et préparation de dossiers de sinistres."
   },
   "es": {
     "skip": "Ir a los proyectos",
     "role": "Ingeniero agrónomo · AgTech",
-    "availability": "Busco prácticas · Verano de 2027",
+    "availability": "Busco un contrato de duración determinada o una misión V.I.E. a partir de junio de 2027",
     "slogan1": "Por una agricultura más resiliente.",
     "slogan2": "Dar a los agricultores la libertad de elegir.",
     "projects": "Mis proyectos",
@@ -402,7 +498,6 @@
     "gisTitle": "Análisis espacial de zonas de riesgo de contaminación por nitratos y conservación de elementos de biodiversidad en explotaciones agrícolas",
     "gisDescription": "Análisis espacial con QGIS para cartografiar zonas de riesgo de contaminación por nitratos, franjas de protección de cursos de agua y setos, contribuyendo a la protección del agua y la biodiversidad.",
     "map": "Ver el mapa · PDF",
-
     "languageLabel": "Elegir idioma",
     "lightMode": "Activar el modo claro",
     "darkMode": "Activar el modo oscuro",
@@ -412,7 +507,24 @@
     "envLabel": "Ver la autoevaluación ambiental (se abre en una pestaña nueva)",
     "gisLabel": "Ver el mapa QGIS de riesgo de contaminación por nitratos y biodiversidad (PDF, se abre en una pestaña nueva)",
     "githubLabel": "GitHub (se abre en una pestaña nueva)",
-    "linkedinLabel": "LinkedIn (se abre en una pestaña nueva)"
+    "linkedinLabel": "LinkedIn (se abre en una pestaña nueva)",
+    "growingTitle": "Proyectos en crecimiento",
+    "forecastTitle": "Datos y predicción",
+    "forecastDescription": "Python, SQL, análisis de datos, big data, IA y modelos predictivos.",
+    "precisionTitle": "Agricultura de precisión",
+    "precisionDescription": "Teledetección, sensores, IoT y computación en la nube.",
+    "decisionTitle": "Trazabilidad y apoyo a la toma de decisiones",
+    "decisionDescription": "Herramientas de apoyo a la decisión y cuadros de mando con Power BI o Looker Studio.",
+    "skillsTitle": "Competencias",
+    "skillsInstruction": "Elige una parcela para descubrir una competencia.",
+    "agronomyTitle": "Agronomía",
+    "agronomyDescription": "Sistemas de producción, experimentación agrícola y normativa de la Política Agrícola Común (PAC).",
+    "terrainTitle": "Trabajo con agricultores",
+    "terrainDescription": "Escuchar a los agricultores, aprender de su experiencia en el campo y explicar con claridad cuestiones técnicas.",
+    "agtechTitle": "AgTech y datos",
+    "agtechDescription": "Python, QGIS, teledetección y herramientas de apoyo a la toma de decisiones.",
+    "riskTitle": "Gestión de riesgos agrícolas",
+    "riskDescription": "Identificación de riesgos, estimación de pérdidas y preparación de expedientes de siniestros."
   }
 };
       const root = document.documentElement;
@@ -422,6 +534,23 @@
       const media = matchMedia('(prefers-color-scheme: dark)');
       let language = 'en';
       let manualTheme = false;
+      const parcels = document.querySelectorAll('.skill-parcel');
+      const skillTitle = document.querySelector('#skill-note h3');
+      const skillDescription = document.querySelector('#skill-note p');
+      let selectedSkill = document.querySelector('.skill-parcel[aria-pressed="true"]').dataset.skill;
+
+      function renderSkill() {
+        const text = translations[language];
+        skillTitle.textContent = text[selectedSkill + 'Title'];
+        skillDescription.textContent = text[selectedSkill + 'Description'];
+        parcels.forEach(parcel => parcel.setAttribute('aria-pressed', String(parcel.dataset.skill === selectedSkill)));
+      }
+
+      parcels.forEach(parcel => parcel.addEventListener('click', () => {
+        if (selectedSkill === parcel.dataset.skill) return;
+        selectedSkill = parcel.dataset.skill;
+        renderSkill();
+      }));
       try {
         const saved = localStorage.getItem('naim-portfolio-language');
         if (Object.prototype.hasOwnProperty.call(translations, saved)) language = saved;
@@ -449,6 +578,7 @@
         languageButtons.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.lang === language)));
         document.title = 'Naïm HAMIDI — ' + text.role;
         document.querySelector('meta[name="description"]').content = 'Naïm Hamidi — ' + text.role + '. ' + text.slogan1 + ' ' + text.slogan2 + ' ' + text.availability + '.';
+        renderSkill();
         updateThemeLabel();
       }
       function applyTheme(theme) {
@@ -473,183 +603,6 @@
       media.addEventListener('change', event => {
         if (!manualTheme) applyTheme(event.matches ? 'dark' : 'light');
       });
-    })();
-  </script>
-
-  <script>
-    (() => {
-      const stories = {
-  "fr": {
-    "heading": "Compétences",
-    "close": "Fermer",
-    "hint": "Choisissez un domaine de compétences",
-    "spring": [
-      "Printemps",
-      "Agriculture et agronomie",
-      "Systèmes de production agricole, filières agroalimentaires, réglementation de la PAC, contrôles agroenvironnementaux et expérimentation agricole."
-    ],
-    "summer": [
-      "Été",
-      "Compétences transversales",
-      "Relation avec les agriculteurs, écoute et pédagogie. Traduction d’informations techniques en conseils compréhensibles, travail en équipe et communication dans un contexte multiculturel."
-    ],
-    "autumn": [
-      "Automne",
-      "AgTech et agriculture numérique",
-      "Analyse et visualisation de données, cartographie QGIS et télédétection. Développement d’outils d’aide à la décision, intelligence artificielle et utilisation de capteurs connectés (IoT) pour comprendre et accompagner les systèmes agricoles."
-    ],
-    "winter": [
-      "Hiver",
-      "Gestion des risques agricoles",
-      "Identification des aléas, évaluation des situations et estimation des pertes agricoles. Constitution et suivi de dossiers de sinistres pour accompagner la prise de décision."
-    ]
-  },
-  "en": {
-    "heading": "Skills",
-    "close": "Close",
-    "hint": "Choose a skill area",
-    "spring": [
-      "Spring",
-      "Agriculture and agronomy",
-      "Agricultural production systems, agrifood sectors, Common Agricultural Policy (CAP) regulations, agri-environmental inspections and agricultural experimentation."
-    ],
-    "summer": [
-      "Summer",
-      "Transferable skills",
-      "Farmer engagement, active listening and clear explanations. Turning technical information into practical, understandable advice, teamwork and communication in multicultural settings."
-    ],
-    "autumn": [
-      "Autumn",
-      "AgTech and digital agriculture",
-      "Data analysis and visualisation, QGIS mapping and remote sensing. Development of decision support tools, artificial intelligence and the use of connected sensors (IoT) to understand and support agricultural systems."
-    ],
-    "winter": [
-      "Winter",
-      "Agricultural risk management",
-      "Identification of hazards, assessment of situations and estimation of agricultural losses. Preparation and follow-up of agricultural insurance claims to support decision-making."
-    ]
-  },
-  "es": {
-    "heading": "Competencias",
-    "close": "Cerrar",
-    "hint": "Elige un área de competencias",
-    "spring": [
-      "Primavera",
-      "Agricultura y agronomía",
-      "Sistemas de producción agrícola, sectores agroalimentarios, normativa de la Política Agrícola Común (PAC), controles agroambientales y experimentación agrícola."
-    ],
-    "summer": [
-      "Verano",
-      "Competencias transversales",
-      "Relación con los agricultores, escucha activa y capacidad pedagógica. Traducción de información técnica en consejos comprensibles, trabajo en equipo y comunicación en contextos multiculturales."
-    ],
-    "autumn": [
-      "Otoño",
-      "AgTech y agricultura digital",
-      "Análisis y visualización de datos, cartografía con QGIS y teledetección. Desarrollo de herramientas de apoyo a la decisión, inteligencia artificial y uso de sensores conectados (IoT) para comprender y acompañar los sistemas agrícolas."
-    ],
-    "winter": [
-      "Invierno",
-      "Gestión de riesgos agrícolas",
-      "Identificación de riesgos, evaluación de situaciones y estimación de pérdidas agrícolas. Preparación y seguimiento de expedientes de siniestros para apoyar la toma de decisiones."
-    ]
-  }
-};
-      const images = {"spring": "avatar_printemps.png", "summer": "avatar_ete.png", "autumn": "avatar_automne.png", "winter": "avatar_hiver.png"};
-      const widget = document.querySelector('.season-widget');
-      const card = document.querySelector('#season-card');
-      const buttons = [...widget.querySelectorAll('[data-season]')];
-      const portrait = document.querySelector('#season-portrait');
-      const closeButton = widget.querySelector('.season-close');
-      let selected = null;
-      let trigger = null;
-      const portraitTints = {};
-      const defaultTints = {spring:[171,195,151],summer:[222,189,113],autumn:[198,146,111],winter:[158,188,205]};
-      function applyPortraitTint() {
-        const color = portraitTints[selected] || defaultTints[selected];
-        if (!color) return;
-        widget.style.setProperty('--portrait-tint', color.join(' '));
-      }
-      function readPortraitBackground(image, season) {
-        if (!image.naturalWidth) return;
-        try {
-          const canvas = document.createElement('canvas');
-          canvas.width = canvas.height = 48;
-          const context = canvas.getContext('2d', {willReadFrequently:true});
-          context.drawImage(image, 0, 0, 48, 48);
-          const pixels = context.getImageData(0, 0, 48, 48).data;
-          const buckets = new Map();
-          // Background is sampled along the perimeter, away from the face.
-          for (let y = 0; y < 48; y++) for (let x = 0; x < 48; x++) {
-            if (x >= 6 && x < 42 && y >= 6 && y < 42) continue;
-            const i = (y * 48 + x) * 4;
-            if (pixels[i + 3] < 200) continue;
-            const rgb = [pixels[i], pixels[i+1], pixels[i+2]];
-            const key = rgb.map(v => Math.floor(v / 32)).join(',');
-            const bucket = buckets.get(key) || {count:0, sums:[0,0,0]};
-            bucket.count++;
-            rgb.forEach((v,j) => bucket.sums[j] += v);
-            buckets.set(key,bucket);
-          }
-          const dominant = [...buckets.values()].sort((a,b) => b.count - a.count)[0];
-          if (!dominant) return;
-          portraitTints[season] = dominant.sums.map(v => Math.round(v / dominant.count));
-          if (selected === season) applyPortraitTint();
-        } catch (_) { /* Keep the seasonal fallback if image pixels cannot be read. */ }
-      }
-      function language() { return Object.hasOwn(stories, document.documentElement.lang) ? document.documentElement.lang : 'en'; }
-      function render() {
-        const copy = stories[language()];
-        document.querySelector('#seasons-heading').textContent = copy.heading;
-        closeButton.setAttribute('aria-label', copy.close);
-        closeButton.title = copy.close;
-        buttons.forEach(button => {
-          const key = button.dataset.season;
-          button.title = copy[key][0] + ' — ' + copy[key][1];
-          button.setAttribute('aria-label', button.title);
-          button.setAttribute('aria-expanded', String(selected === key));
-          button.querySelector('.avatar-fallback').textContent = copy[key][0][0];
-        });
-        if (!selected) return;
-        const [season, title, story] = copy[selected];
-        widget.dataset.season = selected;
-        applyPortraitTint();
-        widget.querySelector('.season-name').textContent = season;
-        document.querySelector('#season-title').textContent = title;
-        widget.querySelector('.season-story').textContent = story;
-        widget.querySelector('.portrait-fallback').textContent = season[0];
-        const source = 'assets/' + images[selected];
-        if (portrait.getAttribute('src') !== source) { portrait.hidden = false; portrait.src = source; }
-        portrait.alt = 'Naïm Hamidi — ' + season;
-      }
-      function close(restoreFocus) {
-        card.hidden = true;
-        selected = null;
-        delete widget.dataset.season;
-        render();
-        if (restoreFocus && trigger) trigger.focus();
-      }
-      buttons.forEach(button => button.addEventListener('click', () => {
-        if (selected === button.dataset.season) { close(true); return; }
-        selected = button.dataset.season;
-        trigger = button;
-        render();
-        card.hidden = false;
-      }));
-      closeButton.addEventListener('click', () => close(true));
-      document.addEventListener('keydown', event => { if (event.key === 'Escape' && selected) close(true); });
-      widget.querySelectorAll('.avatar-button img, #season-portrait').forEach(img => {
-        img.addEventListener('error', () => { img.hidden = true; });
-        if (img.getAttribute('src') && img.complete && !img.naturalWidth) img.hidden = true;
-      });
-      buttons.forEach(button => {
-        const image = button.querySelector('img');
-        image.addEventListener('load', () => readPortraitBackground(image, button.dataset.season));
-        if (image.complete && image.naturalWidth) readPortraitBackground(image, button.dataset.season);
-      });
-      new MutationObserver(render).observe(document.documentElement, {attributes:true, attributeFilter:['lang']});
-      render();
-      widget.hidden = false;
     })();
   </script>
 </body>
